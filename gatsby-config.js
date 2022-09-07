@@ -1,14 +1,3 @@
-require("dotenv").config({
-  path: `.env.${process.env.NODE_ENV}`,
-})
-
-const strapiConfig = {
-  apiURL: process.env.STRAPI_API_URL,
-  accessToken: process.env.STRAPI_TOKEN,
-  contentTypes: ['messages'],
-  singleTypes: [],
-};
-
 module.exports = {
   siteMetadata: {
     title: `assembleurs-gatsby`,
@@ -16,10 +5,6 @@ module.exports = {
   },
   plugins: [
     "gatsby-plugin-postcss",
-    {
-      resolve: `gatsby-source-strapi`,
-      options: strapiConfig,
-    },
     "gatsby-plugin-styled-components",
     "gatsby-plugin-image",
     "gatsby-plugin-sitemap",
