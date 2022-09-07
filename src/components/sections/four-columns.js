@@ -1,0 +1,33 @@
+import React from "react";
+import GlobalStyle from "../../globalStyles";
+import styled from "styled-components";
+
+const Main = styled.div`
+  background-color: ${(props) =>
+    props.backgroundColor};
+`;
+
+const Wrapper = styled.section`
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  column-gap: 2em;
+  row-gap: 2em;
+  @media (max-width: 960px) {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+  }
+  @media (max-width: 460px) {
+    display: initial;
+  }
+`;
+
+const FourColumns = (props) => {
+  return (
+    <Main backgroundColor={props.backgroundColor}>
+      <GlobalStyle />
+      <Wrapper>{props.children}</Wrapper>
+    </Main>
+  );
+};
+
+export default FourColumns;

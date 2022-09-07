@@ -15,16 +15,38 @@
     "clean": "gatsby clean"
   },
   "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^6.1.2",
+    "@fortawesome/free-solid-svg-icons": "^6.1.2",
+    "@fortawesome/react-fontawesome": "^0.2.0",
     "babel-plugin-styled-components": "^2.0.7",
+    "framer-motion": "^7.2.1",
     "gatsby": "^4.21.1",
     "gatsby-plugin-image": "^2.21.0",
+    "gatsby-plugin-postcss": "^5.21.0",
     "gatsby-plugin-sharp": "^4.21.0",
     "gatsby-plugin-sitemap": "^5.21.0",
     "gatsby-plugin-styled-components": "^5.21.0",
     "gatsby-source-filesystem": "^4.21.1",
+    "gatsby-source-strapi": "^2.0.0",
+    "gatsby-transformer-remark": "^5.21.0",
     "gatsby-transformer-sharp": "^4.21.0",
+    "postcss": "^8.4.16",
     "react": "^18.1.0",
     "react-dom": "^18.1.0",
+    "react-icons": "^4.4.0",
     "styled-components": "^5.3.5"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.18.10",
+    "@storybook/addon-actions": "^6.5.10",
+    "@storybook/addon-essentials": "^6.5.10",
+    "@storybook/addon-interactions": "^6.5.10",
+    "@storybook/addon-links": "^6.5.10",
+    "@storybook/builder-webpack5": "^6.5.10",
+    "@storybook/manager-webpack5": "^6.5.10",
+    "@storybook/react": "^6.5.10",
+    "@storybook/testing-library": "^0.0.13",
+    "babel-loader": "^8.2.5",
+    "env-cmd": "^10.1.0"
   }
 }
