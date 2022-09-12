@@ -1,4 +1,8 @@
 import { createGlobalStyle } from "styled-components";
+import "@fontsource/big-shoulders-display/600.css";
+import "@fontsource/big-shoulders-display/700.css";
+import "@fontsource/big-shoulders-display/800.css";
+import "@fontsource/roboto/500.css";
 
 const GlobalStyle = createGlobalStyle`
     body {
