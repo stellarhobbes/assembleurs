@@ -52,8 +52,7 @@ const GlobalStyle = createGlobalStyle`
         font-weight: 500;
         font-size: 1.1em;
         line-height: 1.6em;
-        color: ${(props) =>
-          props.pColor === "white" ? "#ffffff" : "#252D80"};
+        color: ${(props) => (props.pColor === "white" ? "#ffffff" : "#252D80")};
     }
 
     a {
@@ -65,6 +64,21 @@ const GlobalStyle = createGlobalStyle`
         max-width: 1250px;
         margin: auto;
        }
+
+    .my-masonry-grid {
+        display: -webkit-box; /* Not needed if autoprefixing */
+        display: -ms-flexbox; /* Not needed if autoprefixing */
+        display: flex;
+        margin-left: -30px; /* gutter size offset */
+        width: auto;
+    }
+
+    .my-masonry-grid_column {
+        padding-left: 30px; /* gutter size */
+        padding-bottom: 30px; /* gutter size */
+        background-clip: padding-box;
+    }
+
 `;
 
 export default GlobalStyle;

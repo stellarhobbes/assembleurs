@@ -11,7 +11,7 @@ import Citation from "../components/sections/citation";
 import TextCitation from "../components/sections/text-citation";
 import FullImage from "../components/sections/full-image";
 import ContentBloc from "../components/blocs/content-bloc";
-import SubtitleButton from "../components/sections/subtitleandbutton";
+import SubtitleButton from "../components/sections/subtitle-button";
 import FourColumns from "../components/sections/four-columns";
 import Card from "../components/elements/card";
 import CitationSimple from "../components/sections/citation-simple";
@@ -28,7 +28,7 @@ import HandsImage from "../images/illustrations/Picto_mains.png";
 import HatImage from "../images/illustrations/Picto_diplome.png";
 import DisplayImage from "../images/illustrations/Picto_fleches.png";
 import LinkImage from "../images/illustrations/Picto_reseau.png";
-import ImageActeurs from "../images/pictures/Acteurs.jpg"
+import ImageActeurs from "../images/pictures/Acteurs.jpg";
 
 /*Contents*/
 const missionContents = [
@@ -59,10 +59,7 @@ const Cooperative = () => {
     <body>
       <GlobalStyle />
       <Navbar />
-      <TopNav
-        nextLink="Coopérative - L'équipe"
-        nextUrl="/equipe"
-      />
+      <TopNav nextLink="Coopérative - L'équipe" nextUrl="/equipe" />
       <SectionWrap backgroundColor="lightblue">
         <ReverseTextImage
           title="Mission des assembleurs"
@@ -70,7 +67,10 @@ const Cooperative = () => {
           imageUrl={IllustrationLieux}
         />
       </SectionWrap>
-      <Citation citationText="La médiation numérique désigne les dispositifs qui permettent à chacun de comprendre et de s'approprier le numérique, ses enjeux et ses usages." />
+      <Citation
+        backgroundColor="lightblue"
+        citationText="La médiation numérique désigne les dispositifs qui permettent à chacun de comprendre et de s'approprier le numérique, ses enjeux et ses usages."
+      />
       <SectionWrap backgroundColor="lightblue">
         <TextCitation
           backgroundColor="lightblue"
@@ -85,23 +85,23 @@ const Cooperative = () => {
         imageUrl={IllustrationUrgence}
         imageAlt="Illustration de la transformation sociétale"
       />
-      <SectionWrap backgroundColor="lightblue">
+      <SectionWrap backgroundColor="lightgrey">
         <SubtitleButton
           subtitleText="Nos actions sur le terrain"
-          backgroundColor="lightblue"
+          backgroundColor="lightgrey"
         />
         <ContentBloc
-          backgroundColor="lightblue"
+          backgroundColor="lightgrey"
           imageUrl={ArrowRight}
           imageAlt=""
           contentText="Pour nous, le déploiement d'une offre de médiation en adéquation avec les besoins des citoyens sur l'ensemble du territoire passe à la fois par le renforcement des lieux de médiation, le déploiement de solutions innovantes et une meilleure identification des acteurs."
         />
-        <FourColumns backgroundColor="#E0F3F9;">
+        <FourColumns backgroundColor="lightgrey">
           {missionContents.map((content) => (
             <Card
               url={content.url}
               titleText={content.titleText}
-              contentText={content.contentText}           
+              contentText={content.contentText}
             />
           ))}
         </FourColumns>
@@ -111,14 +111,14 @@ const Cooperative = () => {
         citationText="En 2022, les Assembleurs, ce sont des formations pour les aidants et les médiateurs, des rencontres entre acteurs de l'inclusion numérique, des projets autour du numérique éducatif, de la lutte contre la pauvreté ou des TPE-PME"
       />
       <HalfImage
-        backgroundColor="lightblue"
+        backgroundColor="lightgrey"
         backgroundImage={ImageActeurs}
         subtitleText="Notre équipe"
         contentText="Le projet s'est développé depuis fin 2019 au sein du collectif POP, ses activités sont portées par une SCIC. L'équipe compte plus de 15 collaborateurs et nous prévoyons de doubler les effectifs d'ici fin 2023."
         buttonText="Découvrir les profils"
         url="/"
       />
-      <ContactCTA backgroundColor="white"/>
+      <ContactCTA backgroundColor="white" />
       <Footer />
     </body>
   );

@@ -11,7 +11,7 @@ const colors = {
 const Wrapper = styled.div`
   padding: 75px 0px;
   background-color: ${(props) => {
-    return colors[props.backgroundColor] || "white";
+    return colors[props.backgroundColor] || "transparent";
   }};
 `;
 

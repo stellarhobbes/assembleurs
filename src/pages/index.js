@@ -5,7 +5,7 @@ import GlobalStyle from "../globalStyles";
 import Navbar from "../components/sections/navbar";
 import HeaderHome from "../components/home-components/header-home";
 import TextImage from "../components/sections/text-image";
-import SubtitleButton from "../components/sections/subtitleandbutton";
+import SubtitleButton from "../components/sections/subtitle-button";
 import FourColumns from "../components/sections/four-columns";
 import ThreeColumns from "../components/sections/three-columns";
 import SectionWrap from "../components/sections/section-wrap";
@@ -81,22 +81,23 @@ const IndexPage = () => {
         bulletColor=""
         title="La coopérative"
         titleColor=""
-        text="La mission des Assembleurs est d’accompagner, former et animer une
-            dynamique collective pour une société numérique inclusive et
-            créative. Notre vision&nbsp;: Agir collectivement pour une transition
-            numérique inclusive des Hauts-de-France !"
         bubbleText="Atelier mené par les Assembleurs en 2021"
         buttonText="En savoir plus"
         buttonURL="/cooperative"
         imageUrl={OvalePicture}
-      />
-      <SectionWrap backgroundColor="lightblue">
+      >
+        La mission des Assembleurs est d’accompagner, former et animer une
+        dynamique collective pour une société numérique inclusive et créative.
+        Notre vision&nbsp;: Agir collectivement pour une transition numérique
+        inclusive des Hauts-de-France !
+      </TextImage>
+      <SectionWrap backgroundColor="lightgrey">
         <SubtitleButton
-          backgroundColor="lightblue"
+          backgroundColor="lightgrey"
           subtitleText="Nos missions"
           buttonText="Plus d'infos"
         />
-        <FourColumns>
+        <FourColumns backgroundColor="lightgrey">
           {missionContents.map((content) => (
             <Card
               url={content.url}
@@ -128,7 +129,7 @@ const IndexPage = () => {
       <SectionWrap>
         <Partners />
       </SectionWrap>
-      <ContactCTA />
+      <ContactCTA backgroundColor="lightgrey"/>
       <Footer />
     </body>
   );

@@ -5,9 +5,17 @@ import GlobalStyle from "../../globalStyles";
 import Subtitle from "../elements/subtitle";
 import Button from "../elements/button";
 
+const colors = {
+  lightblue: "#E0F3F9",
+  lightred: "#FFE0DB",
+  lightgrey: "#F4F4F4",
+  white: "#ffffff",
+};
+
 const Main = styled.div`
-  background-color: ${(props) =>
-    props.backgroundColor === "lightblue" ? "#E0F3F9" : "fff"};
+  background-color: ${(props) => {
+    return colors[props.backgroundColor] || "transparent";
+  }};
 `;
 
 const Wrapper = styled.section`
@@ -35,7 +43,9 @@ const SubtitleButton = (props) => {
       <Wrapper>
         <Subtitle subtitleText={props.subtitleText} />
         {props.centerText && <CenterText>{props.centerText}</CenterText>}
-        {props.buttonText && <Button buttonText={props.buttonText} buttonUrl={props.url} />}
+        {props.buttonText && (
+          <Button buttonText={props.buttonText} buttonUrl={props.url} />
+        )}
       </Wrapper>
     </Main>
   );

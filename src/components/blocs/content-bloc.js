@@ -2,9 +2,17 @@ import React from "react";
 import styled from "styled-components";
 import GlobalStyle from "../../globalStyles";
 
+const colors = {
+  lightblue: "#E0F3F9",
+  lightred: "#FFE0DB",
+  lightgrey: "#F4F4F4",
+  white: "#ffffff",
+};
+
 const Main = styled.div`
-  background-color: ${(props) =>
-    props.backgroundColor === "lightblue" ? "#E0F3F9" : "#ffffff"};
+  background-color: ${(props) => {
+    return colors[props.backgroundColor] || "transparent";
+  }};
 `;
 const Wrapper = styled.section`
   width: 50%;

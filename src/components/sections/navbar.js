@@ -3,6 +3,8 @@ import { Link } from "gatsby";
 import styled from "styled-components";
 import GlobalStyle from "../../globalStyles";
 
+import NavLink from "../elements/navlink";
+
 import LogoAssembleurs from "../../images/icons/Icone_logo_Assembleurs.png";
 import IconContact from "../../images/icons/Icone_contact_marine.png";
 import IconJobs from "../../images/icons/Icone_jobs_marine.png";
@@ -41,19 +43,6 @@ const Logo = styled.img`
 const Navigation = styled.div`
   display: flex;
   flex-direction: row;
-`;
-
-const NavLink = styled(Link)`
-  font-family: "Big Shoulders Display", cursive;
-  font-weight: 600;
-  letter-spacing: 1px;
-  font-size: 1.5em;
-  color: #252d80;
-  text-transform: uppercase;
-  padding: 5px 10px;
-  &:hover {
-    color: #33cbeb;
-  }
 `;
 
 const Social = styled.div`
@@ -116,6 +105,65 @@ const navigationContents = [
   {
     text: "Missions",
     link: "/missions",
+  },
+  {
+    text: "Solutions",
+    link: "#",
+  },
+  {
+    text: "Sur le terrain",
+    link: "#",
+  },
+  {
+    text: "Ressources",
+    link: "#",
+  },
+  {
+    text: "Agenda",
+    link: "#",
+  }
+];
+
+const mobileNavigationContents = [
+  {
+    text: "Coopérative",
+    link: "/cooperative",
+  },
+  {
+    text: "Équipe",
+    link: "/equipe",
+  },
+  {
+    text: "Chiffres",
+    link: "/chiffres",
+  },
+  {
+    text: "Devenir adhérent",
+    link: "#",
+  },
+  {
+    text: "Témoignage",
+    link: "#",
+  },
+  {
+    text: "Missions",
+    link: "/missions",
+  },
+  {
+    text: "Solutions",
+    link: "#",
+  },
+  {
+    text: "Sur le terrain",
+    link: "#",
+  },
+  {
+    text: "Ressources",
+    link: "#",
+  },
+  {
+    text: "Agenda",
+    link: "#",
   }
 ];
 
@@ -153,8 +201,8 @@ const Navbar = () => {
           <Icon src={IconHamburger} onClick={() => setIsOpen(!isOpen)} />
         </MobileNav>
         <MobileNavigation isOpen={isOpen}>
-          {navigationContents.map((navigation) => (
-            <NavLink to={navigation.link}>{navigation.text}</NavLink>
+          {mobileNavigationContents.map((mobileNavigation) => (
+            <NavLink to={mobileNavigation.link}>{mobileNavigation.text}</NavLink>
           ))}
           <MobileSocial>
             <Icon src={IconContact} />

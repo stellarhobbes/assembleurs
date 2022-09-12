@@ -97,14 +97,14 @@ const Missions = () => {
           <Card
             url={Loupe}
             altimage="Icône de loupe"
-            contentText="Créer des communs pédagogiques"
+            titleText="Créer des communs pédagogiques"
             buttonText="Fabrique à commun"
             butonUrl="/"
           />
           <Card
             url={Outils}
             altimage="Icône de loupe"
-            contentText="Découvrir nos formations"
+            titleText="Découvrir nos formations"
             buttonText="Le Catalogue"
             butonUrl="/"
           />
@@ -156,7 +156,7 @@ const Missions = () => {
             iconAlt="Numéro quatre"
             subtitleText="Créer du lien et mettre en réseau"
             contentText="Au coeur des Assembleurs : animer l'écosystème de la médiation numérique sur les Hauts-de-France."
-            bubbleText="Numérique en commun(s) : rrencontre annuelle des acteurs de l'inclusion numérique, organisée à la fois en édition nationale et édition locale."
+            bubbleText="Numérique en commun(s) : rencontre annuelle des acteurs de l'inclusion numérique, organisée à la fois en édition nationale et édition locale."
           />
         </ReverseDoubleColumns>
       </SectionWrap>

@@ -9,7 +9,7 @@ const Main = styled.div``;
 const SimpleBloc = (props) => {
   return (
     <Main>
-      <Subtitle subtitleText={props.subtitleText} />
+      <Subtitle bulletColor={props.bulletColor} subtitleText={props.subtitleText} />
       <p>{props.contentText}</p>
       {props.buttonText && (
         <Button buttonText={props.buttonText} url={props.url} />

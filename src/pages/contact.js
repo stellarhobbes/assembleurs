@@ -13,25 +13,25 @@ import LogoAssembleurs from "../images/icons/Icone_logo_Assembleurs.png";
 import Enveloppe from "../images/illustrations/Picto_mail.png";
 
 /*Styles*/
-const PhoneCTA = styled.div`
+const MailCTA = styled.div`
   background-color: #e0f3f9;
   padding: 10px 0px;
   text-align: center;
 `;
 
-const PhoneText = styled.p`
+const MailText = styled.p`
   font-family: "Big Shoulders Display", cursive;
   font-weight: 600;
   letter-spacing: 0.5px;
   font-size: 1.8em;
 `;
 
-const PhoneNumber = styled.span`
+const MailNumber = styled.span`
   color: #00bee6;
   text-decoration: none;
 `;
 
-const Phone = styled.a`
+const Mail = styled.a`
     color: inherit;
 `
 
@@ -71,12 +71,12 @@ const Contact = () => {
         titleText="Envie d'échanger avec nous ?"
         contentText="Vous souhaitez co-construire avec nous une société numérique inclusive et créative en Hauts-de-France&nbsp;? Une question, une remarque, une requête&nbsp;? Contactez les Assembleurs&nbsp;!"
       ></Header>
-      <PhoneCTA>
-        <PhoneText>
-          Nous sommes aussi joignable par téléphone au
-          <PhoneNumber><Phone href="tel:0328045293">&nbsp;03 28 04 52 93</Phone></PhoneNumber>
-        </PhoneText>
-      </PhoneCTA>
+      <MailCTA>
+        <MailText>
+          Nous sommes joignable par e-mail : 
+          <MailNumber><Mail href="mailto:bonjour@assembleurs.co">&nbsp;bonjour@assembleurs.co</Mail></MailNumber>
+        </MailText>
+      </MailCTA>
       <SectionWrap>
         <ContactSection>
           <TopContact>

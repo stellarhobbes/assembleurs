@@ -3,9 +3,6 @@ import styled from "styled-components";
 import GlobalStyle from "../../globalStyles";
 
 import SimpleBloc from "../blocs/simple-bloc";
-import Subtitle from "../elements/subtitle";
-
-import CalendarImage from "../../images/illustrations/calendar-assembleurs.png";
 
 const Main = styled.div``;
 const Wrapper = styled.section`
@@ -24,12 +21,6 @@ const LastArticle = styled.div`
   border-left: 0.5px solid #b3b3b3;
 `;
 
-const Agenda = styled.div``;
-
-const Image = styled.img`
-  width: 250px;
-`;
-
 const AtypicalSection = () => {
   return (
     <Main>
@@ -39,13 +30,16 @@ const AtypicalSection = () => {
           subtitleText="Sur le terrain"
           contentText="Suivez notre actualité ! Partez à la rencontre des acteurs et lieux de médiation numérique en Hauts-de-France, découvrez nos actions pour un numérique inclusif en Hauts-de-France. "
           buttonText="Accéder au Blog"
-          url="/"
+          url="#"
         />
         <LastArticle></LastArticle>
-        <Agenda>
-          <Subtitle bulletColor="red" subtitleText="Agenda" />
-          <Image src={CalendarImage} alt=""></Image>
-        </Agenda>
+        <SimpleBloc
+          bulletColor="red"
+          subtitleText="Agenda"
+          contentText="Retrouvez les événements de l’inclusion numérique en Haut de France sur notre agenda"
+          buttonText="Les évènements"
+          url="#"
+        />
       </Wrapper>
     </Main>
   );

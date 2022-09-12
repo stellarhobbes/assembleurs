@@ -6,7 +6,7 @@ import Footer from "../components/sections/footer";
 import TopNav from "../components/sections/top-navigation";
 import HalfImage from "../components/sections/half-image";
 import SectionWrap from "../components/sections/section-wrap";
-import SubtitleButton from "../components/sections/subtitleandbutton";
+import SubtitleButton from "../components/sections/subtitle-button";
 import FourColumns from "../components/sections/four-columns";
 import PeopleCard from "../components/elements/peoplecards";
 import ContactCTA from "../components/sections/contact-cta";
@@ -64,14 +64,9 @@ const Equipe = () => {
     <body>
       <GlobalStyle />
       <Navbar />
-      <TopNav
-        prevLink="Coopérative - Présentation"
-        prevUrl="/cooperative"
-        nextLink="Coopérative - Chiffres"
-        nextUrl="#"
-      />
+      <TopNav />
       <HalfImage
-      backgroundColor="lightblue"
+        backgroundColor="lightgrey"
         isScrollAnimation="Y"
         backgroundImage={ImageHeader}
         subtitleText="L'équipe des Assembleurs"
@@ -91,7 +86,7 @@ const Equipe = () => {
           ))}
         </FourColumns>
       </SectionWrap>
-      <ContactCTA/>
+      <ContactCTA backgroundColor="lightblue"/>
       <Footer />
     </body>
   );

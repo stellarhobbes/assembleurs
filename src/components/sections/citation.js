@@ -6,7 +6,8 @@ import Guillemets from "../../images/icons/guillemets-assembleurs.png";
 import Pattern from "../../images/pictures/pattern-marine.png";
 
 const Main = styled.div`
-  background-color: #e0f3f9;
+  background-color: ${(props) =>
+    props.backgroundColor === "lightblue" ? "#e0f3f9" : "transparent"};
 `;
 const Wrapper = styled.section`
   background-image: url(${Pattern});
@@ -32,11 +33,14 @@ const Icon = styled.img`
   width: 30px;
 `;
 
-const Name = styled.p``;
+const Name = styled.p`
+color: white;
+font-weight: 400;
+`;
 
 const Citation = (props) => {
   return (
-    <Main>
+    <Main backgroundColor={props.backgroundColor}>
       <GlobalStyle />
       <Wrapper>
         <Icon src={Guillemets} alt="" />

@@ -8,6 +8,13 @@ import SimpleBloc from "../blocs/simple-bloc";
 import EyeImage from "../../images/icons/redeye-assembleurs.png";
 import ArrowImage from "../../images/icons/arrow-down-assembleurs.png";
 
+const colors = {
+  lightblue: "#E0F3F9",
+  lightred: "#FFE0DB",
+  lightgrey: "#F4F4F4",
+  white: "#ffffff",
+};
+
 const Main = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -20,7 +27,9 @@ const ImageBloc = styled.div`
   background-size: cover;
 `;
 const ContentBloc = styled.div`
-  background-color: ${(props) => props.backgroundColor === "lightblue" ? "#e0f3f9" : "#ffffff"}; 
+  background-color: ${(props) => {
+    return colors[props.backgroundColor] || "transparent";
+  }};
   display: flex;
   flex-direction: column;
   align-items: center;
