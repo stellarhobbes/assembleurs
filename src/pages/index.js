@@ -43,8 +43,8 @@ const missionContents = [
   },
   {
     url: DisplayImage,
-    titleText: "Mener",
-    contentText: "des projets sectoriels de l'inclusion numérique",
+    titleText: "Appuyer",
+    contentText: "des dynamiques sectorielles : éducation, entreprises, santé ...",
   },
   {
     url: LinkImage,
@@ -81,15 +81,13 @@ const IndexPage = () => {
         bulletColor=""
         title="La coopérative"
         titleColor=""
-        bubbleText="Atelier mené par les Assembleurs en 2021"
         buttonText="En savoir plus"
         buttonURL="/cooperative"
         imageUrl={OvalePicture}
       >
         La mission des Assembleurs est d’accompagner, former et animer une
         dynamique collective pour une société numérique inclusive et créative.
-        Notre vision&nbsp;: Agir collectivement pour une transition numérique
-        inclusive des Hauts-de-France !
+        Notre vision&nbsp;: Agir collectivement pour que chacun trouve sa place dans la société numérique !
       </TextImage>
       <SectionWrap backgroundColor="lightgrey">
         <SubtitleButton

@@ -3,11 +3,11 @@ import styled from "styled-components";
 import GlobalStyle from "../../globalStyles";
 
 /*Images*/
-import BanqueDesTerritoires from "../../images/partners/logo-bdt.png";
-import HautsdeFrance from "../../images/partners/logo-hdf.jpg";
-import LogoPop from "../../images/partners/logo-pop.jpg";
-import Mission from "../../images/partners/logo-mission.jpg";
-import LogoSylab from "../../images/partners/logo-sylab.png";
+import Europe from "../../images/partners/logo-europe.jpg";
+import Anct from "../../images/partners/logo-anct.jpg";
+import Banque from "../../images/partners/logo-bdt.png";
+import Region from "../../images/partners/logo-hdf.jpg";
+import Pop from "../../images/partners/logo-pop.jpg";
 
 /*Styles*/
 const Main = styled.div`
@@ -29,24 +29,24 @@ const Image = styled.img`
 
 const contents = [
   {
-    src: BanqueDesTerritoires,
+    src: Europe,
+    alt: "Logo de l'Union Européenne",
+  },
+  {
+    src: Anct,
+    alt: "Logo de l'Agence Nationale de la Cohésion des Territoires'",
+  },
+  {
+    src: Banque,
     alt: "Logo de la Banque des territoires",
   },
   {
-    src: HautsdeFrance,
-    alt: "Logo de la région Hauts de France",
+    src: Region,
+    alt: "Logo de la région Hauts-de-France",
   },
   {
-    src: LogoSylab,
-    alt: "Logo de SYLAB",
-  },
-  {
-    src: LogoPop,
+    src: Pop,
     alt: "Logo du groupe POP",
-  },
-  {
-    src: Mission,
-    alt: "Logo de la Mission de Société Numérique",
   },
 ];
 

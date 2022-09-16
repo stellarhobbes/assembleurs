@@ -64,7 +64,7 @@ const TextImage = (props) => {
           <Content contentColor={props.contentColor}>{props.children}</Content>
           {props.bubbleText && (
             <Bubble>
-              <FaArrowCircleRight color="#00BEE6" size="20" />
+              <FaArrowCircleRight color="#252d80" size="20" />
               {props.bubbleText}
             </Bubble>
           )}

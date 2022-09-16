@@ -17,6 +17,7 @@ const NumberIcon = styled.img`
 `
 const Subtitle = styled.h2`
     margin-top: 10px;
+    text-align: center;
     text-transform: none;
     letter-spacing: 0.5px;
     font-weight: 600;

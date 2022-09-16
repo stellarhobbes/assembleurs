@@ -70,7 +70,7 @@ const HeaderHome = () => {
       <Wrapper>
         <Image src={Logos} alt=""></Image>
         <Title>
-          Agir collectivement pour que chacun trouve sa place dans la société
+          Les Assembleurs : agir collectivement pour que chacun trouve sa place dans la société
           numérique&nbsp;!
         </Title>
         <Content>

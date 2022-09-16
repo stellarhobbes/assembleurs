@@ -12,6 +12,16 @@ module.exports = {
     "gatsby-transformer-sharp",
     "gatsby-transformer-remark",
     {
+      resolve: `gatsby-plugin-google-fonts`,
+      options: {
+        fonts: [
+          `roboto`,
+          `Big Shoulders Display\:600,700,800` // you can also specify font weights and styles
+        ],
+        display: 'swap'
+      }
+    },
+    {
       resolve: "gatsby-source-filesystem",
       options: {
         name: "images",

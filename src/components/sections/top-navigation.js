@@ -34,7 +34,7 @@ const links = [
   },
   {
     to: "/societaire",
-    title: "Devenir Sociétaire",
+    title: "Devenir sociétaire",
   },
   {
     to: "/temoignages",

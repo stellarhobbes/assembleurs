@@ -70,7 +70,7 @@ const Equipe = () => {
         isScrollAnimation="Y"
         backgroundImage={ImageHeader}
         subtitleText="L'équipe des Assembleurs"
-        contentText="Développé depuis fin 2019 au sein du collectif POP, l'équipe compte plus de 15 collaborateurs et nous prévoyons de doubler les effectifs d'ici fin 2023."
+        contentText="Développé depuis fin 2019 au sein du collectif POP, l'équipe compte plus de 15 collaborateurs et nous prévoyons de doubler les effectifs d'ici fin 2023"
       />
       <SectionWrap>
         <SubtitleButton subtitleText="Les profils" />

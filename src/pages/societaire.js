@@ -39,32 +39,32 @@ const headerContent = [
   {
     numberUrl: NumberOne,
     title: "Participer",
-    text: "S'impliquer activement dans la gouvernance d'un projet régional au service de l'intérêt général.",
+    text: "S'impliquer activement dans la gouvernance d'un projet régional au service de l'intérêt général",
   },
   {
     numberUrl: NumberTwo,
     title: "Échanger",
-    text: "Se mettre en réseau avec d'autres acteurs et territoires.",
+    text: "Se mettre en réseau avec d'autres acteurs et territoires",
   },
   {
     numberUrl: NumberThree,
     title: "S'informer",
-    text: "Décrypter l'actualité de l'inclusion numérique : dispositifs d'États, appels à projet, financements.",
+    text: "Décrypter l'actualité de l'inclusion numérique : dispositifs d'États, appels à projet, financements",
   },
 ];
 
 const valeursContent = [
   {
     title: "Inclusion et pouvoir d'agir",
-    text: "Oeuvrer pour une société numérique inclusive et créative qui offre une place à chacun.",
+    text: "Œuvrer pour une société numérique inclusive et créative qui offre une place à chacun",
   },
   {
     title: "Durabilité & sobriété",
-    text: "Favoriser un numérique éthique, coopératif, démocratique et frugal.",
+    text: "Favoriser un numérique éthique, coopératif, démocratique et frugal",
   },
   {
     title: "ESS & Agilité",
-    text: "Les Assembleurs est une entreprise de l'ESS, qui allie intérêt général et agilité entrepreneuriale.",
+    text: "Les Assembleurs est une entreprise de l'ESS, qui allie intérêt général et agilité entrepreneuriale",
   },
   {
     title: "Ouverture & Collaboration",
@@ -72,7 +72,7 @@ const valeursContent = [
   },
   {
     title: "Ancrage & équité territoriale",
-    text: "Agir pour tous les territoires des Hauts-de-France, notamment les plus sensibles.",
+    text: "Agir pour tous les territoires des Hauts-de-France, notamment les plus sensibles",
   },
 ];
 
@@ -98,8 +98,8 @@ const Societaire = () => {
         isChildren="yes"
         iconUrl={LogoAssembleurs}
         iconAlt="Logo des Assembleurs"
-        titleText="Devenir sociétaire des Assembleurs ?"
-        contentText="Courant 2022, les Assembleurs vont se transformer en Société Coopérative d'Intérêt Collectif (SCIC). 2022 sera une année de transition, durant laquelle il sera possible de devenir sociétaire."
+        titleText="Devenir sociétaire des Assembleurs"
+        contentText="Depuis juillet 2022, les Assembleurs sont devenus une Société Coopérative d'Intérêt Collectif (SCIC). Découvrez comment prendre part à la dynamique !"
       >
         <ThreeColumns>
           {headerContent.map((content) => (

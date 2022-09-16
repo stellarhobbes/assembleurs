@@ -5,9 +5,9 @@ import GlobalStyle from "../../globalStyles";
 
 import NavLink from "../elements/navlink";
 
-import LogoAssembleurs from "../../images/icons/Icone_logo_Assembleurs.png";
+import LogoAssembleurs from "../../images/icons/logo-assembleurs-capsule.png";
 import IconContact from "../../images/icons/Icone_contact_marine.png";
-import IconJobs from "../../images/icons/Icone_jobs_marine.png";
+import IconAgenda from "../../images/icons/icon-agenda.png";
 import IconHamburger from "../../images/icons/icon-hamburger.png";
 
 const Main = styled.div`
@@ -36,7 +36,7 @@ const Nav = styled.div`
 `;
 
 const Logo = styled.img`
-  width: 40px;
+  height: 40px;
   margin-right: 30px;
 `;
 
@@ -108,20 +108,18 @@ const navigationContents = [
   },
   {
     text: "Solutions",
-    link: "#",
+    link: "/solutions",
   },
+  /*
   {
     text: "Sur le terrain",
     link: "#",
   },
+  */
   {
     text: "Ressources",
-    link: "#",
+    link: "/ressources",
   },
-  {
-    text: "Agenda",
-    link: "#",
-  }
 ];
 
 const mobileNavigationContents = [
@@ -139,11 +137,11 @@ const mobileNavigationContents = [
   },
   {
     text: "Devenir adhérent",
-    link: "#",
+    link: "/societaire",
   },
   {
     text: "Témoignage",
-    link: "#",
+    link: "/temoignages",
   },
   {
     text: "Missions",
@@ -151,15 +149,17 @@ const mobileNavigationContents = [
   },
   {
     text: "Solutions",
-    link: "#",
+    link: "/solutions",
   },
+  /*
   {
     text: "Sur le terrain",
     link: "#",
   },
+  */
   {
     text: "Ressources",
-    link: "#",
+    link: "/ressources",
   },
   {
     text: "Agenda",
@@ -188,7 +188,7 @@ const Navbar = () => {
             <Icon src={IconContact} />
           </Link>
           <Link to="#">
-            <Icon src={IconJobs} />
+            <Icon src={IconAgenda} />
           </Link>
         </Social>
       </DesktopWrapper>
@@ -206,7 +206,7 @@ const Navbar = () => {
           ))}
           <MobileSocial>
             <Icon src={IconContact} />
-            <Icon src={IconJobs} />
+            <Icon src={IconAgenda} />
           </MobileSocial>
         </MobileNavigation>
       </MobileWrapper>

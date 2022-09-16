@@ -58,7 +58,7 @@ const testimonialContent = [
     background: "lightred",
     image: TestImage,
     alt: "",
-    name: "Raymond Sisterion",
+    name: "Raymond Sisteron",
     job: "Présidente de l'association",
     company: "Le fil de l'Épeule",
     text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed in nibh eu lacus consequat suscipit. Suspendisse auctor facilisis erat et semper. Vestibulum dolor quam, dignissim quis volutpat vitae, congue feugiat nisl. Fusce semper faucibus sem in pulvinar. ",
@@ -75,12 +75,12 @@ const Temoignages = () => {
           iconUrl={Bulle}
           iconAlt="Icoône oeil rouge"
           titleText="Ils parlent de nous !"
-          contentText="Nos partenaires prennent la parole : retour d'expérience, échanges, accompagnement ... Découvrez-les ci-dessous."
+          contentText="Nos partenaires prennent la parole : retour d'expérience, échanges, accompagnement... Découvrez-les ci-dessous :"
         />
         <Citation
           backgroundColor="lightgrey"
           citationText="Devenir sociétaire des Assembleurs me paraît évident pour bénéficier d'un accès privilégié au réseau d'inclusion numérique !"
-          nameText="Sylvain Prandi • Président de l'association 'Le fil de l'Épeule'"
+          nameText="Sylvain Prandi • Président de l'association &apos;&apos;Le fil de l'Épeule&apos;&apos;"
         />
       </SectionWrap>
       <SectionWrap>

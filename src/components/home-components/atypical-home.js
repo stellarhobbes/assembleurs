@@ -28,15 +28,15 @@ const AtypicalSection = () => {
       <Wrapper>
         <SimpleBloc
           subtitleText="Sur le terrain"
-          contentText="Suivez notre actualité ! Partez à la rencontre des acteurs et lieux de médiation numérique en Hauts-de-France, découvrez nos actions pour un numérique inclusif en Hauts-de-France. "
-          buttonText="Accéder au Blog"
+          contentText="Suivez notre actualité ! Partez à la rencontre des acteurs et lieux de médiation numérique en Hauts-de-France, découvrez nos actions pour un numérique inclusif en Hauts-de-France"
+          buttonText="Accéder au blog"
           url="#"
         />
         <LastArticle></LastArticle>
         <SimpleBloc
           bulletColor="red"
           subtitleText="Agenda"
-          contentText="Retrouvez les événements de l’inclusion numérique en Haut de France sur notre agenda"
+          contentText="Retrouvez les événements de l’inclusion numérique en Hauts-de-France sur notre agenda"
           buttonText="Les évènements"
           url="#"
         />

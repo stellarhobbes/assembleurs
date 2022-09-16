@@ -1,8 +1,4 @@
 import { createGlobalStyle } from "styled-components";
-import "@fontsource/big-shoulders-display/600.css";
-import "@fontsource/big-shoulders-display/700.css";
-import "@fontsource/big-shoulders-display/800.css";
-import "@fontsource/roboto/500.css";
 
 const GlobalStyle = createGlobalStyle`
     body {
@@ -11,7 +7,7 @@ const GlobalStyle = createGlobalStyle`
     }
 
     h1 {
-        font-family: "Big Shoulders Display", cursive;
+        font-family: "Big Shoulders Display";
         font-weight: 700;
         letter-spacing: 1px;
         font-size: 3.5em;
@@ -23,7 +19,7 @@ const GlobalStyle = createGlobalStyle`
     }
 
     h2 {
-        font-family: "Big Shoulders Display", cursive;
+        font-family: "Big Shoulders Display";
         font-weight: 800;
         letter-spacing: 1px;
         font-size: 2.5em;
@@ -32,7 +28,7 @@ const GlobalStyle = createGlobalStyle`
     }
 
     h3 {
-        font-family: "Big Shoulders Display", cursive;
+        font-family: "Big Shoulders Display";
         font-weight: 600;
         letter-spacing: 1px;
         font-size: 1.8em;
@@ -42,7 +38,7 @@ const GlobalStyle = createGlobalStyle`
     }
 
     h4 {
-        font-family: "Big Shoulders Display", cursive;
+        font-family: "Big Shoulders Display", auto;
         font-weight: 600;
         letter-spacing: 1px;
         font-size: 1.8em;

@@ -9,14 +9,18 @@ const StyledLink = styled(Link)`
   text-align: center;
   font-size: 1.5em;
   color: #252d80;
-  padding: 25px 30px;
+  padding: 25px 0px;
+  margin: 0px 30px;
   &:hover {
-    color: #33cbeb;
+    color: #FF4114;
   }
 `;
 
 const activeStyles = {
-  color: "#33cbeb",
+  color: "#252d80",
+  backgroundColor: "#FF411433",
+  padding: "0px"
+
 };
 
 const SubNavLink = (props) => {

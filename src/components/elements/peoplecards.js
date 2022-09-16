@@ -31,7 +31,7 @@ const PeopleCard = (props) => {
       <Image src={props.imageUrl} />
       <Name>{props.name}</Name>
       <Job>{props.job}</Job>
-      <Button buttonText="Contacter par mail" url={props.buttonUrl}/>
+      <Button buttonText="Email" url={props.buttonUrl}/>
     </Wrapper>
   );
 };

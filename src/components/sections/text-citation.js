@@ -58,7 +58,7 @@ const CitationText = styled.p`
   font-family: "Big Shoulders Display", cursive;
   line-height: normal;
   font-weight: 700;
-  letter-spacing: 1px;
+  letter-spacing: 0.5px;
   font-size: 2.5em;
 `;
 

@@ -1,12 +1,12 @@
 import React from "react";
 import { Link } from "gatsby";
-
 import styled from "styled-components";
 import GlobalStyle from "../../globalStyles";
+import { motion } from "framer-motion";
 
 import { FaArrowCircleRight } from "react-icons/fa";
 
-const PrimaryButton = styled.button`
+const PrimaryButton = styled(motion.button)`
   border: none;
   cursor: pointer;
   padding: 10px 10px 10px 20px;
@@ -23,7 +23,6 @@ const PrimaryButton = styled.button`
   align-items: center;
   &:hover {
     background-color: #161a4a;
-    transition: 0.3s;
   }
 `;
 
@@ -31,7 +30,12 @@ let Button = (props) => {
   return (
     <Link to={props.url}>
       <GlobalStyle />
-      <PrimaryButton>
+      <PrimaryButton
+        whileHover={{
+          x: 5,
+          transition: { ease: "easeOut", duration: 0.1 },
+        }}      
+      >
         {props.buttonText}&nbsp;&nbsp;
         <FaArrowCircleRight color="#FF4114" size="30" />
       </PrimaryButton>

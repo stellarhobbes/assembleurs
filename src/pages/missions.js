@@ -34,7 +34,7 @@ const missionContent = [
   {
     numberUrl: NumberOne,
     title: "Accompagner",
-    text: "des stratégies de l'inclusion numérique",
+    text: "des stratégies d’inclusion numérique",
   },
   {
     numberUrl: NumberTwo,
@@ -43,8 +43,8 @@ const missionContent = [
   },
   {
     numberUrl: NumberThree,
-    title: "Mener",
-    text: "des projets sectoriels d'inclusion numérique",
+    title: "Appuyer",
+    text: "des dynamiques sectorielles",
   },
   {
     numberUrl: NumberFour,
@@ -86,33 +86,33 @@ const Missions = () => {
             url={NumberOne}
             iconAlt="Numéro un"
             subtitleText="Accompagner des stratégies d'inclusion numérique"
-            contentText="Identifier les initiatives existantes, co-construire des plans d'action pour renforcer la complémentarité de l'offre et mieux toucher les habitants, déployer des pass numériques."
+            contentText="Identifier les initiatives existantes, co-construire des plans d'action pour renforcer la complémentarité de l'offre et mieux toucher les habitants, déployer des pass numériques"
             bubbleText="Comment chaque habitant peut-il avoir accès aux mêmes services et le territoire être équitablement desservi ? La médiation numérique mobile est l'une des réponses possibles&nbsp;!"
           />
           <Image src={IllustrationLieux} />
         </DoubleColumns>
       </SectionWrap>
-      <SectionWrap backgroundColor="lightblue">
-        <ThreeColumns backgroundColor="lightblue">
+      <SectionWrap backgroundColor="lightgrey">
+        <ThreeColumns backgroundColor="lightgrey">
           <Card
             url={Loupe}
             altimage="Icône de loupe"
             titleText="Créer des communs pédagogiques"
-            buttonText="Fabrique à commun"
-            butonUrl="/"
+            buttonText="Fabrique à communs"
+            butonUrl="#"
           />
           <Card
             url={Outils}
             altimage="Icône de loupe"
-            titleText="Découvrir nos formations"
-            buttonText="Le Catalogue"
-            butonUrl="/"
+            titleText="Coordonner des formations"
+            buttonText="Aidants Connect"
+            butonUrl="#"
           />
           <NumberBloc
             url={NumberTwo}
             iconAlt="Numéro deux"
             subtitleText="Structurer et animer une offre de formation"
-            contentText="Concevoir et diffuser des contenus pédagogiques, créer des communs. Coordonner le déploiement des formations Aidants Connect sur les Hauts-de-France, la Normandie et le Grand Est."
+            contentText="Concevoir et diffuser des contenus pédagogiques, créer des communs. Coordonner le déploiement des formations Aidants Connect sur les Hauts-de-France, la Normandie et le Grand Est"
           />
         </ThreeColumns>
       </SectionWrap>
@@ -121,9 +121,9 @@ const Missions = () => {
           <NumberBloc
             url={NumberThree}
             iconAlt="Numéro trois"
-            subtitleText="Mener des projets sectoriels"
-            contentText="À l'école, dans les associations, en entreprise, sur les marchés, dans la rue : la médiation numérique aujourd'hui, c'est partout ! C'est pourquoi nous travaillons avec des acteurs de tous horizons sur des approches sectorielles de l'inclusion numérique."
-            bubbleText="Associations, entreprises, acteurs éducatifs, élus ... Nous avons tou.te.s besoin de médiation numérique&nbsp;!"
+            subtitleText="Appuyer des dynamiques sectorielles : éducation, entreprises, santé..."
+            contentText="À l'école, dans les associations, en entreprise, sur les marchés, dans la rue : la médiation numérique aujourd'hui, c'est partout ! C'est pourquoi nous travaillons avec des acteurs de tous horizons sur des approches sectorielles de l'inclusion numérique"
+            bubbleText="Associations, entreprises, acteurs éducatifs, élus ... Nous avons tous besoin de médiation numérique&nbsp;!"
           />
           <Image src={IllustrationPublic} />
         </DoubleColumns>
@@ -155,8 +155,8 @@ const Missions = () => {
             url={NumberFour}
             iconAlt="Numéro quatre"
             subtitleText="Créer du lien et mettre en réseau"
-            contentText="Au coeur des Assembleurs : animer l'écosystème de la médiation numérique sur les Hauts-de-France."
-            bubbleText="Numérique en commun(s) : rencontre annuelle des acteurs de l'inclusion numérique, organisée à la fois en édition nationale et édition locale."
+            contentText="Au cœur de la mission des Assembleurs : animer l'écosystème de la médiation numérique sur les Hauts-de-France"
+            otherContentText="Numérique en commun(s) : rencontre annuelle des acteurs de l'inclusion numérique, organisée à la fois en édition nationale et édition locale"
           />
         </ReverseDoubleColumns>
       </SectionWrap>

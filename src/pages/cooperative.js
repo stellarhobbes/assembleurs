@@ -59,7 +59,7 @@ const Cooperative = () => {
     <body>
       <GlobalStyle />
       <Navbar />
-      <TopNav nextLink="Coopérative - L'équipe" nextUrl="/equipe" />
+      <TopNav/>
       <SectionWrap backgroundColor="lightblue">
         <ReverseTextImage
           title="Mission des assembleurs"
@@ -69,14 +69,14 @@ const Cooperative = () => {
       </SectionWrap>
       <Citation
         backgroundColor="lightblue"
-        citationText="La médiation numérique désigne les dispositifs qui permettent à chacun de comprendre et de s'approprier le numérique, ses enjeux et ses usages."
+        citationText="La médiation numérique désigne les dispositifs qui permettent à chacun de comprendre et de s'approprier le numérique, ses enjeux et ses usages"
       />
       <SectionWrap backgroundColor="lightblue">
         <TextCitation
           backgroundColor="lightblue"
           title="Notre vision"
           htroisText="Agir collectivement pour une transition numérique inclusive des Hauts-de-France !"
-          text="L'inclusion numérique, c'est répondre à une urgence sociale pour aider les plus éloignés dans leur appropriation des outils et démarches. C'est aussi un enjeu sociétal qui consiste à accompagner iun changement de société et donner à tous et à toutes les clés pour être acteurs de la société numérique. "
+          text="L'inclusion numérique, c'est répondre à une urgence sociale pour aider les plus éloignés dans leur appropriation des outils et démarches. C'est aussi un enjeu sociétal qui consiste à accompagner un changement de société et donner à tous et à toutes les clés pour être acteurs de la société numérique "
           iconUrl={IconEyeCyan}
           citationText="Agir collectivement pour que chacun trouve sa place dans la société numérique"
         />
@@ -94,7 +94,7 @@ const Cooperative = () => {
           backgroundColor="lightgrey"
           imageUrl={ArrowRight}
           imageAlt=""
-          contentText="Pour nous, le déploiement d'une offre de médiation en adéquation avec les besoins des citoyens sur l'ensemble du territoire passe à la fois par le renforcement des lieux de médiation, le déploiement de solutions innovantes et une meilleure identification des acteurs."
+          contentText="Pour nous, le déploiement d'une offre de médiation en adéquation avec les besoins des citoyens sur l'ensemble du territoire passe à la fois par le renforcement des lieux de médiation, le déploiement de solutions innovantes et une meilleure identification des acteurs"
         />
         <FourColumns backgroundColor="lightgrey">
           {missionContents.map((content) => (
@@ -114,7 +114,7 @@ const Cooperative = () => {
         backgroundColor="lightgrey"
         backgroundImage={ImageActeurs}
         subtitleText="Notre équipe"
-        contentText="Le projet s'est développé depuis fin 2019 au sein du collectif POP, ses activités sont portées par une SCIC. L'équipe compte plus de 15 collaborateurs et nous prévoyons de doubler les effectifs d'ici fin 2023."
+        contentText="Le projet s'est développé depuis fin 2019 au sein du collectif POP, ses activités sont portées par une SCIC. L'équipe compte plus de 15 collaborateurs et nous prévoyons de doubler les effectifs d'ici fin 2023"
         buttonText="Découvrir les profils"
         url="/"
       />

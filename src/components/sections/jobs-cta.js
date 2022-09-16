@@ -6,17 +6,9 @@ import GlobalStyle from "../../globalStyles";
 import Subtitle from "../elements/subtitle";
 import Button from "../elements/button";
 
-const colors = {
-  lightblue: "#E0F3F9",
-  lightred: "#FFE0DB",
-  lightgrey: "#F4F4F4",
-  white: "#ffffff",
-};
-
 const Main = styled.div`
-  background-color: ${(props) => {
-    return colors[props.backgroundColor] || "transparent";
-  }};
+  background-color: ${(props) =>
+    props.backgroundColor === "white" ? "#ffffff" : "#E0F3F9"};
 `;
 
 const Wrapper = styled.section`
@@ -29,23 +21,24 @@ const Wrapper = styled.section`
     flex-direction: column;
     justify-content: center;
     padding: 50px 0px;
+    text-align: center;
   }
 `;
 
-const ContactCTA = (props) => {
+const JobsCTA = (props) => {
   return (
     <Main backgroundColor={props.backgroundColor}>
       <GlobalStyle />
       <Wrapper>
         <div>
-          <Subtitle bulletColor="red" subtitleText="Envie de nous rejoindre&nbsp;?" />
+          <Subtitle bulletColor="red" subtitleText="Envoyez-nous CV et lettre de motivation" />
         </div>
         <div>
-          <Link to="/nous-rejoindre"><Button buttonText="Nos offres" /></Link>
+          <Link to="#"><Button buttonText="Candidature spontanée" /></Link>
         </div>
       </Wrapper>
     </Main>
   );
 };
 
-export default ContactCTA;
+export default JobsCTA;

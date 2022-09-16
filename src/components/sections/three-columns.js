@@ -7,6 +7,7 @@ const colors = {
   lightred: "#FFE0DB",
   lightgrey: "#F4F4F4",
   white: "#ffffff",
+  darkblue: "#252D80",
 };
 
 const Main = styled.div`

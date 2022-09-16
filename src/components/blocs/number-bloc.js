@@ -33,11 +33,12 @@ const NumberBloc = (props) => {
     <Wrapper>
       <GlobalStyle />
       <IconNumber src={props.url} alt={props.iconAlt} />
-      <Subtitle>{props.subtitleText}</Subtitle>
+      <Subtitle><mark style={{backgroundColor: "#FFE0DB", color: "#252D80"}}>{props.subtitleText}</mark></Subtitle>
       <Content>{props.contentText}</Content>
+      <Content>{props.otherContentText}</Content>
       {props.bubbleText && (
         <Bubble>
-          <FaArrowCircleRight color="#00BEE6" size="20" />
+          <FaArrowCircleRight color="#252d80" size="20" />
           {props.bubbleText}
         </Bubble>
       )}

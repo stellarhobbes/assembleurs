@@ -4,10 +4,10 @@ import styled from "styled-components";
 import GlobalStyle from "../../globalStyles";
 
 import LogoAssembleurs from "../../images/icons/Icone_logo_Assembleurs.png";
-import LinkedinLogo from "../../images/icons/Icone_linkedin_cyan.png";
-import TwitterLogo from "../../images/icons/Icone_twitter_cyan.png";
-import JobsLogo from "../../images/icons/Icone_jobs_cyan.png";
-import ContactLogo from "../../images/icons/Icone_contact_cyan.png";
+import LinkedinLogo from "../../images/icons/Icone_linkedin_red.png";
+import TwitterLogo from "../../images/icons/Icone_twitter_red.png";
+import JobsLogo from "../../images/icons/Icone_jobs_red.png";
+import ContactLogo from "../../images/icons/Icone_contact_red.png";
 
 /*styles*/
 const Main = styled.div`

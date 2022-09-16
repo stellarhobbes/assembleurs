@@ -3,21 +3,22 @@ import styled from "styled-components";
 import { Link } from "gatsby";
 
 const StyledLink = styled(Link)`
-  font-family: "Big Shoulders Display", cursive;
+  font-family: "Big Shoulders Display";
   font-weight: 600;
   letter-spacing: 1px;
   text-align: center;
   font-size: 1.5em;
   color: #252d80;
   text-transform: uppercase;
-  padding: 5px 10px;
+  padding: 0px;
+  margin: 5px 10px;
   &:hover {
     color: #33cbeb;
   }
 `;
 
 const activeStyles = {
-  color: "#33cbeb",
+  backgroundColor: "#99E5F5",
 };
 
 const NavLink = (props) => {
