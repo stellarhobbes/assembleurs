@@ -17,7 +17,7 @@ import ImageHeader from "../images/pictures/image-header-equipe.png";
 import Camille from "../images/pictures/Team/camille.png"
 import Diane from "../images/pictures/Team/diane.png"
 import Eglantine from "../images/pictures/Team/eglantine.png"
-import EmmanuelL from "../images/pictures/Team/emmanuelL.png"
+import EmmanuelL from "../images/pictures/Team/emmanuell.png"
 import EmmanuelV from "../images/pictures/Team/emmanuelv.png"
 import Erika from "../images/pictures/Team/erika.png"
 import Faustine from "../images/pictures/Team/faustine.png"
