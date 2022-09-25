@@ -40,17 +40,17 @@ const BlogMarkdown = styled(ReactMarkdown)`
 `;
 
 export const query = graphql`
-query ($slug: String!) {
-  strapiSolution(slug: { eq: $slug }) {
-    content {
-      data {
-        content
+  query ($slug: String!) {
+    strapiSolution(slug: { eq: $slug }) {
+      content {
+        data {
+          content
+        }
       }
+      title
+      accroche
     }
-    title
-    accroche
   }
-}
 `;
 
 const SolutionTemplate = (props) => {
@@ -65,9 +65,11 @@ const SolutionTemplate = (props) => {
         />
         <Wrapper>
           <SectionWrap>
-            <BlogMarkdown>
-              {props.data.strapiSolution.content.data.content}
-            </BlogMarkdown>
+            {props.data.strapiSolution.content.data.content && (
+              <BlogMarkdown>
+                {props.data.strapiSolution.content.data.content}
+              </BlogMarkdown>
+            )}
           </SectionWrap>
         </Wrapper>
         <Footer />
