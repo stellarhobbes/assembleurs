@@ -29,11 +29,7 @@ exports.sourceNodes = ({ actions }) => {
     type allStrapiSolution implements Node {
       buttonText: String
       backgroundImage: Boolean
-      content {
-        data {
-          content: String
-        }
-      }
+      content: String
     },
     type allStrapiRessource implements Node {
       accroche: String
