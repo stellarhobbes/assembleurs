@@ -28,12 +28,10 @@ exports.sourceNodes = ({ actions }) => {
   const typeDefs = `
     type allStrapiSolution implements Node {
       buttonText: String
-      backgroundImage: Boolean
       content: String
     },
     type allStrapiRessource implements Node {
       accroche: String
-      backgroundImage: Boolean
     }
   `
   createTypes(typeDefs)
