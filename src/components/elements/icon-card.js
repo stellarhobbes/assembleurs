@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import GlobalStyle from "../../globalStyles";
+import ReactMarkdown from "react-markdown";
 
 import Button from "./button";
 
@@ -10,8 +11,6 @@ const colors = {
   lightgrey: "#F4F4F4",
   white: "#ffffff",
 };
-
-
 
 const Wrapper = styled.div`
   background-color: ${(props) => {
@@ -38,11 +37,18 @@ const Icon = styled.img`
 
 const Subtitle = styled.h3`
   text-transform: none;
-  letter-spacing: 0.4px;
+  font-size: 1.6em;
+  letter-spacing: 0.3px;
   font-weight: 700;
 `;
-const Content = styled.p`
+
+const Accroche = styled.p`
   font-size: 1em;
+  font-weight: 600;
+`
+
+const Content = styled(ReactMarkdown)`
+  font-size: 0.9em;
   line-height: 1.2em;
 `;
 
@@ -51,9 +57,10 @@ const IconCard = (props) => {
     <Wrapper backgroundColor={props.backgroundColor} backgroundImage={props.backgroundImage}>
       <GlobalStyle />
       <Icon src={props.imageUrl} alt={props.imageAlt}></Icon>
-      <Subtitle>{props.subtitleText}</Subtitle>
+      {props.subtitleText && <Subtitle>{props.subtitleText}</Subtitle>}
+      {props.accrocheText && <Accroche>{props.accrocheText}</Accroche>}
       <Content>{props.children}</Content>
-      <Button url={props.buttonUrl} buttonText={props.buttonText}></Button>
+      {props.buttonText && <Button url={props.buttonUrl} buttonText={props.buttonText}></Button>}
     </Wrapper>
   );
 };

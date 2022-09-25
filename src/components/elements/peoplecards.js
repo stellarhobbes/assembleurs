@@ -11,17 +11,20 @@ const Wrapper = styled.div`
   align-items: center;
   padding: 30px;
   border-radius: 30px;
+  margin-bottom: 30px;
 `;
 
 const Image = styled.img`
-  width: 200px;
+  width: 100%;
   margin-bottom: 20px;
 `;
 const Name = styled.h3`
   margin: 0px 0px;
+  text-align: center;
 `;
 const Job = styled.p`
   margin: 5px 0px;
+  text-align: center;
 `;
 
 const PeopleCard = (props) => {
@@ -31,7 +34,7 @@ const PeopleCard = (props) => {
       <Image src={props.imageUrl} />
       <Name>{props.name}</Name>
       <Job>{props.job}</Job>
-      <Button buttonText="Email" url={props.buttonUrl}/>
+      {props.buttonUrl && <Button buttonText="Email" url={props.buttonUrl}/>}
     </Wrapper>
   );
 };

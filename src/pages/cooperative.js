@@ -1,4 +1,5 @@
 import React from "react";
+import styled from "styled-components";
 import GlobalStyle from "../globalStyles";
 
 /*Components*/
@@ -19,7 +20,8 @@ import HalfImage from "../components/sections/half-image";
 import ContactCTA from "../components/sections/contact-cta";
 
 /*Images*/
-import IllustrationLieux from "../images/illustrations/illustration-lieux.png";
+/*import IllustrationLieux from "../images/illustrations/illustration-lieux.png";*/
+import ImageHeader from "../images/pictures/image-header-cooperative.png";
 import IconEyeCyan from "../images/icons/cyaneye-assembleurs.png";
 import IconEyeRed from "../images/icons/redeye-assembleurs.png";
 import IllustrationUrgence from "../images/illustrations/illustration-urgencesociale.png";
@@ -28,7 +30,7 @@ import HandsImage from "../images/illustrations/Picto_mains.png";
 import HatImage from "../images/illustrations/Picto_diplome.png";
 import DisplayImage from "../images/illustrations/Picto_fleches.png";
 import LinkImage from "../images/illustrations/Picto_reseau.png";
-import ImageActeurs from "../images/pictures/Acteurs.jpg";
+import EquipeAssembleurs from "../images/pictures/équipe-assembleurs-couleur.png";
 
 /*Contents*/
 const missionContents = [
@@ -54,19 +56,41 @@ const missionContents = [
   },
 ];
 
+/*Styles*/
+const Wrapper = styled.section`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: -100px;
+  margin-bottom: 100px;
+  @media (max-width: 960px) {
+    margin-bottom: 50px;
+    margin-top: -50px;
+  }
+`;
+const Bubble = styled.p`
+  width: 50%;
+  text-align: center;
+  @media (max-width: 960px) {
+    width: 90%;
+  }
+`;
+
 const Cooperative = () => {
   return (
     <body>
       <GlobalStyle />
       <Navbar />
-      <TopNav/>
+      <TopNav />
       <SectionWrap backgroundColor="lightblue">
         <ReverseTextImage
           title="Mission des assembleurs"
           text="Accompagner, former et animer une dynamique collective pour une société numérique inclusive et créative !"
-          imageUrl={IllustrationLieux}
+          imageUrl={ImageHeader}
         />
       </SectionWrap>
+      <div id="target"></div>
       <Citation
         backgroundColor="lightblue"
         citationText="La médiation numérique désigne les dispositifs qui permettent à chacun de comprendre et de s'approprier le numérique, ses enjeux et ses usages"
@@ -85,6 +109,13 @@ const Cooperative = () => {
         imageUrl={IllustrationUrgence}
         imageAlt="Illustration de la transformation sociétale"
       />
+      <Wrapper>
+        <Bubble>
+          On considère qu’environ 20% de la population est en situation
+          d’illectronisme, mais l’inclusion numérique c’est aussi accompagner
+          l’ensemble des citoyens dans la transformation sociétale en cours.
+        </Bubble>
+      </Wrapper>
       <SectionWrap backgroundColor="lightgrey">
         <SubtitleButton
           subtitleText="Nos actions sur le terrain"
@@ -112,11 +143,11 @@ const Cooperative = () => {
       />
       <HalfImage
         backgroundColor="lightgrey"
-        backgroundImage={ImageActeurs}
+        backgroundImage={EquipeAssembleurs}
         subtitleText="Notre équipe"
         contentText="Le projet s'est développé depuis fin 2019 au sein du collectif POP, ses activités sont portées par une SCIC. L'équipe compte plus de 15 collaborateurs et nous prévoyons de doubler les effectifs d'ici fin 2023"
         buttonText="Découvrir les profils"
-        url="/"
+        url="/equipe"
       />
       <ContactCTA backgroundColor="white" />
       <Footer />

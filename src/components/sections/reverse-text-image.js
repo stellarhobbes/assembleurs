@@ -2,11 +2,11 @@ import React from "react";
 import styled from "styled-components";
 import GlobalStyle from "../../globalStyles";
 import Subtitle from "../elements/subtitle";
+import { AnchorLink } from "gatsby-plugin-anchor-links";
 
 import EyeImage from "../../images/icons/redeye-assembleurs.png";
 import ArrowImage from "../../images/icons/arrow-down-assembleurs.png";
 
-import { motion } from "framer-motion";
 
 const Main = styled.section``;
 
@@ -51,14 +51,6 @@ const ScrollImages = styled.div`
   }
 `;
 
-const bounceTransition = {
-  y: {
-    duration: 0.5,
-    yoyo: Infinity,
-    ease: "easeOut",
-  },
-};
-
 const ReverseTextImage = (props) => {
   return (
     <Main>
@@ -75,13 +67,10 @@ const ReverseTextImage = (props) => {
           />
           <Text>{props.text}</Text>
           <ScrollImages>
-            <motion.div
-              transition={bounceTransition}
-              animate={{ y: ["10%", "-10%"] }}
-            >
-              <img src={ArrowImage} alt="" style={{ width: "40px" }}></img>
-              <img src={EyeImage} alt="" style={{ width: "40px" }}></img>
-            </motion.div>
+          <AnchorLink to="/cooperative#target">
+            <img src={ArrowImage} alt="" style={{ width: "40px" }}></img>
+            <img src={EyeImage} alt="" style={{ width: "40px" }}></img>
+          </AnchorLink>
           </ScrollImages>
         </TextColumn>
       </Wrapper>

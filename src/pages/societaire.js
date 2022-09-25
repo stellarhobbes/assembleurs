@@ -1,6 +1,8 @@
 import React from "react";
 import GlobalStyle from "../globalStyles";
+import { Link } from "gatsby";
 import styled from "styled-components";
+import { Helmet } from "react-helmet";
 
 /*Components*/
 import Navbar from "../components/sections/navbar";
@@ -13,7 +15,6 @@ import Subtitle from "../components/elements/subtitle";
 import ListElement from "../components/elements/list-element";
 import SimpleSection from "../components/sections/simple-section";
 import SectionWrap from "../components/sections/section-wrap";
-import Separator from "../components/blocs/separator";
 import RoundCard from "../components/elements/round-card";
 import ContactCTA from "../components/sections/contact-cta";
 import Footer from "../components/sections/footer";
@@ -25,14 +26,20 @@ import ArrowDown from "../images/icons/arrow-down-assembleurs.png";
 import NumberOne from "../images/icons/number01-assembleurs.png";
 import NumberTwo from "../images/icons/number02-assembleurs.png";
 import NumberThree from "../images/icons/number03-assembleurs.png";
+import QuestionMark from "../images/icons/questionmark-assembleurs.png";
 import Mouse from "../images/illustrations/cursor-image.png";
 
 /*Styles*/
 const GreySection = styled.div`
   background-color: #f4f4f4;
   z-index: -5;
-`
+`;
 
+const SocietaireCard = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`;
 
 /*Contents*/
 const headerContent = [
@@ -91,6 +98,12 @@ const societaireContent = [
 const Societaire = () => {
   return (
     <body>
+      <Helmet>
+        <meta charSet="utf-8" />
+        <title>Les Assembleurs</title>
+        <link rel="canonical" href="" />
+        <script async src="https://tally.so/widgets/embed.js"></script>
+      </Helmet>
       <GlobalStyle />
       <Navbar />
       <TopNav />
@@ -133,7 +146,6 @@ const Societaire = () => {
             quel que soit le nombre de parts souscrites.
           </SimpleSection>
         </SectionWrap>
-        <Separator />
         <SectionWrap>
           <SimpleSection
             iconUrl={ArrowDown}
@@ -143,8 +155,6 @@ const Societaire = () => {
             <RoundCard
               backgroundColor="white"
               titleText="Devenir sociétaire c'est ..."
-              buttonUrl="#"
-              buttonText="Devenir sociétaire"
             >
               {societaireContent.map((content) => (
                 <ListElement contentText={content.text} />
@@ -153,7 +163,48 @@ const Societaire = () => {
           </SimpleSection>
         </SectionWrap>
       </GreySection>
-      <ContactCTA backgroundColor="white" />
+      <SectionWrap>
+        <SimpleSection
+          iconUrl={QuestionMark}
+          iconAlt="Un point d'interrogation"
+          titleText="Comment devenir sociétaire ?"
+          buttonUrl="https://tally.so/#tally-open=wzx59q&tally-emoji-text=👋&tally-emoji-animation=wave"
+          buttonText="Télécharger l'archive"
+        >
+          Si vous souhaitez uniquement adhérer au réseau, contactez-nous à{" "}
+          <Link to="mailto:bonjour@assembleurs.co">bonjour@assembleurs.co</Link>
+        </SimpleSection>
+        <div style={{ margin: "75px" }}></div>
+        <ThreeColumns>
+          <SocietaireCard>
+            <img src={NumberOne} alt="" style={{ width: "50px" }}></img>
+            <h3 style={{ textAlign: "center" }}>Bulletin de souscription</h3>
+            <p style={{ textAlign: "center" }}>
+              Vous téléchargez le bulletin de souscription et nous le renvoyez
+              rempli à{" "}
+              <Link to="mailto:bonjour@assembleurs.co">
+                bonjour@assembleurs.co
+              </Link>
+            </p>
+          </SocietaireCard>
+          <SocietaireCard>
+            <img src={NumberTwo} alt="" style={{ width: "50px" }}></img>
+            <h3 style={{ textAlign: "center" }}>Validation administrative</h3>
+            <p style={{ textAlign: "center" }}>
+              Votre souscription est présentée au Conseil d’Adminisitration
+            </p>
+          </SocietaireCard>
+          <SocietaireCard>
+            <img src={NumberThree} alt="" style={{ width: "50px" }}></img>
+            <h3 style={{ textAlign: "center" }}>Prise de sociétariat</h3>
+            <p style={{ textAlign: "center" }}>
+              Vous versez les fonds relatifs à votre souscription sur le compte
+              des Assembleurs
+            </p>
+          </SocietaireCard>
+        </ThreeColumns>
+      </SectionWrap>
+      <ContactCTA backgroundColor="lightblue" />
       <Footer />
     </body>
   );

@@ -71,10 +71,14 @@ const Header = (props) => {
     <Main>
       <GlobalStyle />
       <Wrapper>
-        <motion.div transition={bounceTransition}
-              animate={{ y: ["10%", "-10%"] }}>
-          <Image src={props.iconUrl} alt={props.iconAlt}></Image>
-        </motion.div>
+        {props.iconUrl && (
+          <motion.div
+            transition={bounceTransition}
+            animate={{ y: ["10%", "-10%"] }}
+          >
+            <Image src={props.iconUrl} alt={props.iconAlt}></Image>
+          </motion.div>
+        )}
         <Title>{props.titleText}</Title>
         <Content>{props.contentText}</Content>
         {props.isChildren && (

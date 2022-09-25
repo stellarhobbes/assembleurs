@@ -108,11 +108,11 @@ const navContents = [
   },
   {
     title: "Solutions",
-    url: "#",
+    url: "/solutions",
   },
   {
     title: "Ressources",
-    url: "#",
+    url: "/ressources",
   },
   {
     title: "Mentions légales",
@@ -128,7 +128,8 @@ const navContents = [
   },
   {
     title: "Agenda",
-    url: "#",
+    url: "https://openagenda.com/assembleurs",
+    target: "_blank"
   },
   {
     title: "Cookies & RGPD",
@@ -146,7 +147,7 @@ const Footer = () => {
         </div>
         <Nav>
           {navContents.map((content) => (
-            <Link to={content.url}>
+            <Link to={content.url} target={content.target}>
               <NavLink>{content.title}</NavLink>
             </Link>
           ))}
@@ -160,7 +161,7 @@ const Footer = () => {
               <Image src={ContactLogo} alt=""></Image>
             </NavLink>
           </Link>
-          <Link to="#">
+          <Link to="/nous-rejoindre">
             <NavLink>
               Jobs
               <Image src={JobsLogo} alt=""></Image>
@@ -168,13 +169,13 @@ const Footer = () => {
           </Link>
         </SubFooterText>
         <SubFooterIcons>
-          <Link to="#">
+          <Link to="https://twitter.com/Assembleurs" target="_blank">
             <NavLink>
               Twitter
               <Image src={TwitterLogo} alt=""></Image>
             </NavLink>
           </Link>
-          <Link to="#">
+          <Link to="https://www.linkedin.com/company/les-assembleurs/" target="_blank">
             <NavLink>
               Linkedin
               <Image src={LinkedinLogo} alt=""></Image>

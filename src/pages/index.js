@@ -1,5 +1,6 @@
 import * as React from "react";
 import GlobalStyle from "../globalStyles";
+import { Helmet } from "react-helmet";
 
 /*Components*/
 import Navbar from "../components/sections/navbar";
@@ -44,7 +45,8 @@ const missionContents = [
   {
     url: DisplayImage,
     titleText: "Appuyer",
-    contentText: "des dynamiques sectorielles : éducation, entreprises, santé ...",
+    contentText:
+      "des dynamiques sectorielles : éducation, entreprises, santé ...",
   },
   {
     url: LinkImage,
@@ -74,9 +76,15 @@ const solutionContents = [
 const IndexPage = () => {
   return (
     <body>
+      <Helmet>
+        <meta charSet="utf-8" />
+        <title>Les Assembleurs</title>
+        <link rel="canonical" href="www.assembleurs.co" />
+      </Helmet>
       <GlobalStyle />
       <Navbar />
       <HeaderHome />
+      <div id="target"></div>
       <TextImage
         bulletColor=""
         title="La coopérative"
@@ -87,13 +95,15 @@ const IndexPage = () => {
       >
         La mission des Assembleurs est d’accompagner, former et animer une
         dynamique collective pour une société numérique inclusive et créative.
-        Notre vision&nbsp;: Agir collectivement pour que chacun trouve sa place dans la société numérique !
+        Notre vision&nbsp;: Agir collectivement pour que chacun trouve sa place
+        dans la société numérique !
       </TextImage>
       <SectionWrap backgroundColor="lightgrey">
         <SubtitleButton
           backgroundColor="lightgrey"
           subtitleText="Nos missions"
           buttonText="Plus d'infos"
+          buttonUrl="/missions"
         />
         <FourColumns backgroundColor="lightgrey">
           {missionContents.map((content) => (
@@ -113,6 +123,7 @@ const IndexPage = () => {
           backgroundColor="lightblue"
           subtitleText="Nos solutions"
           buttonText="Plus d'infos"
+          buttonUrl="/solutions"
         />
         <ThreeColumns backgroundColor="lightblue">
           {solutionContents.map((content) => (
@@ -127,7 +138,7 @@ const IndexPage = () => {
       <SectionWrap>
         <Partners />
       </SectionWrap>
-      <ContactCTA backgroundColor="lightgrey"/>
+      <ContactCTA backgroundColor="lightgrey" />
       <Footer />
     </body>
   );

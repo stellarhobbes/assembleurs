@@ -1,48 +1,24 @@
 import React from "react";
 import styled from "styled-components";
-import Masonry from "react-masonry-css";
+import { Link } from "gatsby";
+/*import Masonry from "react-masonry-css";
 
 /*Components*/
 import Navbar from "../components/sections/navbar";
 import Footer from "../components/sections/footer";
 import HalfImage from "../components/sections/half-image";
 import JobsCTA from "../components/sections/jobs-cta";
-import DecorationSection from "../components/sections/decoration-section";
-import Subtitle from "../components/elements/subtitle";
-import ListElement from "../components/elements/list-element";
 import SectionWrap from "../components/sections/section-wrap";
 import SimpleSection from "../components/sections/simple-section";
-import IconCard from "../components/elements/icon-card";
+/*import IconCard from "../components/elements/icon-card";
 
 /*Images*/
 import ImageHeader from "../images/pictures/image-header-equipe.png";
 import CyanEye from "../images/icons/cyaneye-assembleurs.png";
-import LogoAssembleurs from "../images/icons/Icone_logo_Assembleurs.png";
+/*import LogoAssembleurs from "../images/icons/Icone_logo_Assembleurs.png";
 
 /*Contents*/
-const valeursContent = [
-  {
-    title: "Inclusion et pouvoir d'agir",
-    text: "Oeuvrer pour une société numérique inclusive et créative qui offre une place à chacun",
-  },
-  {
-    title: "Durabilité & sobriété",
-    text: "Favoriser un numérique éthique, coopératif, démocratique et frugal",
-  },
-  {
-    title: "ESS & Agilité",
-    text: "Les Assembleurs est une entreprise de l'ESS, qui allie intérêt général et agilité entrepreneuriale",
-  },
-  {
-    title: "Ouverture & Collaboration",
-    text: "Favoriser la co-construction, le pair à pair et la production de communs",
-  },
-  {
-    title: "Ancrage & équité territoriale",
-    text: "Agir pour tous les territoires des Hauts-de-France, notamment les plus sensibles",
-  },
-];
-
+/*
 const offersContent = [
   {
     backgroundColor: "lightblue",
@@ -99,9 +75,9 @@ const offersContent = [
     url: "#",
   },
 ];
-
+*/
 /*Styles*/
-const ColumnsWrapper = styled.section``;
+/*const ColumnsWrapper = styled.section``;
 
 const breakpointColumnsObj = {
   default: 3,
@@ -109,6 +85,24 @@ const breakpointColumnsObj = {
   700: 2,
   500: 1,
 };
+*/
+const Wrapper = styled.section`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+`;
+const Bubble = styled.p`
+  width: 50%;
+  font-weight: 600;
+  text-align: center;
+  background-color: #e0f3f9;
+  border-radius: 30px;
+  padding: 50px;
+  @media (max-width: 960px) {
+    width: 90%;
+  }
+`;
 
 const NousRejoindre = () => {
   return (
@@ -122,12 +116,6 @@ const NousRejoindre = () => {
         contentText="Envie de travailler sur des sujets à impact social fort&nbsp;? Rejoignez les Assembleurs pour agir sur l'inclusion numérique en Hauts-de-France"
       />
       <JobsCTA />
-      <DecorationSection>
-        <Subtitle subtitleText="Les valeurs partagées" />
-        {valeursContent.map((content) => (
-          <ListElement titleText={content.title} contentText={content.text} />
-        ))}
-      </DecorationSection>
       <SectionWrap>
         <SimpleSection
           iconUrl={CyanEye}
@@ -139,6 +127,16 @@ const NousRejoindre = () => {
           Hauts-de-France
         </SimpleSection>
       </SectionWrap>
+
+      <Wrapper>
+        <Bubble>
+          Nous n’avons pas d’offre d’emploi en cours, n’hésitez pas à nous
+          envoyer une candidature spontanée à{" "}
+          <Link to="mailto:bonjour@assembleurs.co">bonjour@assembleurs.co</Link>
+        </Bubble>
+      </Wrapper>
+      <SectionWrap />
+      {/*
       <ColumnsWrapper>
         <Masonry
           breakpointCols={breakpointColumnsObj}
@@ -159,6 +157,7 @@ const NousRejoindre = () => {
           ))}
         </Masonry>
       </ColumnsWrapper>
+*/}
       <Footer />
     </body>
   );

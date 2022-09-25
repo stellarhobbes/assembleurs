@@ -34,7 +34,7 @@ const JobsCTA = (props) => {
           <Subtitle bulletColor="red" subtitleText="Envoyez-nous CV et lettre de motivation" />
         </div>
         <div>
-          <Link to="#"><Button buttonText="Candidature spontanée" /></Link>
+          <Link to="mailto:bonjour@assembleurs.co"><Button buttonText="Candidature spontanée" /></Link>
         </div>
       </Wrapper>
     </Main>

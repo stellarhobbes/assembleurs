@@ -18,7 +18,7 @@ const StyledLink = styled(Link)`
 `;
 
 const activeStyles = {
-  backgroundColor: "#99E5F5",
+  boxShadow: "inset 0 -0.8em 0 #99E5F5",
 };
 
 const NavLink = (props) => {

@@ -26,7 +26,7 @@ import DataOne from "../images/data/data-15pax.png";
 import DataTwo from "../images/data/data-30.png";
 import DataThree from "../images/data/data-60.png";
 import DataFour from "../images/data/data-300000.png";
-import DataFive from "../images/data/data-3.png";
+import DataFive from "../images/data/data-4.png";
 import DataSix from "../images/data/data-800.png";
 
 import DataSeven from "../images/data/data-29-2.png";
@@ -77,7 +77,7 @@ const dataAssembleurs = [
     subtitleText: "Projets sectoriels",
     contentText: "",
     subcontentText:
-      "Le numérique éducatif - Inclusion numérique des dirigeants TPE - Stratégie de lutte contre la pauvreté",
+      "Le numérique éducatif - Inclusion numérique des dirigeants TPE - Stratégie de lutte contre la pauvreté - Santé",
     sourceText: "",
   },
   {

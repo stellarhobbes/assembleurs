@@ -55,7 +55,7 @@ const TestimonialCard = (props) => {
     <Wrapper backgroundColor={props.backgroundColor}>
       <GlobalStyle />
       <Presentation>
-        <Image src={props.imageUrl} alt={props.imageAlt}></Image>
+        {props.imageUrl && <Image src={props.imageUrl} alt={props.imageAlt}></Image>}
         <Title>
           <Name>{props.nameText}</Name>
           <Job>{props.jobText}</Job>

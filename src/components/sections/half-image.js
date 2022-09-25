@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import GlobalStyle from "../../globalStyles";
-import { motion } from "framer-motion";
+import { AnchorLink } from "gatsby-plugin-anchor-links";
 
 import SimpleBloc from "../blocs/simple-bloc";
 
@@ -54,14 +54,6 @@ const ScrollImages = styled.div`
   }
 `;
 
-const bounceTransition = {
-  y: {
-    duration: 0.5,
-    yoyo: Infinity,
-    ease: "easeOut",
-  },
-};
-
 const HalfImage = (props) => {
   return (
     <Main>
@@ -77,14 +69,10 @@ const HalfImage = (props) => {
       </ContentBloc>
       {props.isScrollAnimation && (
         <ScrollImages>
-          <motion.div
-            transition={bounceTransition}
-            animate={{ y: ["10%", "-10%"] }}
-            isScrollAnimation={props.isScrollAnimation}
-          >
+          <AnchorLink to="/equipe#target">
             <img src={ArrowImage} alt="" style={{ width: "40px" }}></img>
             <img src={EyeImage} alt="" style={{ width: "40px" }}></img>
-          </motion.div>
+          </AnchorLink>
         </ScrollImages>
       )}
     </Main>

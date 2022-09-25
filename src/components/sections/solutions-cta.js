@@ -33,7 +33,7 @@ const SolutionsCTA = (props) => {
           <Subtitle bulletColor="red" subtitleText="Nos solutions pour l'inclusion numérique" />
         </div>
         <div>
-          <Link to="#"><Button buttonText="Découvrir" /></Link>
+          <Link to="/solutions"><Button buttonText="Découvrir" /></Link>
         </div>
       </Wrapper>
     </Main>

@@ -17,8 +17,7 @@ const StyledLink = styled(Link)`
 `;
 
 const activeStyles = {
-  color: "#252d80",
-  backgroundColor: "#FF411433",
+  boxShadow: "inset 0 -0.8em 0 #FF411433",
   padding: "0px"
 
 };

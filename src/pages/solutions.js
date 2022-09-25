@@ -1,5 +1,6 @@
 import React from "react";
 import GlobalStyle from "../globalStyles";
+import { useStaticQuery, graphql } from "gatsby";
 import styled from "styled-components";
 import Masonry from "react-masonry-css";
 
@@ -16,8 +17,6 @@ import ActeursPublics from "../images/illustrations/Picto_illu_1.png";
 import ActeursInclusionNum from "../images/illustrations/Picto_illu_2.png";
 import ActeursSocietaux from "../images/illustrations/Picto_illu_3.png";
 import Pattern from "../images/pictures/pattern-logo.png";
-import PatternLines from "../images/pictures/pattern-line-10p.png";
-import PatternWaves from "../images/pictures/pattern-wave-10p.png";
 
 /*Content*/
 const headerContent = [
@@ -31,7 +30,7 @@ const headerContent = [
   {
     image: ActeursInclusionNum,
     alt: "Illustration acteurs publics",
-    title: "Inclusion numérique",
+    title: "D'inclusion numérique",
     text: "(lieux de médiation, tiers-lieux, centres sociaux...)",
     url: "/solutions/acteurs-inclusion-numerique",
   },
@@ -41,61 +40,6 @@ const headerContent = [
     title: "Sociétaux",
     text: "(associations, acteurs santé, éducatifs, économiques...)",
     url: "/solutions/acteurs-societaux",
-  },
-];
-
-const solutionContent = [
-  {
-    backgroundImage: PatternLines,
-    backgroundColor: "lightblue",
-    tag: ["public", "inclusion"],
-    title: "Test de carte",
-    text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed convallis bibendum faucibus. ",
-    button: "Télécharger",
-    url: "#",
-  },
-  {
-    backgroundColor: "lightgrey",
-    tag: ["inclusion", "societe"],
-    title: "Test de carte",
-    text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed convallis bibendum faucibus. Integer dignissim mauris et felis commodo dictum. Curabitur rhoncus nunc diam, ut tempor libero ultrices et.",
-    button: "Télécharger",
-    url: "#",
-  },
-  {
-    backgroundImage: PatternWaves,
-    backgroundColor: "lightred",
-    tag: ["public", "societe"],
-    title: "Test de carte",
-    text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed convallis bibendum faucibus. Integer dignissim mauris et felis commodo dictum. ",
-    button: "Télécharger",
-    url: "#",
-  },
-  {
-    backgroundImage: PatternLines,
-    backgroundColor: "lightgrey",
-    tag: ["inclusion"],
-    title: "Test de carte",
-    text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed convallis bibendum faucibus. ",
-    button: "Télécharger",
-    url: "#",
-  },
-  {
-    backgroundImage: PatternWaves,
-    backgroundColor: "lightblue",
-    tag: ["public", "societe"],
-    title: "Test de carte",
-    text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed convallis bibendum faucibus. Integer dignissim mauris et felis commodo dictum. Curabitur rhoncus nunc diam, ut tempor libero ultrices et.",
-    button: "Télécharger",
-    url: "#",
-  },
-  {
-    backgroundColor: "lightgrey",
-    tag: ["societe"],
-    title: "Test de carte",
-    text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed convallis bibendum faucibus. Integer dignissim mauris et felis commodo dictum. Curabitur rhoncus nunc diam, ut tempor libero ultrices et.",
-    button: "Télécharger",
-    url: "#",
   },
 ];
 
@@ -140,6 +84,24 @@ const breakpointColumnsObj = {
 };
 
 const Solutions = () => {
+  const Solutions = useStaticQuery(graphql`
+    query {
+      allStrapiSolution {
+        nodes {
+          accroche
+          backgroundColor
+          title
+          id
+          buttonText
+          slug
+          backgroundImage {
+            url
+          }
+        }
+      }
+    }
+  `);
+
   return (
     <body>
       <GlobalStyle />
@@ -169,16 +131,16 @@ const Solutions = () => {
             className="my-masonry-grid"
             columnClassName="my-masonry-grid_column"
           >
-            {solutionContent.map((content) => (
+            {Solutions.allStrapiSolution.nodes.map((node) => (
               <SolutionCard
-                backgroundImage={content.backgroundImage}
-                backgroundColor={content.backgroundColor}
-                subtitleText={content.title}
-                contentText={content.text}
-                buttonText={content.button}
-                buttonUrl={content.url}
+                key={node.id}
+                backgroundImage={node.backgroundImage.url}
+                backgroundColor={node.backgroundColor}
+                subtitleText={node.title}
+                buttonText={node.buttonText}
+                buttonUrl={`/solutions/${node.slug}`}
               >
-                {content.text}
+                {node.accroche}
               </SolutionCard>
             ))}
           </Masonry>

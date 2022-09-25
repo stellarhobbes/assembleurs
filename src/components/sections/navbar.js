@@ -5,7 +5,7 @@ import GlobalStyle from "../../globalStyles";
 
 import NavLink from "../elements/navlink";
 
-import LogoAssembleurs from "../../images/icons/logo-assembleurs-capsule.png";
+import LogoAssembleurs from "../../images/icons/Icone_logo_Assembleurs.png";
 import IconContact from "../../images/icons/Icone_contact_marine.png";
 import IconAgenda from "../../images/icons/icon-agenda.png";
 import IconHamburger from "../../images/icons/icon-hamburger.png";
@@ -92,7 +92,7 @@ const MobileNavigation = styled.div`
   flex-direction: column;
   align-items: center;
   overflow: hidden;
-  max-height: ${({ isOpen }) => (isOpen ? "400px" : "0")};
+  max-height: ${({ isOpen }) => (isOpen ? "600px" : "0")};
   transition: max-height 0.3s ease-in;
   width: 100%;
 `;
@@ -161,10 +161,6 @@ const mobileNavigationContents = [
     text: "Ressources",
     link: "/ressources",
   },
-  {
-    text: "Agenda",
-    link: "#",
-  }
 ];
 
 const Navbar = () => {
@@ -179,7 +175,9 @@ const Navbar = () => {
           </Link>
           <Navigation>
             {navigationContents.map((navigation) => (
-              <NavLink to={navigation.link}>{navigation.text}</NavLink>
+              <NavLink to={navigation.link} target={navigation.target}>
+                {navigation.text}
+              </NavLink>
             ))}
           </Navigation>
         </Nav>
@@ -187,7 +185,7 @@ const Navbar = () => {
           <Link to="/contact">
             <Icon src={IconContact} />
           </Link>
-          <Link to="#">
+          <Link to="https://openagenda.com/assembleurs" target="_blank">
             <Icon src={IconAgenda} />
           </Link>
         </Social>
@@ -202,11 +200,17 @@ const Navbar = () => {
         </MobileNav>
         <MobileNavigation isOpen={isOpen}>
           {mobileNavigationContents.map((mobileNavigation) => (
-            <NavLink to={mobileNavigation.link}>{mobileNavigation.text}</NavLink>
+            <NavLink to={mobileNavigation.link}>
+              {mobileNavigation.text}
+            </NavLink>
           ))}
           <MobileSocial>
-            <Icon src={IconContact} />
-            <Icon src={IconAgenda} />
+            <Link to="/contact">
+              <Icon src={IconContact} />
+            </Link>
+            <Link to="https://openagenda.com/assembleurs" target="_blank">
+              <Icon src={IconAgenda} />
+            </Link>
           </MobileSocial>
         </MobileNavigation>
       </MobileWrapper>

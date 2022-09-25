@@ -44,7 +44,7 @@ const SubtitleButton = (props) => {
         <Subtitle subtitleText={props.subtitleText} />
         {props.centerText && <CenterText>{props.centerText}</CenterText>}
         {props.buttonText && (
-          <Button buttonText={props.buttonText} buttonUrl={props.url} />
+          <Button buttonText={props.buttonText} url={props.buttonUrl} />
         )}
       </Wrapper>
     </Main>

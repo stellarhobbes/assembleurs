@@ -1,7 +1,8 @@
 import React from "react";
 import styled from "styled-components";
 import GlobalStyle from "../../globalStyles";
-import { motion } from "framer-motion";
+import { StaticImage } from "gatsby-plugin-image";
+import { AnchorLink } from "gatsby-plugin-anchor-links";
 
 import Logos from "../../images/icons/Bandeau-logo-REACT.jpg";
 import EyeImage from "../../images/icons/redeye-assembleurs.png";
@@ -49,29 +50,27 @@ const ScrollImages = styled.div`
   width: 40px;
   position: absolute;
   right: 50px;
-  top: 500px;
+  top: 600px;
   @media (max-width: 960px) {
     display: none;
   }
 `;
-
-const bounceTransition = {
-  y: {
-    duration: 0.5,
-    yoyo: Infinity,
-    ease: "easeOut",
-  },
-};
 
 const HeaderHome = () => {
   return (
     <Main>
       <GlobalStyle />
       <Wrapper>
-        <Image src={Logos} alt=""></Image>
+        <StaticImage
+          src="../../images/icons/logo-assembleurs-capsule.png"
+          alt=""
+          placeholder="blurred"
+          layout="fixed"
+          width={200}
+        ></StaticImage>
         <Title>
-          Les Assembleurs : agir collectivement pour que chacun trouve sa place dans la société
-          numérique&nbsp;!
+          Les Assembleurs : agir collectivement pour que chacun trouve sa place
+          dans la société numérique&nbsp;!
         </Title>
         <Content>
           Nous accompagnons, formons et animons l’écosystème de l’inclusion
@@ -79,14 +78,12 @@ const HeaderHome = () => {
           médiateurs, accompagnement des collectivités, rencontres et projets
           éducatifs, lutte contre la pauvreté...
         </Content>
+        <Image src={Logos} alt=""></Image>
         <ScrollImages>
-          <motion.div
-            transition={bounceTransition}
-            animate={{ y: ["10%", "-10%"] }}
-          >
+          <AnchorLink to="/#target">
             <img src={ArrowImage} alt="" style={{ width: "40px" }}></img>
             <img src={EyeImage} alt="" style={{ width: "40px" }}></img>
-          </motion.div>
+          </AnchorLink>
         </ScrollImages>
       </Wrapper>
     </Main>
