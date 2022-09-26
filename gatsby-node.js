@@ -28,7 +28,7 @@ exports.sourceNodes = ({ actions }) => {
   const typeDefs = `
     type allStrapiSolution implements Node {
       buttonText: String
-      content: String
+      content: MarkdownRemark
     },
     type allStrapiRessource implements Node {
       accroche: String
