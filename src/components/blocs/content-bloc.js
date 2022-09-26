@@ -14,6 +14,7 @@ const Main = styled.div`
     return colors[props.backgroundColor] || "transparent";
   }};
 `;
+
 const Wrapper = styled.section`
   width: 50%;
   display: grid;
@@ -21,13 +22,23 @@ const Wrapper = styled.section`
   grid-gap: 3em;
   align-items: center;
   padding: 20px 0px;
+  @media (max-width: 960px) {
+    display: flex;
+    width: 90%;
+    grid-gap: 0em;
+  }
 `;
+
 const Subtitle = styled.h4`
   text-transform: initial;
   margin: 15px 0px 20px 0px;
 `;
+
 const Icon = styled.img`
   width: 75px;
+  @media (max-width: 960px) {
+    display: none;
+  }
 `;
 
 const ContentBloc = (props) => {

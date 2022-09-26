@@ -1,10 +1,10 @@
 import React from "react";
 import styled from "styled-components";
 import GlobalStyle from "../../globalStyles";
-import { StaticImage } from "gatsby-plugin-image";
 import { AnchorLink } from "gatsby-plugin-anchor-links";
 
 import Logos from "../../images/icons/Bandeau-logo-REACT.jpg";
+import LogoCapsule from "../../images/icons/logo-assembleurs-capsule.png"
 import EyeImage from "../../images/icons/redeye-assembleurs.png";
 import ArrowImage from "../../images/icons/arrow-down-assembleurs.png";
 
@@ -24,6 +24,10 @@ const Wrapper = styled.section`
   flex-direction: column;
   align-items: center;
 `;
+
+const Logo = styled.img`
+  width: 200px;
+`
 
 const Image = styled.img`
   width: 250px;
@@ -61,13 +65,7 @@ const HeaderHome = () => {
     <Main>
       <GlobalStyle />
       <Wrapper>
-        <StaticImage
-          src="../../images/icons/logo-assembleurs-capsule.png"
-          alt=""
-          placeholder="blurred"
-          layout="fixed"
-          width={200}
-        ></StaticImage>
+        <Logo src={LogoCapsule}></Logo>
         <Title>
           Les Assembleurs : agir collectivement pour que chacun trouve sa place
           dans la société numérique&nbsp;!

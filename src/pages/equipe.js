@@ -1,34 +1,35 @@
 import React from "react";
-import styled from "styled-components";
 import GlobalStyle from "../globalStyles";
-import Masonry from "react-masonry-css";
+import { Helmet } from "react-helmet";
 
 import Navbar from "../components/sections/navbar";
 import Footer from "../components/sections/footer";
 import TopNav from "../components/sections/top-navigation";
 import HalfImage from "../components/sections/half-image";
 import SectionWrap from "../components/sections/section-wrap";
+import ThreeColumns from "../components/sections/three-columns";
 import SubtitleButton from "../components/sections/subtitle-button";
 import PeopleCard from "../components/elements/peoplecards";
 import ContactCTA from "../components/sections/contact-cta";
 
-import ImageHeader from "../images/pictures/image-header-equipe.png";
+import ImageHeader from "../images/pictures/image-header-equipe.jpeg";
 
-import Camille from "../images/pictures/Team/camille.png"
-import Diane from "../images/pictures/Team/diane.png"
-import Eglantine from "../images/pictures/Team/eglantine.png"
-import EmmanuelL from "../images/pictures/Team/emmanuell.png"
-import EmmanuelV from "../images/pictures/Team/emmanuelv.png"
-import Erika from "../images/pictures/Team/erika.png"
-import Faustine from "../images/pictures/Team/faustine.png"
-import Floriane from "../images/pictures/Team/floriane.png"
-import FX from "../images/pictures/Team/fx.png"
-import Jules from "../images/pictures/Team/jules.png"
-import Julie from "../images/pictures/Team/julie.png"
-import Marion from "../images/pictures/Team/marion.png"
-import Romain from "../images/pictures/Team/romain.png"
-import Sakina from "../images/pictures/Team/sakina.png"
-import Thomas from "../images/pictures/Team/thomas.png"
+import Camille from "../images/pictures/Team/camille.png";
+import Diane from "../images/pictures/Team/diane.png";
+import Amandine from "../images/pictures/Team/amandine.png";
+import Eglantine from "../images/pictures/Team/eglantine.png";
+import EmmanuelL from "../images/pictures/Team/emmanuell.png";
+import EmmanuelV from "../images/pictures/Team/emmanuelv.png";
+import Erika from "../images/pictures/Team/erika.png";
+import Faustine from "../images/pictures/Team/faustine.png";
+import Floriane from "../images/pictures/Team/floriane.png";
+import FX from "../images/pictures/Team/fx.png";
+import Jules from "../images/pictures/Team/jules.png";
+import Julie from "../images/pictures/Team/julie.png";
+import Marion from "../images/pictures/Team/marion.png";
+import Romain from "../images/pictures/Team/romain.png";
+import Sakina from "../images/pictures/Team/sakina.png";
+import Thomas from "../images/pictures/Team/thomas.png";
 
 const peopleList = [
   {
@@ -45,7 +46,7 @@ const peopleList = [
   },
   {
     background: "#E1F4FA",
-    picture: Floriane,
+    picture: Amandine,
     name: "Amandine EZCURDIA",
     job: "Coordinatrice formations Aidants Connect",
   },
@@ -129,17 +130,14 @@ const peopleList = [
   },
 ];
 
-const Wrapper = styled.section``
-const breakpointColumnsObj = {
-  default: 3,
-  960: 3,
-  700: 2,
-  500: 1,
-};
-
 const Equipe = () => {
   return (
     <body>
+      <Helmet>
+        <meta charSet="utf-8" />
+        <title>Les Assembleurs - Équipe</title>
+        <link rel="canonical" href="https://les.assembleurs.co/equipe" />
+      </Helmet>
       <GlobalStyle />
       <Navbar />
       <TopNav />
@@ -153,12 +151,8 @@ const Equipe = () => {
       <SectionWrap>
         <div id="target"></div>
         <SubtitleButton subtitleText="Les profils" />
-        <Wrapper>
-        <Masonry
-          breakpointCols={breakpointColumnsObj}
-          className="my-masonry-grid"
-          columnClassName="my-masonry-grid_column"
-        >
+
+        <ThreeColumns>
           {peopleList.map((people) => (
             <PeopleCard
               backgroundColor={people.background}
@@ -168,8 +162,7 @@ const Equipe = () => {
               buttonUrl={people.mailto}
             />
           ))}
-        </Masonry>
-        </Wrapper>
+        </ThreeColumns>
       </SectionWrap>
       <ContactCTA backgroundColor="lightblue" />
       <Footer />

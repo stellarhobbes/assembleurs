@@ -1,6 +1,7 @@
 import React from "react";
 import GlobalStyle from "../globalStyles";
 import styled from "styled-components";
+import { Helmet } from "react-helmet";
 
 /*Components*/
 import Navbar from "../components/sections/navbar";
@@ -61,6 +62,14 @@ const Image = styled.img`
 const Missions = () => {
   return (
     <body>
+      <Helmet>
+        <meta charSet="utf-8" />
+        <title>Les Assembleurs - Missions</title>
+        <link
+          rel="canonical"
+          href="https://les.assembleurs.co/missions"
+        />
+      </Helmet>
       <GlobalStyle />
       <Navbar />
       <Header
@@ -150,7 +159,7 @@ const Missions = () => {
       <Separator />
       <SectionWrap>
         <ReverseDoubleColumns>
-        <ThreeBlocs></ThreeBlocs>
+          <ThreeBlocs></ThreeBlocs>
           <NumberBloc
             url={NumberFour}
             iconAlt="Numéro quatre"

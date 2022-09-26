@@ -3,6 +3,7 @@ import GlobalStyle from "../../globalStyles";
 import { useStaticQuery, graphql } from "gatsby";
 import styled from "styled-components";
 import Masonry from "react-masonry-css";
+import { Helmet } from "react-helmet";
 
 /*Components*/
 import Navbar from "../../components/sections/navbar";
@@ -24,7 +25,7 @@ const headerContent = [
     image: ActeursPublics,
     opacity: "",
     alt: "Illustration acteurs publics",
-    title: "Publics",
+    title: "Acteurs publics",
     text: "(collectivités, opérateurs de service public...)",
     url: "/solutions/acteurs-publics",
   },
@@ -32,7 +33,7 @@ const headerContent = [
     image: ActeursInclusionNum,
     opacity: "yes",
     alt: "Illustration acteurs publics",
-    title: "Inclusion numérique",
+    title: "Acteurs de l'inclusion numérique",
     text: "(lieux de médiation, tiers-lieux, centres sociaux...)",
     url: "/solutions/acteurs-inclusion-numerique",
   },
@@ -40,7 +41,7 @@ const headerContent = [
     image: ActeursSocietaux,
     opacity: "yes",
     alt: "Illustration acteurs publics",
-    title: "Sociétaux",
+    title: "Acteurs sociétaux",
     text: "(associations, acteurs santé, éducatifs, économiques...)",
     url: "/solutions/acteurs-societaux",
   },
@@ -107,12 +108,20 @@ const SolutionsPublic = () => {
   `);
   return (
     <body>
+      <Helmet>
+        <meta charSet="utf-8" />
+        <title>Les Assembleurs - Acteurs publics</title>
+        <link
+          rel="canonical"
+          href="https://les.assembleurs.co/acteurs-publics"
+        />
+      </Helmet>
       <GlobalStyle />
       <Navbar />
       <HeaderWrap>
         <Header>
           <Title>Découvrir nos solutions en fonction de votre situation</Title>
-          <Content>Vous êtes des acteurs&nbsp;...</Content>
+          <Content>Vous êtes&nbsp;...</Content>
         </Header>
 
         <ThreeColumns>

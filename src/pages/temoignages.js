@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import Masonry from "react-masonry-css";
+import { Helmet } from "react-helmet";
 
 import Navbar from "../components/sections/navbar";
 import TopNav from "../components/sections/top-navigation";
@@ -58,6 +59,11 @@ const testimonialContent = [
 const Temoignages = () => {
   return (
     <body>
+       <Helmet>
+        <meta charSet="utf-8" />
+        <title>Les Assembleurs - Témoignages</title>
+        <link rel="canonical" href="https://les.assembleurs.co/temoignages" />
+      </Helmet>
       <Navbar />
       <TopNav />
       <SectionWrap backgroundColor="lightgrey">

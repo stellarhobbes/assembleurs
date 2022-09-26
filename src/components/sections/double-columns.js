@@ -16,7 +16,10 @@ const Wrapper = styled.section`
     grid-template-rows: 2fr;
   }
   @media (max-width: 460px) {
-    display: initial;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
   }
 `;
 

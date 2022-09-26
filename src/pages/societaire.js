@@ -100,8 +100,8 @@ const Societaire = () => {
     <body>
       <Helmet>
         <meta charSet="utf-8" />
-        <title>Les Assembleurs</title>
-        <link rel="canonical" href="" />
+        <title>Les Assembleurs - Devenir sociétaire</title>
+        <link rel="canonical" href="https://les.assembleurs.co/societaire" />
         <script async src="https://tally.so/widgets/embed.js"></script>
       </Helmet>
       <GlobalStyle />
@@ -136,10 +136,10 @@ const Societaire = () => {
             iconUrl={CyanEye}
             iconAlt="Un oeil cyan"
             titleText="Le principe Coopératif"
-            buttonUrl="#"
+            buttonUrl="https://drive.pop.eu.com/s/e4NBnYNLwkZbto3"
             buttonText="Télécharger la plaquette"
             imageUrl={Mouse}
-            imageAlt=""
+            imageAlt="Image de souris"
           >
             Devenir sociétaire consiste à souscrire une ou plusieurs parts
             sociales de la SCIC.<br></br>1 associé = 1 voix dans la gouvernance,

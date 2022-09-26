@@ -5,6 +5,7 @@ import GlobalStyle from "../../globalStyles";
 import SimpleBloc from "../blocs/simple-bloc";
 
 const Main = styled.div``;
+
 const Wrapper = styled.section`
   padding: 0px 0px 50px 50px;
   display: grid;
@@ -13,6 +14,7 @@ const Wrapper = styled.section`
   @media (max-width: 960px) {
     display: flex;
     flex-direction: column;
+    padding: initial;
   }
 `;
 

@@ -14,6 +14,9 @@ const Wrapper = styled.div`
   background-color: ${(props) => {
     return colors[props.backgroundColor] || "transparent";
   }};
+  @media (max-width: 960px) {
+    padding: 25px 0px;
+  }
 `;
 
 const SectionWrap = (props) => {

@@ -5,9 +5,18 @@ import GlobalStyle from "../../globalStyles";
 import Subtitle from "../elements/subtitle";
 import Button from "../elements/button";
 
+const colors = {
+  lightblue: "#E0F3F9",
+  lightred: "#FFE0DB",
+  lightgrey: "#F4F4F4",
+  white: "#ffffff",
+  darkblue: "#252D80",
+};
+
 const Main = styled.div`
-  background-color: ${(props) =>
-    props.backgroundColor === "lightblue" ? "#E0F3F9" : "#ffffff"};
+  background-color: ${(props) => {
+    return colors[props.backgroundColor] || "transparent";
+  }};
 `;
 
 const Wrapper = styled.section`

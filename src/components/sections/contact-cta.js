@@ -26,7 +26,9 @@ const Wrapper = styled.section`
   align-items: center;
   padding: 25px 0px;
   @media (max-width: 960px) {
+    text-align: center;
     flex-direction: column;
+    align-items: center;
     justify-content: center;
     padding: 50px 0px;
   }

@@ -16,6 +16,10 @@ const Wrapper = styled(motion.div)`
 
 const Image = styled.img`
   width: 250px;
+  @media (max-width: 960px) {
+    width: 175px;
+  }
+
 `;
 
 const Title = styled.h2`

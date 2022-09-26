@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import GlobalStyle from "../globalStyles";
+import { Helmet } from "react-helmet";
 
 /*Components*/
 import Navbar from "../components/sections/navbar";
@@ -21,7 +22,7 @@ import ContactCTA from "../components/sections/contact-cta";
 
 /*Images*/
 /*import IllustrationLieux from "../images/illustrations/illustration-lieux.png";*/
-import ImageHeader from "../images/pictures/image-header-cooperative.png";
+import ImageHeader from "../images/pictures/image-header-cooperative-haricot.png";
 import IconEyeCyan from "../images/icons/cyaneye-assembleurs.png";
 import IconEyeRed from "../images/icons/redeye-assembleurs.png";
 import IllustrationUrgence from "../images/illustrations/illustration-urgencesociale.png";
@@ -80,10 +81,15 @@ const Bubble = styled.p`
 const Cooperative = () => {
   return (
     <body>
+      <Helmet>
+        <meta charSet="utf-8" />
+        <title>Les Assembleurs - Coopérative</title>
+        <link rel="canonical" href="https://les.assembleurs.co/cooperative" />
+      </Helmet>
       <GlobalStyle />
       <Navbar />
       <TopNav />
-      <SectionWrap backgroundColor="lightblue">
+      <SectionWrap backgroundColor="lightgrey">
         <ReverseTextImage
           title="Mission des assembleurs"
           text="Accompagner, former et animer une dynamique collective pour une société numérique inclusive et créative !"
@@ -92,12 +98,12 @@ const Cooperative = () => {
       </SectionWrap>
       <div id="target"></div>
       <Citation
-        backgroundColor="lightblue"
+        backgroundColor="lightgrey"
         citationText="La médiation numérique désigne les dispositifs qui permettent à chacun de comprendre et de s'approprier le numérique, ses enjeux et ses usages"
       />
-      <SectionWrap backgroundColor="lightblue">
+      <SectionWrap backgroundColor="lightgrey">
         <TextCitation
-          backgroundColor="lightblue"
+          backgroundColor="lightgrey"
           title="Notre vision"
           htroisText="Agir collectivement pour une transition numérique inclusive des Hauts-de-France !"
           text="L'inclusion numérique, c'est répondre à une urgence sociale pour aider les plus éloignés dans leur appropriation des outils et démarches. C'est aussi un enjeu sociétal qui consiste à accompagner un changement de société et donner à tous et à toutes les clés pour être acteurs de la société numérique "

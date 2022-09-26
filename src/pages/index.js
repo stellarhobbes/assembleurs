@@ -79,7 +79,7 @@ const IndexPage = () => {
       <Helmet>
         <meta charSet="utf-8" />
         <title>Les Assembleurs</title>
-        <link rel="canonical" href="www.assembleurs.co" />
+        <link rel="canonical" href="https://les.assembleurs.co/" />
       </Helmet>
       <GlobalStyle />
       <Navbar />

@@ -20,6 +20,12 @@ const Top = styled.div``;
 const Bottom = styled.div`
   display: flex;
   flex-direction: row;
+  @media (max-width: 960px) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
 `;
 
 const ContentWrap = styled.div`

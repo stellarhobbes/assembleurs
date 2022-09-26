@@ -25,7 +25,6 @@ const Wrapper = styled.section`
   justify-content: space-between;
   @media (max-width: 960px) {
     flex-direction: column;
-    align-items: initial;
   }
 `;
 

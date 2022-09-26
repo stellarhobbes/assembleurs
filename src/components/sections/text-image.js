@@ -22,7 +22,10 @@ const Wrapper = styled.section`
   align-items: center;
   padding: 50px 0px 50px 0px;
   @media (max-width: 960px) {
-    display: initial;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
   }
 `;
 

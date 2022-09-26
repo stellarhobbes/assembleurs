@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { Link } from "gatsby";
+import { Helmet } from "react-helmet";
 /*import Masonry from "react-masonry-css";
 
 /*Components*/
@@ -107,6 +108,11 @@ const Bubble = styled.p`
 const NousRejoindre = () => {
   return (
     <body>
+      <Helmet>
+        <meta charSet="utf-8" />
+        <title>Les Assembleurs - Nous rejoindre</title>
+        <link rel="canonical" href="https://les.assembleurs.co/nous-rejoindre" />
+      </Helmet>
       <Navbar />
       <HalfImage
         isScrollAnimation="yes"

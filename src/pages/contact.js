@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import GlobalStyle from "../globalStyles";
+import { Helmet } from "react-helmet";
 
 /*Components*/
 import Navbar from "../components/sections/navbar";
@@ -32,8 +33,8 @@ const MailNumber = styled.span`
 `;
 
 const Mail = styled.a`
-    color: inherit;
-`
+  color: inherit;
+`;
 
 const ContactSection = styled.div``;
 const TopContact = styled.div`
@@ -41,6 +42,9 @@ const TopContact = styled.div`
   flex-direction: row;
   align-items: center;
   justify-content: center;
+  @media (max-width: 960px) {
+    flex-direction: column;
+  }
 `;
 const Image = styled.img`
   width: 250px;
@@ -50,19 +54,25 @@ const Adresse = styled.div`
   margin: 0px 25px;
 `;
 const Icon = styled.img`
-    width: 50px;
+  width: 50px;
 `;
 const Title = styled.h3`
-margin: 10px 0px;
+  margin: 10px 0px;
 `;
 const Content = styled.p`
-margin: 5px 0px;`;
+  margin: 5px 0px;
+`;
 
-const FormContact = styled.div``
+const FormContact = styled.div``;
 
 const Contact = () => {
   return (
     <body>
+      <Helmet>
+        <meta charSet="utf-8" />
+        <title>Les Assembleurs - Contact</title>
+        <link rel="canonical" href="https://les.assembleurs.co/contact" />
+      </Helmet>
       <GlobalStyle />
       <Navbar />
       <Header
@@ -73,8 +83,12 @@ const Contact = () => {
       ></Header>
       <MailCTA>
         <MailText>
-          Nous sommes joignable par e-mail : 
-          <MailNumber><Mail href="mailto:bonjour@assembleurs.co">&nbsp;bonjour@assembleurs.co</Mail></MailNumber>
+          Nous sommes joignable par e-mail :
+          <MailNumber>
+            <Mail href="mailto:bonjour@assembleurs.co">
+              &nbsp;bonjour@assembleurs.co
+            </Mail>
+          </MailNumber>
         </MailText>
       </MailCTA>
       <SectionWrap>

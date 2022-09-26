@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import GlobalStyle from "../globalStyles";
+import { Helmet } from "react-helmet";
 
 /*Components*/
 import Navbar from "../components/sections/navbar";
@@ -142,10 +143,10 @@ const Image = styled.img`
 const NumbersBloc = styled.div``;
 const Numbers = styled.div``;
 const Top = styled.div`
-display: flex;
-flex-direction: row;
-justify-content: space-between;
-@media (max-width: 960px) {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  @media (max-width: 960px) {
     flex-direction: column;
   }
 `;
@@ -154,6 +155,11 @@ const Bottom = styled.div``;
 const Chiffres = () => {
   return (
     <body>
+      <Helmet>
+        <meta charSet="utf-8" />
+        <title>Les Assembleurs - Chiffres</title>
+        <link rel="canonical" href="https://les.assembleurs.co/chiffres" />
+      </Helmet>
       <GlobalStyle />
       <Navbar />
       <TopNav />
@@ -170,7 +176,7 @@ const Chiffres = () => {
         dynamique collective pour une société numérique inclusive et créative.{" "}
         <br />
         <br /> Notre vision : Agir collectivement pour une transition numérique
-        inclusive des Hauts-de-France !
+        inclusive des Hauts-de-France&nbsp;!
       </TextImage>
       <div style={{ backgroundColor: "#F4F4F4" }}>
         <SectionWrap>
@@ -225,24 +231,24 @@ const Chiffres = () => {
               </SubtitleCenter>
               <Numbers>
                 <Top>
-                <DataCard
-                  imageUrl={DataTen}
-                  imageAlt=""
-                  contentText="exclues du numérique en Hauts-de-France"
-                  subcontentText="Soit 19% de la population"
-                />
-                    <DataCard
-                  imageUrl={DataEleven}
-                  imageAlt=""
-                  contentText="Médiateurs numériques en Hauts-de-France au sein de 500 lieux"
-                />
+                  <DataCard
+                    imageUrl={DataTen}
+                    imageAlt=""
+                    contentText="exclues du numérique en Hauts-de-France"
+                    subcontentText="Soit 19% de la population"
+                  />
+                  <DataCard
+                    imageUrl={DataEleven}
+                    imageAlt=""
+                    contentText="Médiateurs numériques en Hauts-de-France au sein de 500 lieux"
+                  />
                 </Top>
                 <Bottom>
-                <DataCard
-                  imageUrl={DataTwelve}
-                  imageAlt=""
-                  contentText="75.000 travailleurs sociaux en première ligne, trop peu formés"
-                />
+                  <DataCard
+                    imageUrl={DataTwelve}
+                    imageAlt=""
+                    contentText="75.000 travailleurs sociaux en première ligne, trop peu formés"
+                  />
                 </Bottom>
               </Numbers>
             </NumbersBloc>

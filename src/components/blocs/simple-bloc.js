@@ -4,7 +4,8 @@ import styled from "styled-components";
 import Button from "../elements/button";
 import Subtitle from "../elements/subtitle";
 
-const Main = styled.div``;
+const Main = styled.div`
+`;
 
 const SimpleBloc = (props) => {
   return (

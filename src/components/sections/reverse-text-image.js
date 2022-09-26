@@ -17,7 +17,8 @@ const Wrapper = styled.div`
   grid-auto-rows: 1fr;
   padding: 50px 0px 50px 0px;
   @media (max-width: 960px) {
-    display: initial;
+    display: flex;
+    flex-direction: column-reverse;
   }
 `;
 

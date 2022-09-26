@@ -14,7 +14,11 @@ import Footer from "../components/sections/footer";
 const Main = styled.div``;
 const Wrapper = styled.section`
   width: 60%;
+  @media (max-width: 960px) {
+    width: 90%;
+  }
 `;
+
 const BlogMarkdown = styled(ReactMarkdown)`
   h2 {
     text-transform: none;

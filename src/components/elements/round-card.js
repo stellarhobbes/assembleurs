@@ -22,8 +22,8 @@ const Wrapper = styled.div`
   padding: 50px 100px;
   border-radius: 30px;
   @media (max-width: 960px) {
-    padding: 25px 25px;
-    width: 95%;
+    padding: 15px 15px;
+    width: 90%;
   }
 `;
 const Title = styled.h3`

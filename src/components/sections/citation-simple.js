@@ -11,6 +11,9 @@ const Wrapper = styled.section`
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  @media (max-width: 960px) {
+    padding: 75px 0px;
+  }
 `;
 
 const Title = styled.h2`
@@ -22,6 +25,7 @@ const Title = styled.h2`
   width: 60%;
   @media (max-width: 960px) {
     width: 90%;
+    font-size: 1.8em;
   }
 `;
 

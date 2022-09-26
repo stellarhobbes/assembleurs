@@ -35,6 +35,9 @@ const Image = styled.img`
   width: 150px;
   position: absolute;
   bottom: -85px;
+  @media (max-width: 960px) {
+    display: none;
+  }
 `;
 
 const bounceTransition = {

@@ -3,6 +3,7 @@ import GlobalStyle from "../globalStyles";
 import styled from "styled-components";
 import { useStaticQuery, graphql } from "gatsby";
 import Masonry from "react-masonry-css";
+import { Helmet } from "react-helmet";
 
 /*Components*/
 import Navbar from "../components/sections/navbar";
@@ -31,7 +32,7 @@ const Ressources = () => {
     query {
       allStrapiRessource {
         nodes {
-          accroche 
+          accroche
           backgroundColor
           title
           content {
@@ -51,6 +52,11 @@ const Ressources = () => {
   `);
   return (
     <body>
+      <Helmet>
+        <meta charSet="utf-8" />
+        <title>Les Assembleurs - Ressources</title>
+        <link rel="canonical" href="https://les.assembleurs.co/ressources" />
+      </Helmet>
       <GlobalStyle />
       <Navbar />
       <HalfImage

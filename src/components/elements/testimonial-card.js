@@ -19,16 +19,25 @@ const Wrapper = styled.div`
   border-radius: 30px;
   margin-bottom: 30px;
 `;
+
 const Presentation = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
   margin-bottom: 25px;
+  @media (max-width: 960px) {
+    flex-direction: column;
+  }
 `;
+
 const Image = styled.img`
   width: 200px;
   margin-right: 25px;
+  @media (max-width: 960px) {
+    width: 90%;
+  }
 `;
+
 const Title = styled.div``;
 const Name = styled.p`
   font-family: "Big Shoulders Display", cursive;
@@ -39,15 +48,18 @@ const Name = styled.p`
   text-transform: uppercase;
   margin-bottom: 5px;
 `;
+
 const Job = styled.p`
   margin: 0px 0px;
 `;
+
 const Company = styled.p`
   border-bottom: 0.1em solid #252d80;
   margin-top: 0px;
   padding-bottom: 25px;
   font-weight: 600;
 `;
+
 const Content = styled.p``;
 
 const TestimonialCard = (props) => {
