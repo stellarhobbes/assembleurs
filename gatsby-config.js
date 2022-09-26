@@ -51,6 +51,15 @@ module.exports = {
     "gatsby-plugin-styled-components",
     "gatsby-plugin-image",
     "gatsby-plugin-sitemap",
+    {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        icon: `src/images/icons/Icone_logo_Assembleurs.png`,
+        name: `Les Assembleurs`,
+        short_name: `Assembleurs`,
+        start_url: `/`
+      },
+    },
     "gatsby-plugin-sharp",
     "gatsby-transformer-sharp",
     "gatsby-transformer-remark",

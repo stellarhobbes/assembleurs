@@ -26,6 +26,7 @@
     "gatsby-plugin-anchor-links": "^1.2.1",
     "gatsby-plugin-google-fonts": "^1.0.1",
     "gatsby-plugin-image": "^2.21.0",
+    "gatsby-plugin-manifest": "^4.23.1",
     "gatsby-plugin-postcss": "^5.21.0",
     "gatsby-plugin-sharp": "^4.21.0",
     "gatsby-plugin-sitemap": "^5.21.0",
