@@ -50,15 +50,19 @@ const Image = styled.img`
   width: 250px;
   margin: 0px 25px;
 `;
+
 const Adresse = styled.div`
   margin: 0px 25px;
 `;
+
 const Icon = styled.img`
   width: 50px;
 `;
+
 const Title = styled.h3`
   margin: 10px 0px;
 `;
+
 const Content = styled.p`
   margin: 5px 0px;
 `;
