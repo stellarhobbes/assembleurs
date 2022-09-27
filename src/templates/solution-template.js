@@ -28,7 +28,7 @@ const BlogMarkdown = styled(ReactMarkdown)`
     border: none;
     cursor: pointer;
     padding: 10px 20px 10px 20px;
-    margin: 20px 0px;
+    margin: 20px 10px;
     background-color: #1b2f7d;
     border-radius: 30px;
     font-family: "Big Shoulders Display", cursive;
@@ -40,6 +40,10 @@ const BlogMarkdown = styled(ReactMarkdown)`
       background-color: #161a4a;
       transition: 0.5 ease-in-out;
     }
+  }
+  img {
+    width: 100%;
+    padding: 50px 0px;
   }
 `;
 

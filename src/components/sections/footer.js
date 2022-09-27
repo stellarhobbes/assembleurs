@@ -124,7 +124,8 @@ const navContents = [
   },
   {
     title: "Sur le terrain",
-    url: "#",
+    url: "https://simplistic-cycle-553.notion.site/Sur-le-terrain-35a90e8e35b745da90f1b5da63a09491",
+    target: "_blank"
   },
   {
     title: "Agenda",

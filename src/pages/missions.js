@@ -108,14 +108,16 @@ const Missions = () => {
             altimage="Icône de loupe"
             titleText="Créer des communs pédagogiques"
             buttonText="Fabrique à communs"
-            butonUrl="#"
+            buttonUrl="https://les.assembleurs.co/solutions/fabrique-a-communs-pedagogiques"
+            target="_blank"
           />
           <Card
             url={Outils}
             altimage="Icône de loupe"
             titleText="Coordonner des formations"
             buttonText="Aidants Connect"
-            butonUrl="#"
+            buttonUrl="https://les.assembleurs.co/solutions/formations-aidants-connect"
+            target="_blank"
           />
           <NumberBloc
             url={NumberTwo}

@@ -23,7 +23,7 @@ const activeStyles = {
 
 const NavLink = (props) => {
   return (
-    <StyledLink to={props.to} activeStyle={activeStyles}>
+    <StyledLink to={props.to} target={props.target} activeStyle={activeStyles}>
       {props.children}
     </StyledLink>
   );

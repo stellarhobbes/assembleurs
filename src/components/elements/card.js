@@ -34,7 +34,11 @@ const Card = (props) => {
       {props.titleText && <Title>{props.titleText}</Title>}
       {props.contentText && <Content>{props.contentText}</Content>}
       {props.buttonText && (
-        <Button buttonText={props.buttonText} url={props.buttonUrl} />
+        <Button
+          buttonText={props.buttonText}
+          url={props.buttonUrl}
+          target={props.target}
+        />
       )}
     </Wrapper>
   );

@@ -28,7 +28,7 @@ const PrimaryButton = styled(motion.button)`
 
 let Button = (props) => {
   return (
-    <Link to={props.url}>
+    <Link to={props.url} target={props.target}>
       <GlobalStyle />
       <PrimaryButton
         whileHover={{

@@ -110,12 +110,11 @@ const navigationContents = [
     text: "Solutions",
     link: "/solutions",
   },
-  /*
   {
     text: "Sur le terrain",
-    link: "#",
+    link: "https://simplistic-cycle-553.notion.site/Sur-le-terrain-35a90e8e35b745da90f1b5da63a09491",
+    target: "_blank",
   },
-  */
   {
     text: "Ressources",
     link: "/ressources",
@@ -151,12 +150,11 @@ const mobileNavigationContents = [
     text: "Solutions",
     link: "/solutions",
   },
-  /*
   {
     text: "Sur le terrain",
-    link: "#",
+    link: "https://simplistic-cycle-553.notion.site/Sur-le-terrain-35a90e8e35b745da90f1b5da63a09491",
+    target: "_blank",
   },
-  */
   {
     text: "Ressources",
     link: "/ressources",
@@ -200,7 +198,7 @@ const Navbar = () => {
         </MobileNav>
         <MobileNavigation isOpen={isOpen}>
           {mobileNavigationContents.map((mobileNavigation) => (
-            <NavLink to={mobileNavigation.link}>
+            <NavLink to={mobileNavigation.link} target={mobileNavigation.target}>
               {mobileNavigation.text}
             </NavLink>
           ))}
