@@ -158,7 +158,7 @@ const Chiffres = () => {
       <Helmet>
         <meta charSet="utf-8" />
         <title>Les Assembleurs - Chiffres</title>
-        <link rel="canonical" href="https://les.assembleurs.co/chiffres" />
+        <link rel="canonical" href="https://assembleurs.co/chiffres" />
       </Helmet>
       <GlobalStyle />
       <Navbar />

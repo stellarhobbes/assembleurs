@@ -75,7 +75,7 @@ const Contact = () => {
       <Helmet>
         <meta charSet="utf-8" />
         <title>Les Assembleurs - Contact</title>
-        <link rel="canonical" href="https://les.assembleurs.co/contact" />
+        <link rel="canonical" href="https://assembleurs.co/contact" />
       </Helmet>
       <GlobalStyle />
       <Navbar />

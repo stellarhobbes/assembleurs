@@ -4,8 +4,8 @@ require("dotenv").config({
 
 module.exports = {
   siteMetadata: {
-    title: `assembleurs-gatsby`,
-    siteUrl: `https://www.yourdomain.tld`,
+    title: `Les Assembleurs`,
+    siteUrl: `https://assembleurs.co/`,
   },
   plugins: [
     {

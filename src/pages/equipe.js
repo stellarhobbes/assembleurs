@@ -136,7 +136,7 @@ const Equipe = () => {
       <Helmet>
         <meta charSet="utf-8" />
         <title>Les Assembleurs - Équipe</title>
-        <link rel="canonical" href="https://les.assembleurs.co/equipe" />
+        <link rel="canonical" href="https://assembleurs.co/equipe" />
       </Helmet>
       <GlobalStyle />
       <Navbar />

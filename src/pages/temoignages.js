@@ -62,7 +62,7 @@ const Temoignages = () => {
        <Helmet>
         <meta charSet="utf-8" />
         <title>Les Assembleurs - Témoignages</title>
-        <link rel="canonical" href="https://les.assembleurs.co/temoignages" />
+        <link rel="canonical" href="https://assembleurs.co/temoignages" />
       </Helmet>
       <Navbar />
       <TopNav />

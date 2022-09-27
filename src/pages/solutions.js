@@ -108,7 +108,7 @@ const Solutions = () => {
        <Helmet>
         <meta charSet="utf-8" />
         <title>Les Assembleurs - Solutions</title>
-        <link rel="canonical" href="https://les.assembleurs.co/solutions" />
+        <link rel="canonical" href="https://assembleurs.co/solutions" />
       </Helmet>
       <GlobalStyle />
       <Navbar />

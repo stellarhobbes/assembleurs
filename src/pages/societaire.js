@@ -101,7 +101,7 @@ const Societaire = () => {
       <Helmet>
         <meta charSet="utf-8" />
         <title>Les Assembleurs - Devenir sociétaire</title>
-        <link rel="canonical" href="https://les.assembleurs.co/societaire" />
+        <link rel="canonical" href="https://assembleurs.co/societaire" />
         <script async src="https://tally.so/widgets/embed.js"></script>
       </Helmet>
       <GlobalStyle />

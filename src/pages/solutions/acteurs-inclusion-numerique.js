@@ -113,7 +113,7 @@ const SolutionsPublic = () => {
         <title>Les Assembleurs - Acteurs de l'inclusion numérique</title>
         <link
           rel="canonical"
-          href="https://les.assembleurs.co/acteurs-inclusion-numerique"
+          href="https://assembleurs.co/acteurs-inclusion-numerique"
         />
       </Helmet>
       <GlobalStyle />

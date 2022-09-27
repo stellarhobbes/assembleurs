@@ -111,7 +111,7 @@ const NousRejoindre = () => {
       <Helmet>
         <meta charSet="utf-8" />
         <title>Les Assembleurs - Nous rejoindre</title>
-        <link rel="canonical" href="https://les.assembleurs.co/nous-rejoindre" />
+        <link rel="canonical" href="https://assembleurs.co/nous-rejoindre" />
       </Helmet>
       <Navbar />
       <HalfImage

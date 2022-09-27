@@ -116,7 +116,7 @@ const navContents = [
   },
   {
     title: "Mentions légales",
-    url: "#",
+    url: "/mentions-legales",
   },
   {
     title: "Missions",

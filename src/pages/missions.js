@@ -67,7 +67,7 @@ const Missions = () => {
         <title>Les Assembleurs - Missions</title>
         <link
           rel="canonical"
-          href="https://les.assembleurs.co/missions"
+          href="https://assembleurs.co/missions"
         />
       </Helmet>
       <GlobalStyle />
@@ -108,7 +108,7 @@ const Missions = () => {
             altimage="Icône de loupe"
             titleText="Créer des communs pédagogiques"
             buttonText="Fabrique à communs"
-            buttonUrl="https://les.assembleurs.co/solutions/fabrique-a-communs-pedagogiques"
+            buttonUrl="https://assembleurs.co/solutions/fabrique-a-communs-pedagogiques"
             target="_blank"
           />
           <Card
@@ -116,7 +116,7 @@ const Missions = () => {
             altimage="Icône de loupe"
             titleText="Coordonner des formations"
             buttonText="Aidants Connect"
-            buttonUrl="https://les.assembleurs.co/solutions/formations-aidants-connect"
+            buttonUrl="https://assembleurs.co/solutions/formations-aidants-connect"
             target="_blank"
           />
           <NumberBloc

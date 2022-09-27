@@ -111,7 +111,7 @@ const SolutionsPublic = () => {
       <Helmet>
         <meta charSet="utf-8" />
         <title>Les Assembleurs - Acteurs sociétaux</title>
-        <link rel="canonical" href="https://les.assembleurs.co/acteurs-societaux" />
+        <link rel="canonical" href="https://assembleurs.co/acteurs-societaux" />
       </Helmet>
       <GlobalStyle />
       <Navbar />

@@ -3,6 +3,7 @@ import styled from "styled-components";
 import GlobalStyle from "../globalStyles";
 import { graphql } from "gatsby";
 import ReactMarkdown from "react-markdown";
+import { Helmet } from "react-helmet";
 
 /*Components*/
 import Navbar from "../components/sections/navbar";
@@ -64,6 +65,11 @@ export const query = graphql`
 const SolutionTemplate = (props) => {
   return (
     <body>
+      <Helmet>
+        <meta charSet="utf-8" />
+        <title>Les Assembleurs - {props.data.strapiSolution.title}</title>
+        <link rel="canonical" href="https://assembleurs.co/" />
+      </Helmet>
       <Main>
         <GlobalStyle />
         <Navbar />

@@ -55,7 +55,7 @@ const Ressources = () => {
       <Helmet>
         <meta charSet="utf-8" />
         <title>Les Assembleurs - Ressources</title>
-        <link rel="canonical" href="https://les.assembleurs.co/ressources" />
+        <link rel="canonical" href="https://assembleurs.co/ressources" />
       </Helmet>
       <GlobalStyle />
       <Navbar />

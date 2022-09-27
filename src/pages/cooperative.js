@@ -84,7 +84,7 @@ const Cooperative = () => {
       <Helmet>
         <meta charSet="utf-8" />
         <title>Les Assembleurs - Coopérative</title>
-        <link rel="canonical" href="https://les.assembleurs.co/cooperative" />
+        <link rel="canonical" href="https://assembleurs.co/cooperative" />
       </Helmet>
       <GlobalStyle />
       <Navbar />
