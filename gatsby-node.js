@@ -26,12 +26,12 @@ exports.createPages = async ({ graphql, actions }) => {
 exports.sourceNodes = ({ actions }) => {
   const { createTypes } = actions
   const typeDefs = `
-    type allStrapiSolution implements Node {
+    type allStrapiSolution implements Node @infer {
       buttonText: String
-      content: MarkdownRemark
+      content: String
       backgroundImage: File
     },
-    type allStrapiRessource implements Node {
+    type allStrapiRessource implements Node @infer {
       accroche: String
     }
   `
