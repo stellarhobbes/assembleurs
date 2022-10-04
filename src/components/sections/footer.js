@@ -125,16 +125,17 @@ const navContents = [
   {
     title: "Sur le terrain",
     url: "https://simplistic-cycle-553.notion.site/Sur-le-terrain-35a90e8e35b745da90f1b5da63a09491",
-    target: "_blank"
+    target: "_blank",
   },
   {
     title: "Agenda",
     url: "https://openagenda.com/assembleurs",
-    target: "_blank"
+    target: "_blank",
   },
   {
-    title: "Cookies & RGPD",
-    url: "#",
+    title: "Newsletter",
+    url: "https://247b7de5.sibforms.com/serve/MUIEAHOLEPboUNbmd3oi3_29YFapcQw8vs_GQJDHY6xMGXQYHk2cRVjZIpPe_RW_Y97lu0ZNDyrxXSyaQBDnXfSl5aQFevhiQiOlmaVWhGNj1NFWBiIfWUO0dl609ehohHa-xTE4YVwSVGPlSlrYN-5b-MsmkupYGlzEZvraL5_StpN-1XeVboP7PPc_G6qfOyJkwOfwC_FwrUJk",
+    target: "_blank",
   },
 ];
 
@@ -144,7 +145,9 @@ const Footer = () => {
       <GlobalStyle />
       <Navbar>
         <div>
-          <Link to="/"><Logo src={LogoAssembleurs} alt="Logo Assembleurs"></Logo></Link>
+          <Link to="/">
+            <Logo src={LogoAssembleurs} alt="Logo Assembleurs"></Logo>
+          </Link>
         </div>
         <Nav>
           {navContents.map((content) => (
@@ -176,7 +179,10 @@ const Footer = () => {
               <Image src={TwitterLogo} alt=""></Image>
             </NavLink>
           </Link>
-          <Link to="https://www.linkedin.com/company/les-assembleurs/" target="_blank">
+          <Link
+            to="https://www.linkedin.com/company/les-assembleurs/"
+            target="_blank"
+          >
             <NavLink>
               Linkedin
               <Image src={LinkedinLogo} alt=""></Image>
