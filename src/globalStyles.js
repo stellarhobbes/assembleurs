@@ -63,6 +63,14 @@ const GlobalStyle = createGlobalStyle`
         color: ${(props) => (props.pColor === "white" ? "#ffffff" : "#252D80")};
     }
 
+    ol {
+        font-family: 'Roboto', sans-serif;
+        font-weight: 500;
+        font-size: 1.1em;
+        line-height: 1.6em;
+        color: ${(props) => (props.pColor === "white" ? "#ffffff" : "#252D80")};
+    }
+
     a {
         text-decoration: none;
        }

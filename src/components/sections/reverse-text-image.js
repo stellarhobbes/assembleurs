@@ -68,7 +68,7 @@ const ReverseTextImage = (props) => {
           />
           <Text>{props.text}</Text>
           <ScrollImages>
-          <AnchorLink to="/cooperative#target">
+          <AnchorLink to={props.targetId}>
             <img src={ArrowImage} alt="" style={{ width: "40px" }}></img>
             <img src={EyeImage} alt="" style={{ width: "40px" }}></img>
           </AnchorLink>

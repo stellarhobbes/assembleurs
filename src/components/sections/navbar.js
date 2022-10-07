@@ -112,8 +112,7 @@ const navigationContents = [
   },
   {
     text: "Sur le terrain",
-    link: "https://simplistic-cycle-553.notion.site/Sur-le-terrain-35a90e8e35b745da90f1b5da63a09491",
-    target: "_blank",
+    link: "/sur-le-terrain",
   },
   {
     text: "Ressources",
@@ -135,7 +134,7 @@ const mobileNavigationContents = [
     link: "/chiffres",
   },
   {
-    text: "Devenir adhérent",
+    text: "Devenir sociétaire",
     link: "/societaire",
   },
   {
@@ -152,8 +151,7 @@ const mobileNavigationContents = [
   },
   {
     text: "Sur le terrain",
-    link: "https://simplistic-cycle-553.notion.site/Sur-le-terrain-35a90e8e35b745da90f1b5da63a09491",
-    target: "_blank",
+    link: "/sur-le-terrain",
   },
   {
     text: "Ressources",

@@ -132,8 +132,8 @@ const Missions = () => {
           <NumberBloc
             url={NumberThree}
             iconAlt="Numéro trois"
-            subtitleText="Appuyer des dynamiques sectorielles : éducation, entreprises, santé..."
-            contentText="À l'école, dans les associations, en entreprise, sur les marchés, dans la rue : la médiation numérique aujourd'hui, c'est partout ! C'est pourquoi nous travaillons avec des acteurs de tous horizons sur des approches sectorielles de l'inclusion numérique"
+            subtitleText="Appuyer des dynamiques sectorielles&nbsp;: éducation, entreprises, santé..."
+            contentText="À l'école, dans les associations, en entreprise, sur les marchés, dans la rue&nbsp;: la médiation numérique aujourd'hui, c'est partout ! C'est pourquoi nous travaillons avec des acteurs de tous horizons sur des approches sectorielles de l'inclusion numérique"
             bubbleText="Associations, entreprises, acteurs éducatifs, élus ... Nous avons tous besoin de médiation numérique&nbsp;!"
           />
           <Image src={IllustrationPublic} />

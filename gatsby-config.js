@@ -44,6 +44,21 @@ module.exports = {
                 process.env.GATSBY_IS_PREVIEW === "true" ? "preview" : "live",
             },
           },
+          {
+            singularName: "blog",
+            api: {
+              image: {
+                populate: "*"
+              },
+              slug: {
+                populate: "*"
+              }
+            },
+            queryParams: {
+              publicationState:
+                process.env.GATSBY_IS_PREVIEW === "true" ? "preview" : "live",
+            },
+          },
         ],
       },
     },

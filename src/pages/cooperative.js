@@ -94,6 +94,7 @@ const Cooperative = () => {
           title="Mission des assembleurs"
           text="Accompagner, former et animer une dynamique collective pour une société numérique inclusive et créative !"
           imageUrl={ImageHeader}
+          targetId="/cooperative#target"
         />
       </SectionWrap>
       <div id="target"></div>
