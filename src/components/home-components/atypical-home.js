@@ -1,11 +1,10 @@
 import React from "react";
 import styled from "styled-components";
 import GlobalStyle from "../../globalStyles";
+import { useStaticQuery, graphql } from "gatsby";
 
 import SimpleBloc from "../blocs/simple-bloc";
 import Button from "../elements/button";
-
-import LastBlogImage from "../../images/illustrations/transition-numerique.png";
 
 const Main = styled.div``;
 
@@ -44,6 +43,19 @@ const Title = styled.p`
 `;
 
 const AtypicalSection = () => {
+  const lastBlogArticle = useStaticQuery(graphql`
+    query {
+      allStrapiBlog(limit: 1) {
+        nodes {
+          title 
+          image {
+            url
+          }
+          slug
+        }
+      }
+    }
+  `);
   return (
     <Main>
       <GlobalStyle />
@@ -52,20 +64,20 @@ const AtypicalSection = () => {
           subtitleText="Sur le terrain"
           contentText="Suivez notre actualité ! Partez à la rencontre des acteurs et lieux de médiation numérique en Hauts-de-France, découvrez nos actions pour un numérique inclusif en Hauts-de-France"
           buttonText="Accéder au blog"
-          url="https://simplistic-cycle-553.notion.site/Sur-le-terrain-35a90e8e35b745da90f1b5da63a09491"
+          url="/sur-le-terrain"
           target="_blank"
         />
-        <LastArticle>
-          <Image src={LastBlogImage}></Image>
-          <Title>
-            La médiation numérique en circuit court, ça vous parle ?
-          </Title>
-          <Button
-            buttonText="Lire l'article"
-            url="https://simplistic-cycle-553.notion.site/LA-M-DIATION-NUM-RIQUE-EN-CIRCUIT-COURT-A-VOUS-PARLE-affdd189699e4d51b8cbd69d1090d1b1"
-            target="_blank"
-          ></Button>
-        </LastArticle>
+        {lastBlogArticle.allStrapiBlog.nodes.map((node) => (
+          <LastArticle>
+            <Image src={node.image.url}></Image>
+            <Title>{node.title}</Title>
+            <Button
+              buttonText="Lire l'article"
+              url={`/sur-le-terrain/${node.slug}`}
+              target="_blank"
+            ></Button>
+          </LastArticle>
+        ))}
         <SimpleBloc
           bulletColor="red"
           subtitleText="Agenda"
