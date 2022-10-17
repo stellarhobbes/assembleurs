@@ -111,8 +111,8 @@ const navContents = [
     url: "/solutions",
   },
   {
-    title: "Ressources",
-    url: "/ressources",
+    title: "Nos communs",
+    url: "/nos-communs",
   },
   {
     title: "Mentions légales",

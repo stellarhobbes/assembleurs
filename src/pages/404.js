@@ -1,5 +1,8 @@
 import * as React from "react";
-import { Link } from "gatsby";
+import GlobalStyle from "../globalStyles";
+import styled from "styled-components";
+
+import Button from "../components/elements/button";
 
 const pageStyles = {
   color: "#232129",
@@ -8,41 +11,50 @@ const pageStyles = {
 };
 const headingStyles = {
   marginTop: 0,
-  marginBottom: 64,
-  maxWidth: 320,
+  marginBottom: 48,
+  maxWidth: 600,
 };
 
 const paragraphStyles = {
   marginBottom: 48,
 };
 const codeStyles = {
-  color: "#8A6534",
+  color: "#FF4114",
   padding: 4,
-  backgroundColor: "#FFF4DB",
+  backgroundColor: "#FFE0DB",
   fontSize: "1.25rem",
   borderRadius: 4,
 };
 
+const CustomButton = styled(Button)`
+
+`
+
+
 const NotFoundPage = () => {
   return (
     <main style={pageStyles}>
-      <h1 style={headingStyles}>Page not found</h1>
+      <GlobalStyle />
+      <h1 style={headingStyles}>Page introuvable</h1>
       <p style={paragraphStyles}>
-        Sorry 😔, we couldn’t find what you were looking for.
+        Désolé 😔, la page que vous cherchez n'existe pas.
         <br />
         {process.env.NODE_ENV === "development" ? (
           <>
             <br />
-            Try creating a page in <code style={codeStyles}>src/pages/</code>.
+            Retournez à la <code style={codeStyles}>home</code> pour continuer à naviguer.
             <br />
           </>
         ) : null}
         <br />
-        <Link to="/">Go home</Link>.
+        <CustomButton
+          url="/"
+          buttonText="Retour"
+        />
       </p>
     </main>
   );
 };
 
 export default NotFoundPage;
-export const Head = () => <title>Not found</title>;
+export const Head = () => <title>Page introuvable</title>;

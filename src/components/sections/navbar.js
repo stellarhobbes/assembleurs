@@ -115,8 +115,8 @@ const navigationContents = [
     link: "/sur-le-terrain",
   },
   {
-    text: "Ressources",
-    link: "/ressources",
+    text: "Nos communs",
+    link: "/nos-communs",
   },
 ];
 
@@ -154,8 +154,8 @@ const mobileNavigationContents = [
     link: "/sur-le-terrain",
   },
   {
-    text: "Ressources",
-    link: "/ressources",
+    text: "Nos communs",
+    link: "/nos-communs",
   },
 ];
 

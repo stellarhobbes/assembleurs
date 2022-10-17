@@ -54,15 +54,15 @@ const Ressources = () => {
     <body>
       <Helmet>
         <meta charSet="utf-8" />
-        <title>Les Assembleurs - Ressources</title>
-        <link rel="canonical" href="https://assembleurs.co/ressources" />
+        <title>Les Assembleurs - Nos communs</title>
+        <link rel="canonical" href="https://assembleurs.co/nos-communs" />
       </Helmet>
       <GlobalStyle />
       <Navbar />
       <HalfImage
         backgroundImage={ImageHeader}
         backgroundColor="lightgrey"
-        subtitleText="Les ressources"
+        subtitleText="Nos communs"
         contentText="Les Assembleurs sélectionnent et mettent en commun de nombreuses
         ressources et outils méthodologiques, à votre disposition ci-dessous."
       />
