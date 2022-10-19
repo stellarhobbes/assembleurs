@@ -2,9 +2,10 @@ import React from "react";
 import styled from "styled-components";
 import GlobalStyle from "../../globalStyles";
 import { AnchorLink } from "gatsby-plugin-anchor-links";
+import { useStaticQuery, graphql } from "gatsby";
 
 import Logos from "../../images/icons/Bandeau-logo-REACT.jpg";
-import LogoCapsule from "../../images/icons/logo-assembleurs-capsule.png"
+import LogoCapsule from "../../images/icons/logo-assembleurs-capsule.png";
 import EyeImage from "../../images/icons/redeye-assembleurs.png";
 import ArrowImage from "../../images/icons/arrow-down-assembleurs.png";
 
@@ -27,7 +28,7 @@ const Wrapper = styled.section`
 
 const Logo = styled.img`
   width: 200px;
-`
+`;
 
 const Image = styled.img`
   width: 250px;
@@ -61,21 +62,21 @@ const ScrollImages = styled.div`
 `;
 
 const HeaderHome = () => {
+  const homeContent = useStaticQuery(graphql`
+    query {
+      strapiHomepage {
+        title
+        accroche
+      }
+    }
+  `);
   return (
     <Main>
       <GlobalStyle />
       <Wrapper>
         <Logo src={LogoCapsule}></Logo>
-        <Title>
-          Les Assembleurs : agir collectivement pour que chacun trouve sa place
-          dans la société numérique&nbsp;!
-        </Title>
-        <Content>
-          Nous accompagnons, formons et animons l’écosystème de l’inclusion
-          numérique en Hauts-de-France. Formations pour les aidants et les
-          médiateurs, accompagnement des collectivités, rencontres et projets
-          éducatifs, lutte contre la pauvreté...
-        </Content>
+        <Title>{homeContent.strapiHomepage.title}</Title>
+        <Content>{homeContent.strapiHomepage.accroche}</Content>
         <Image src={Logos} alt=""></Image>
         <ScrollImages>
           <AnchorLink to="/#target">

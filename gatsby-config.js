@@ -1,6 +1,6 @@
 require("dotenv").config({
   path: `.env.${process.env.NODE_ENV}`,
-})
+});
 
 module.exports = {
   siteMetadata: {
@@ -18,11 +18,11 @@ module.exports = {
             singularName: "solution",
             api: {
               backgroundImage: {
-                populate: "*"
+                populate: "*",
               },
               slug: {
-                populate: "*"
-              }
+                populate: "*",
+              },
             },
             queryParams: {
               publicationState:
@@ -33,11 +33,11 @@ module.exports = {
             singularName: "ressource",
             api: {
               backgroundImage: {
-                populate: "*"
+                populate: "*",
               },
               slug: {
-                populate: "*"
-              }
+                populate: "*",
+              },
             },
             queryParams: {
               publicationState:
@@ -48,15 +48,41 @@ module.exports = {
             singularName: "blog",
             api: {
               image: {
-                populate: "*"
+                populate: "*",
               },
               slug: {
-                populate: "*"
-              }
+                populate: "*",
+              },
             },
             queryParams: {
               publicationState:
                 process.env.GATSBY_IS_PREVIEW === "true" ? "preview" : "live",
+            },
+          },
+        ],
+        singleTypes: [
+          {
+            singularName: "homepage",
+            queryParams: {
+              publicationState:
+              process.env.GATSBY_IS_PREVIEW === "true" ? "preview" : "live",
+              populate: {
+                blocks: {
+                  populate: "*",
+                },
+              },
+            },
+          },
+          {
+            singularName: "contact",
+            queryParams: {
+              publicationState:
+              process.env.GATSBY_IS_PREVIEW === "true" ? "preview" : "live",
+              populate: {
+                blocks: {
+                  populate: "*",
+                },
+              },
             },
           },
         ],
@@ -72,7 +98,7 @@ module.exports = {
         icon: `src/images/icons/Icone_logo_Assembleurs.png`,
         name: `Les Assembleurs`,
         short_name: `Assembleurs`,
-        start_url: `/`
+        start_url: `/`,
       },
     },
     "gatsby-plugin-sharp",
@@ -81,18 +107,18 @@ module.exports = {
     {
       resolve: "gatsby-plugin-anchor-links",
       options: {
-        duration: 500
-      }
+        duration: 500,
+      },
     },
     {
       resolve: `gatsby-plugin-google-fonts`,
       options: {
         fonts: [
           `roboto`,
-          `Big Shoulders Display\:600,700,800` // you can also specify font weights and styles
+          `Big Shoulders Display\:600,700,800`, // you can also specify font weights and styles
         ],
-        display: 'swap'
-      }
+        display: "swap",
+      },
     },
     {
       resolve: "gatsby-source-filesystem",

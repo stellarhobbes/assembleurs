@@ -1,6 +1,7 @@
 import * as React from "react";
 import GlobalStyle from "../globalStyles";
 import { Helmet } from "react-helmet";
+import { useStaticQuery, graphql } from "gatsby";
 
 /*Components*/
 import Navbar from "../components/sections/navbar";
@@ -16,64 +17,40 @@ import Partners from "../components/sections/partners-section";
 import ContactCTA from "../components/sections/contact-cta";
 import Footer from "../components/sections/footer";
 
-/*Images*/
-import OvalePicture from "../images/pictures/ovale-picture-home-assembleurs.png";
-
-import HandsImage from "../images/illustrations/Picto_mains.png";
-import HatImage from "../images/illustrations/Picto_diplome.png";
-import DisplayImage from "../images/illustrations/Picto_fleches.png";
-import LinkImage from "../images/illustrations/Picto_reseau.png";
-
-import MayorImage from "../images/illustrations/Picto_illu_1.png";
-import CityImage from "../images/illustrations/Picto_illu_2.png";
-import DoctorImage from "../images/illustrations/Picto_illu_3.png";
-
-/*Styles*/
-
-/*Contents*/
-const missionContents = [
-  {
-    url: HandsImage,
-    titleText: "Accompagner",
-    contentText: "des stratégies de l'inclusion numérique",
-  },
-  {
-    url: HatImage,
-    titleText: "Structurer",
-    contentText: "et animer une offre de formation",
-  },
-  {
-    url: DisplayImage,
-    titleText: "Appuyer",
-    contentText:
-      "des dynamiques sectorielles : éducation, entreprises, santé ...",
-  },
-  {
-    url: LinkImage,
-    titleText: "Créer du lien",
-    contentText: "mettre en réseau et animer l'écosystème",
-  },
-];
-
-const solutionContents = [
-  {
-    url: MayorImage,
-    titleText: "Acteurs publics",
-    contentText: "(collectivités, opérateurs de service public…)",
-  },
-  {
-    url: CityImage,
-    titleText: "Acteurs de l'inclusion numérique",
-    contentText: "(lieux de médiation, tiers-lieux, centres sociaux...)",
-  },
-  {
-    url: DoctorImage,
-    titleText: "Acteurs sociétaux",
-    contentText: "(associations, acteurs santé, éducatifs, économiques…)",
-  },
-];
-
 const IndexPage = () => {
+  const homeContent = useStaticQuery(graphql`
+    query {
+      strapiHomepage {
+        textImage {
+          image {
+            url
+          }
+          title
+          description
+        }
+        missions {
+          title
+          missionCard {
+            cardTitle
+            cardText
+            cardImage {
+              url
+            }
+          }
+        }
+        solutions {
+          title
+          solutionCard {
+            cardTitle
+            cardText
+            cardImage {
+              url
+            }
+          }
+        }
+      }
+    }
+  `);
   return (
     <body>
       <Helmet>
@@ -87,30 +64,27 @@ const IndexPage = () => {
       <div id="target"></div>
       <TextImage
         bulletColor=""
-        title="La coopérative"
+        title={homeContent.strapiHomepage.textImage.title}
         titleColor=""
         buttonText="En savoir plus"
         buttonURL="/cooperative"
-        imageUrl={OvalePicture}
+        imageUrl={homeContent.strapiHomepage.textImage.image.url}
       >
-        La mission des Assembleurs est d’accompagner, former et animer une
-        dynamique collective pour une société numérique inclusive et créative.
-        Notre vision&nbsp;: Agir collectivement pour que chacun trouve sa place
-        dans la société numérique !
+        {homeContent.strapiHomepage.textImage.description}
       </TextImage>
       <SectionWrap backgroundColor="lightgrey">
         <SubtitleButton
           backgroundColor="lightgrey"
-          subtitleText="Nos missions"
+          subtitleText={homeContent.strapiHomepage.missions.title}
           buttonText="Plus d'infos"
           buttonUrl="/missions"
         />
         <FourColumns backgroundColor="lightgrey">
-          {missionContents.map((content) => (
+          {homeContent.strapiHomepage.missions.missionCard.map((mission) => (
             <Card
-              url={content.url}
-              titleText={content.titleText}
-              contentText={content.contentText}
+              url={mission.cardImage.url}
+              titleText={mission.cardTitle}
+              contentText={mission.cardText}
             />
           ))}
         </FourColumns>
@@ -126,11 +100,11 @@ const IndexPage = () => {
           buttonUrl="/solutions"
         />
         <ThreeColumns backgroundColor="lightblue">
-          {solutionContents.map((content) => (
+        {homeContent.strapiHomepage.solutions.solutionCard.map((solution) => (
             <Card
-              url={content.url}
-              titleText={content.titleText}
-              contentText={content.contentText}
+            url={solution.cardImage.url}
+            titleText={solution.cardTitle}
+            contentText={solution.cardText}
             />
           ))}
         </ThreeColumns>

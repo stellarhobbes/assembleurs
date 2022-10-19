@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import GlobalStyle from "../globalStyles";
+import { useStaticQuery, graphql } from "gatsby";
 import { Helmet } from "react-helmet";
 
 /*Components*/
@@ -70,6 +71,17 @@ const Content = styled.p`
 const FormContact = styled.div``;
 
 const Contact = () => {
+  const contact = useStaticQuery(graphql`
+  query {
+    strapiContact {
+      mailAdress
+      title
+      bandeau
+      adress
+      accroche
+    }
+  }
+`);
   return (
     <body>
       <Helmet>
@@ -81,16 +93,16 @@ const Contact = () => {
       <Navbar />
       <Header
         iconUrl={LogoAssembleurs}
-        iconAlt="Icoône du logo des Assembleurs"
-        titleText="Envie d'échanger avec nous ?"
-        contentText="Vous souhaitez co-construire avec nous une société numérique inclusive et créative en Hauts-de-France&nbsp;? Une question, une remarque, une requête&nbsp;? Contactez les Assembleurs&nbsp;!"
+        iconAlt="Icone du logo des Assembleurs"
+        titleText={contact.strapiContact.title}
+        contentText={contact.strapiContact.accroche}
       ></Header>
       <MailCTA>
         <MailText>
-          Nous sommes joignable par e-mail :
+          {contact.strapiContact.bandeau}
           <MailNumber>
-            <Mail href="mailto:bonjour@assembleurs.co">
-              &nbsp;bonjour@assembleurs.co
+            <Mail href={`mailto:` + contact.strapiContact.mailAdress}>
+              &nbsp;{contact.strapiContact.mailAdress}
             </Mail>
           </MailNumber>
         </MailText>
@@ -102,8 +114,7 @@ const Contact = () => {
             <Adresse>
               <Icon src={LogoAssembleurs} alt="Logo des Assembleurs"></Icon>
               <Title>Les Assembleurs</Title>
-              <Content>8 rue Nicolas Leblanc</Content>
-              <Content>59000 Lille</Content>
+              <Content>{contact.strapiContact.adress}</Content>
             </Adresse>
           </TopContact>
           <FormContact></FormContact>

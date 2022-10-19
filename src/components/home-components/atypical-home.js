@@ -54,6 +54,16 @@ const AtypicalSection = () => {
           slug
         }
       }
+      strapiHomepage {
+        blogBloc {
+          title
+          accroche
+        }
+        agendaBloc {
+          title
+          accroche
+        }
+      }
     }
   `);
   return (
@@ -61,8 +71,8 @@ const AtypicalSection = () => {
       <GlobalStyle />
       <Wrapper>
         <SimpleBloc
-          subtitleText="Sur le terrain"
-          contentText="Suivez notre actualité ! Partez à la rencontre des acteurs et lieux de médiation numérique en Hauts-de-France, découvrez nos actions pour un numérique inclusif en Hauts-de-France"
+          subtitleText={lastBlogArticle.strapiHomepage.blogBloc.title}
+          contentText={lastBlogArticle.strapiHomepage.blogBloc.accroche}
           buttonText="Accéder au blog"
           url="/sur-le-terrain"
           target="_blank"
@@ -80,8 +90,8 @@ const AtypicalSection = () => {
         ))}
         <SimpleBloc
           bulletColor="red"
-          subtitleText="Agenda"
-          contentText="Retrouvez les événements de l’inclusion numérique en Hauts-de-France sur notre agenda"
+          subtitleText={lastBlogArticle.strapiHomepage.agendaBloc.title}
+          contentText={lastBlogArticle.strapiHomepage.agendaBloc.accroche}
           buttonText="Les évènements"
           url="https://openagenda.com/assembleurs"
           target="_blank"

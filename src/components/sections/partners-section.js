@@ -1,13 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import GlobalStyle from "../../globalStyles";
-
-/*Images*/
-import Europe from "../../images/partners/logo-europe.jpg";
-import Anct from "../../images/partners/logo-anct.jpg";
-import Banque from "../../images/partners/logo-bdt.png";
-import Region from "../../images/partners/logo-hdf.jpg";
-import Pop from "../../images/partners/logo-pop.jpg";
+import { useStaticQuery, graphql } from "gatsby";
 
 /*Styles*/
 const Main = styled.div`
@@ -32,36 +26,24 @@ const Image = styled.img`
   }
 `;
 
-const contents = [
-  {
-    src: Europe,
-    alt: "Logo de l'Union Européenne",
-  },
-  {
-    src: Anct,
-    alt: "Logo de l'Agence Nationale de la Cohésion des Territoires'",
-  },
-  {
-    src: Banque,
-    alt: "Logo de la Banque des territoires",
-  },
-  {
-    src: Region,
-    alt: "Logo de la région Hauts-de-France",
-  },
-  {
-    src: Pop,
-    alt: "Logo du groupe POP",
-  },
-];
-
 const Partners = () => {
+  const Partners = useStaticQuery(graphql`
+  query {
+    strapiHomepage {
+      partners {
+        partnerLogo {
+          url
+        }
+      }
+    }
+  }
+`);
   return (
     <Main>
       <GlobalStyle />
       <Wrapper>
-        {contents.map((content) => (
-          <Image src={content.src} alt={content.alt} />
+        {Partners.strapiHomepage.partners.map((content) => (
+          <Image src={content.partnerLogo.url} />
         ))}
       </Wrapper>
     </Main>
