@@ -103,6 +103,44 @@ const Societaire = () => {
         <title>Les Assembleurs - Devenir sociétaire</title>
         <link rel="canonical" href="https://assembleurs.co/societaire" />
         <script async src="https://tally.so/widgets/embed.js"></script>
+        <meta
+          name="title"
+          content="Les Assembleurs - Agir collectivement pour que chacun trouve sa place dans la société numérique."
+        />
+        <meta
+          name="description"
+          content="Les Assembleurs est une société coopérative d’intérêt collectif (SCIC) ayant pour mission d’accompagner, former et animer une dynamique collective pour un numérique inclusif et créatif en Hauts-de-France."
+        />
+
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://assembleurs.co/societaire" />
+        <meta
+          property="og:title"
+          content="Les Assembleurs - Agir collectivement pour que chacun trouve sa place dans la société numérique."
+        />
+        <meta
+          property="og:description"
+          content="Les Assembleurs est une société coopérative d’intérêt collectif (SCIC) ayant pour mission d’accompagner, former et animer une dynamique collective pour un numérique inclusif et créatif en Hauts-de-France."
+        />
+        <meta
+          property="og:image"
+          content="https://res.cloudinary.com/dgnptaxm4/image/upload/v1666271732/illustration-assembleurs_l9rl5h.png"
+        />
+
+        <meta property="twitter:card" content="summary_large_image" />
+        <meta property="twitter:url" content="https://assembleurs.co/societaire" />
+        <meta
+          property="twitter:title"
+          content="Les Assembleurs - Agir collectivement pour que chacun trouve sa place dans la société numérique."
+        />
+        <meta
+          property="twitter:description"
+          content="Les Assembleurs est une société coopérative d’intérêt collectif (SCIC) ayant pour mission d’accompagner, former et animer une dynamique collective pour un numérique inclusif et créatif en Hauts-de-France."
+        />
+        <meta
+          property="twitter:image"
+          content="https://res.cloudinary.com/dgnptaxm4/image/upload/v1666271732/illustration-assembleurs_l9rl5h.png"
+        ></meta>
       </Helmet>
       <GlobalStyle />
       <Navbar />
@@ -169,7 +207,7 @@ const Societaire = () => {
           iconAlt="Un point d'interrogation"
           titleText="Comment devenir sociétaire ?"
           buttonUrl="https://tally.so/#tally-open=nWO76k&tally-emoji-text=👋&tally-emoji-animation=wave"
-          buttonText="Télécharger l'archive"
+          buttonText="Télécharger le document"
         >
           Si vous souhaitez uniquement adhérer au réseau, contactez-nous à{" "}
           <Link to="mailto:bonjour@assembleurs.co">bonjour@assembleurs.co</Link>
