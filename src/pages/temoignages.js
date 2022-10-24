@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import Masonry from "react-masonry-css";
-import { Helmet } from "react-helmet";
+import { Seo } from "../components/seo";
 
 import Navbar from "../components/sections/navbar";
 import TopNav from "../components/sections/top-navigation";
@@ -21,7 +21,7 @@ const breakpointColumnsObj = {
   default: 2,
   960: 1,
   700: 1,
-  500: 1
+  500: 1,
 };
 
 const DoubleColumnsWrapper = styled.section``;
@@ -59,49 +59,6 @@ const testimonialContent = [
 const Temoignages = () => {
   return (
     <body>
-       <Helmet>
-        <meta charSet="utf-8" />
-        <title>Les Assembleurs - Témoignages</title>
-        <link rel="canonical" href="https://assembleurs.co/temoignages" />
-        <meta
-          name="title"
-          content="Les Assembleurs - Agir collectivement pour que chacun trouve sa place dans la société numérique."
-        />
-        <meta
-          name="description"
-          content="Les Assembleurs est une société coopérative d’intérêt collectif (SCIC) ayant pour mission d’accompagner, former et animer une dynamique collective pour un numérique inclusif et créatif en Hauts-de-France."
-        />
-
-        <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://assembleurs.co/temoignages" />
-        <meta
-          property="og:title"
-          content="Les Assembleurs - Agir collectivement pour que chacun trouve sa place dans la société numérique."
-        />
-        <meta
-          property="og:description"
-          content="Les Assembleurs est une société coopérative d’intérêt collectif (SCIC) ayant pour mission d’accompagner, former et animer une dynamique collective pour un numérique inclusif et créatif en Hauts-de-France."
-        />
-        <meta
-          property="og:image"
-          content="https://res.cloudinary.com/dgnptaxm4/image/upload/v1666271732/illustration-assembleurs_l9rl5h.png"
-        />
-
-        <meta property="twitter:card" content="summary_large_image" />
-        <meta property="twitter:url" content="https://assembleurs.co/temoignages" />
-        <meta
-          property="twitter:title"
-          content="Les Assembleurs - Agir collectivement pour que chacun trouve sa place dans la société numérique."
-        />
-        <meta
-          property="twitter:description"
-          content="Les Assembleurs est une société coopérative d’intérêt collectif (SCIC) ayant pour mission d’accompagner, former et animer une dynamique collective pour un numérique inclusif et créatif en Hauts-de-France."
-        />
-        <meta
-          property="twitter:image"
-          content="https://res.cloudinary.com/dgnptaxm4/image/upload/v1666271732/illustration-assembleurs_l9rl5h.png"
-        ></meta>
-      </Helmet>
       <Navbar />
       <TopNav />
       <SectionWrap backgroundColor="lightgrey">
@@ -114,37 +71,41 @@ const Temoignages = () => {
         <Citation
           backgroundColor="lightgrey"
           citationText="Devenir sociétaire des Assembleurs me paraît évident pour bénéficier d'un accès privilégié au réseau d'inclusion numérique !"
-          nameText="Sylvain Prandi • Président de l'association &apos;&apos;Le fil de l'Épeule&apos;&apos;"
+          nameText="Sylvain Prandi • Président de l'association ''Le fil de l'Épeule''"
         />
       </SectionWrap>
       <SectionWrap>
         <SubtitleButton subtitleText="Les témoignages" />
         <DoubleColumnsWrapper>
-        <Masonry
-          breakpointCols={breakpointColumnsObj}
-          className="my-masonry-grid"
-          columnClassName="my-masonry-grid_column"
-        >
-          {testimonialContent.map((content) => (
-            <TestimonialCard
-              backgroundColor={content.background}
-              imageUrl={content.image}
-              imageAlt={content.alt}
-              nameText={content.name}
-              jobText={content.job}
-              companyText={content.company}
-              contentText={content.text}
-              buttonText={content.button}
-              buttonUrl={content.url}
-            />
-          ))}
-        </Masonry>
+          <Masonry
+            breakpointCols={breakpointColumnsObj}
+            className="my-masonry-grid"
+            columnClassName="my-masonry-grid_column"
+          >
+            {testimonialContent.map((content) => (
+              <TestimonialCard
+                backgroundColor={content.background}
+                imageUrl={content.image}
+                imageAlt={content.alt}
+                nameText={content.name}
+                jobText={content.job}
+                companyText={content.company}
+                contentText={content.text}
+                buttonText={content.button}
+                buttonUrl={content.url}
+              />
+            ))}
+          </Masonry>
         </DoubleColumnsWrapper>
       </SectionWrap>
-      <ContactCTA backgroundColor="lightgrey"/>
+      <ContactCTA backgroundColor="lightgrey" />
       <Footer />
     </body>
   );
 };
 
 export default Temoignages;
+
+export const Head = () => (
+  <Seo title="Les Assembleurs - Témoignages" pathname="/temoignages"></Seo>
+);

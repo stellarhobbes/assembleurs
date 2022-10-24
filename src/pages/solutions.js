@@ -154,4 +154,6 @@ const Solutions = () => {
 
 export default Solutions;
 
-export const Head = () => <Seo title="Les Assembleurs - Nos solutions"></Seo>;
+export const Head = () => (
+  <Seo title="Les Assembleurs - Nos solutions" pathname="/solutions"></Seo>
+);

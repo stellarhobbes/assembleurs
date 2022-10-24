@@ -1,7 +1,7 @@
 import React from "react";
 import GlobalStyle from "../globalStyles";
 import styled from "styled-components";
-import { Helmet } from "react-helmet";
+import { Seo } from "../components/seo";
 
 /*Components*/
 import Navbar from "../components/sections/navbar";
@@ -62,52 +62,6 @@ const Image = styled.img`
 const Missions = () => {
   return (
     <body>
-      <Helmet>
-        <meta charSet="utf-8" />
-        <title>Les Assembleurs - Missions</title>
-        <link
-          rel="canonical"
-          href="https://assembleurs.co/missions"
-        />
-         <meta
-          name="title"
-          content="Les Assembleurs - Agir collectivement pour que chacun trouve sa place dans la société numérique."
-        />
-        <meta
-          name="description"
-          content="Les Assembleurs est une société coopérative d’intérêt collectif (SCIC) ayant pour mission d’accompagner, former et animer une dynamique collective pour un numérique inclusif et créatif en Hauts-de-France."
-        />
-
-        <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://assembleurs.co/missions" />
-        <meta
-          property="og:title"
-          content="Les Assembleurs - Agir collectivement pour que chacun trouve sa place dans la société numérique."
-        />
-        <meta
-          property="og:description"
-          content="Les Assembleurs est une société coopérative d’intérêt collectif (SCIC) ayant pour mission d’accompagner, former et animer une dynamique collective pour un numérique inclusif et créatif en Hauts-de-France."
-        />
-        <meta
-          property="og:image"
-          content="https://res.cloudinary.com/dgnptaxm4/image/upload/v1666271732/illustration-assembleurs_l9rl5h.png"
-        />
-
-        <meta property="twitter:card" content="summary_large_image" />
-        <meta property="twitter:url" content="https://assembleurs.co/missions" />
-        <meta
-          property="twitter:title"
-          content="Les Assembleurs - Agir collectivement pour que chacun trouve sa place dans la société numérique."
-        />
-        <meta
-          property="twitter:description"
-          content="Les Assembleurs est une société coopérative d’intérêt collectif (SCIC) ayant pour mission d’accompagner, former et animer une dynamique collective pour un numérique inclusif et créatif en Hauts-de-France."
-        />
-        <meta
-          property="twitter:image"
-          content="https://res.cloudinary.com/dgnptaxm4/image/upload/v1666271732/illustration-assembleurs_l9rl5h.png"
-        ></meta>
-      </Helmet>
       <GlobalStyle />
       <Navbar />
       <Header
@@ -216,3 +170,10 @@ const Missions = () => {
 };
 
 export default Missions;
+
+export const Head = () => (
+  <Seo
+    title="Les Assembleurs - Missions"
+    pathname="/missions"
+  ></Seo>
+);

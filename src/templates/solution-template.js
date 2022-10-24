@@ -3,7 +3,7 @@ import styled from "styled-components";
 import GlobalStyle from "../globalStyles";
 import { graphql } from "gatsby";
 import ReactMarkdown from "react-markdown";
-import { Helmet } from "react-helmet";
+import { Seo } from "../components/seo";
 
 /*Components*/
 import Navbar from "../components/sections/navbar";
@@ -39,6 +39,7 @@ const SolutionMarkdown = styled(ReactMarkdown)`
 export const query = graphql`
   query ($slug: String!) {
     strapiSolution(slug: { eq: $slug }) {
+      slug
       content {
         data {
           content
@@ -53,49 +54,6 @@ export const query = graphql`
 const SolutionTemplate = (props) => {
   return (
     <body>
-      <Helmet>
-        <meta charSet="utf-8" />
-        <title>Les Assembleurs - {props.data.strapiSolution.title}</title>
-        <link rel="canonical" href="https://assembleurs.co/" />
-        <meta
-          name="title"
-          content="Les Assembleurs - Agir collectivement pour que chacun trouve sa place dans la société numérique."
-        />
-        <meta
-          name="description"
-          content="Les Assembleurs est une société coopérative d’intérêt collectif (SCIC) ayant pour mission d’accompagner, former et animer une dynamique collective pour un numérique inclusif et créatif en Hauts-de-France."
-        />
-
-        <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://assembleurs.co/" />
-        <meta
-          property="og:title"
-          content="Les Assembleurs - Agir collectivement pour que chacun trouve sa place dans la société numérique."
-        />
-        <meta
-          property="og:description"
-          content="Les Assembleurs est une société coopérative d’intérêt collectif (SCIC) ayant pour mission d’accompagner, former et animer une dynamique collective pour un numérique inclusif et créatif en Hauts-de-France."
-        />
-        <meta
-          property="og:image"
-          content="https://res.cloudinary.com/dgnptaxm4/image/upload/v1666271732/illustration-assembleurs_l9rl5h.png"
-        />
-
-        <meta property="twitter:card" content="summary_large_image" />
-        <meta property="twitter:url" content="https://assembleurs.co/" />
-        <meta
-          property="twitter:title"
-          content="Les Assembleurs - Agir collectivement pour que chacun trouve sa place dans la société numérique."
-        />
-        <meta
-          property="twitter:description"
-          content="Les Assembleurs est une société coopérative d’intérêt collectif (SCIC) ayant pour mission d’accompagner, former et animer une dynamique collective pour un numérique inclusif et créatif en Hauts-de-France."
-        />
-        <meta
-          property="twitter:image"
-          content="https://res.cloudinary.com/dgnptaxm4/image/upload/v1666271732/illustration-assembleurs_l9rl5h.png"
-        ></meta>
-      </Helmet>
       <Main>
         <GlobalStyle />
         <Navbar />
@@ -119,3 +77,10 @@ const SolutionTemplate = (props) => {
 };
 
 export default SolutionTemplate;
+
+export const Head = (props) => (
+  <Seo
+    title={`Les Assembleurs - ${props.data.strapiSolution.title}`}
+    pathname={`/solutions/${props.data.strapiSolution.slug}`}
+  ></Seo>
+);

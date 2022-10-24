@@ -3,7 +3,7 @@ import GlobalStyle from "../../globalStyles";
 import { useStaticQuery, graphql } from "gatsby";
 import styled from "styled-components";
 import Masonry from "react-masonry-css";
-import { Helmet } from "react-helmet";
+import { Seo } from "../../components/seo";
 
 /*Components*/
 import Navbar from "../../components/sections/navbar";
@@ -108,11 +108,6 @@ const SolutionsPublic = () => {
   `);
   return (
     <body>
-      <Helmet>
-        <meta charSet="utf-8" />
-        <title>Les Assembleurs - Acteurs sociétaux</title>
-        <link rel="canonical" href="https://assembleurs.co/acteurs-societaux" />
-      </Helmet>
       <GlobalStyle />
       <Navbar />
       <HeaderWrap>
@@ -164,3 +159,10 @@ const SolutionsPublic = () => {
 };
 
 export default SolutionsPublic;
+
+export const Head = () => (
+  <Seo
+    title="Les Assembleurs - Acteurs sociétaux"
+    pathname="/acteurs-societaux"
+  ></Seo>
+);

@@ -2,7 +2,7 @@ import React from "react";
 import GlobalStyle from "../globalStyles";
 import styled from "styled-components";
 import { useStaticQuery, graphql } from "gatsby";
-import { Helmet } from "react-helmet";
+import { Seo } from "../components/seo";
 
 import Masonry from "react-masonry-css";
 
@@ -12,7 +12,7 @@ import SectionWrap from "../components/sections/section-wrap";
 import ReverseTextImage from "../components/sections/reverse-text-image";
 import Footer from "../components/sections/footer";
 
-import ImageHeader from "../images/illustrations/illustration-public.png"
+import ImageHeader from "../images/illustrations/illustration-public.png";
 
 const breakpointColumnsObj = {
   default: 3,
@@ -42,49 +42,6 @@ const BlogPage = () => {
   `);
   return (
     <body>
-      <Helmet>
-        <meta charSet="utf-8" />
-        <title>Les Assembleurs - Sur le terrain</title>
-        <link rel="canonical" href="https://assembleurs.co/sur-le-terrain" />
-        <meta
-          name="title"
-          content="Les Assembleurs - Agir collectivement pour que chacun trouve sa place dans la société numérique."
-        />
-        <meta
-          name="description"
-          content="Les Assembleurs est une société coopérative d’intérêt collectif (SCIC) ayant pour mission d’accompagner, former et animer une dynamique collective pour un numérique inclusif et créatif en Hauts-de-France."
-        />
-
-        <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://assembleurs.co/sur-le-terrain" />
-        <meta
-          property="og:title"
-          content="Les Assembleurs - Agir collectivement pour que chacun trouve sa place dans la société numérique."
-        />
-        <meta
-          property="og:description"
-          content="Les Assembleurs est une société coopérative d’intérêt collectif (SCIC) ayant pour mission d’accompagner, former et animer une dynamique collective pour un numérique inclusif et créatif en Hauts-de-France."
-        />
-        <meta
-          property="og:image"
-          content="https://res.cloudinary.com/dgnptaxm4/image/upload/v1666271732/illustration-assembleurs_l9rl5h.png"
-        />
-
-        <meta property="twitter:card" content="summary_large_image" />
-        <meta property="twitter:url" content="https://assembleurs.co/sur-le-terrain" />
-        <meta
-          property="twitter:title"
-          content="Les Assembleurs - Agir collectivement pour que chacun trouve sa place dans la société numérique."
-        />
-        <meta
-          property="twitter:description"
-          content="Les Assembleurs est une société coopérative d’intérêt collectif (SCIC) ayant pour mission d’accompagner, former et animer une dynamique collective pour un numérique inclusif et créatif en Hauts-de-France."
-        />
-        <meta
-          property="twitter:image"
-          content="https://res.cloudinary.com/dgnptaxm4/image/upload/v1666271732/illustration-assembleurs_l9rl5h.png"
-        ></meta>
-      </Helmet>
       <GlobalStyle />
       <Navbar />
       <SectionWrap backgroundColor="lightgrey">
@@ -122,3 +79,10 @@ const BlogPage = () => {
   );
 };
 export default BlogPage;
+
+export const Head = () => (
+  <Seo
+    title="Les Assembleurs - Sur le terrain"
+    pathname="/sur-le-terrain"
+  ></Seo>
+);
