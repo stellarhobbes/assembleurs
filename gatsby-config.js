@@ -128,34 +128,14 @@ module.exports = {
       },
       __key: "images",
     },
+    "gatsby-plugin-sitemap",
     {
-      resolve: `gatsby-plugin-sitemap`,
+      resolve: 'gatsby-plugin-robots-txt',
       options: {
-        query: `{
-          site {
-            siteMetadata {
-              siteUrl
-            }
-          }
-          allSitePage {
-            nodes {
-              path
-            }
-          }
-        }`,
-        serialize: ({ site, allSitePage }) => {
-          let pages = [];
-          allSitePage.nodes.map((node) => {
-            pages.push({
-              url: site.siteMetadata.siteUrl + node.path,
-              changefreq: `daily`,
-              priority: 0.7,
-            });
-          });
-
-          return pages;
-        },
-      },
-    },
+        host: 'https://assembleurs.co/',
+        sitemap: 'https://assembleurs.co/sitemap.xml',
+        policy: [{userAgent: '*', allow: '/'}]
+      }
+    }
   ],
 };
