@@ -138,18 +138,16 @@ module.exports = {
             }
           }
           allSitePage {
-            edges {
-              node {
-                path
-              }
+            nodes {
+              path
             }
           }
         }`,
         serialize: ({ site, allSitePage }) => {
           let pages = [];
-          allSitePage.edges.map((edge) => {
+          allSitePage.nodes.map((node) => {
             pages.push({
-              url: site.siteMetadata.siteUrl + edge.node.path,
+              url: site.siteMetadata.siteUrl + node.path,
               changefreq: `daily`,
               priority: 0.7,
             });
