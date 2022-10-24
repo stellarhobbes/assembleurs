@@ -5,7 +5,10 @@ require("dotenv").config({
 module.exports = {
   siteMetadata: {
     title: `Les Assembleurs`,
+    description:
+      "Les Assembleurs est une société coopérative d’intérêt collectif (SCIC) ayant pour mission d’accompagner, former et animer une dynamique collective pour un numérique inclusif et créatif en Hauts-de-France.",
     siteUrl: `https://assembleurs.co/`,
+    image: "https://res.cloudinary.com/dgnptaxm4/image/upload/v1666271732/illustration-assembleurs_l9rl5h.png"
   },
   plugins: [
     {
@@ -128,14 +131,19 @@ module.exports = {
       },
       __key: "images",
     },
-    "gatsby-plugin-sitemap",
     {
-      resolve: 'gatsby-plugin-robots-txt',
+      resolve: `gatsby-plugin-sitemap`,
       options: {
-        host: 'https://assembleurs.co/',
-        sitemap: 'https://assembleurs.co/sitemap.xml',
-        policy: [{userAgent: '*', allow: '/'}]
-      }
-    }
+        output: `/sitemap.xml`,
+      },
+    },
+    {
+      resolve: "gatsby-plugin-robots-txt",
+      options: {
+        host: "https://assembleurs.co/",
+        sitemap: "https://assembleurs.co/sitemap.xml",
+        policy: [{ userAgent: "*", allow: "/" }],
+      },
+    },
   ],
 };
