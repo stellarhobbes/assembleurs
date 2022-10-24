@@ -28,10 +28,12 @@ const Wrapper = styled.section`
 
 const Logo = styled.img`
   width: 200px;
+  height: auto;
 `;
 
 const Image = styled.img`
   width: 250px;
+  height: auto;
   padding: 15px 25px;
   background-color: white;
   border-radius: 50px;
@@ -80,8 +82,8 @@ const HeaderHome = () => {
         <Image src={Logos} alt=""></Image>
         <ScrollImages>
           <AnchorLink to="/#target">
-            <img src={ArrowImage} alt="" style={{ width: "40px" }}></img>
-            <img src={EyeImage} alt="" style={{ width: "40px" }}></img>
+            <img src={ArrowImage} alt="" style={{ width: "40px", height: "auto" }}></img>
+            <img src={EyeImage} alt="" style={{ width: "40px", height: "auto" }}></img>
           </AnchorLink>
         </ScrollImages>
       </Wrapper>

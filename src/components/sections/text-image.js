@@ -39,6 +39,7 @@ const ImageColumn = styled.div`
 
 const ImageWrapper = styled.img`
   width: 100%;
+  height: auto;
 `;
 
 const Bubble = styled.p`

@@ -37,6 +37,7 @@ const Nav = styled.div`
 
 const Logo = styled.img`
   height: 40px;
+  width: auto;
   margin-right: 30px;
 `;
 
@@ -60,6 +61,7 @@ const MobileSocial = styled.div`
 
 const Icon = styled.img`
   width: 40px;
+  height: auto;
   margin: 0px 10px;
   cursor: pointer;
 `;

@@ -18,6 +18,7 @@ const Wrapper = styled.section`
 `;
 const Image = styled.img`
   height: 50px;
+  width: auto;
   margin: 10px 20px;
   @media (max-width: 960px) {
    margin-bottom: 20px;

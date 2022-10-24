@@ -39,6 +39,7 @@ const Nav = styled.div`
 
 const Logo = styled.img`
   width: 75px;
+  height: auto;
   margin-right: 50px;
   @media (max-width: 960px) {
     margin-right: initial;
@@ -93,6 +94,7 @@ const SubFooterIcons = styled.div`
 
 const Image = styled.img`
   width: 30px;
+  height: auto;
   margin-left: 10px;
   @media (max-width: 960px) {
     margin-left: initial;

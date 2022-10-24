@@ -11,10 +11,12 @@ const Wrapper = styled.div`
 
 const Image = styled.img`
   width: 250px;
+  height: auto;
 `;
 
 const Icon = styled.img`
   width: 50px;
+  height: auto;
 `;
 
 const Title = styled.h3`

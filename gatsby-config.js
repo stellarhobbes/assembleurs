@@ -11,7 +11,8 @@ module.exports = {
     {
       resolve: "gatsby-source-strapi",
       options: {
-        apiURL: process.env.STRAPI_API_URL || "https://assembleurs.herokuapp.com",
+        apiURL:
+          process.env.STRAPI_API_URL || "https://assembleurs.herokuapp.com",
         accessToken: process.env.STRAPI_TOKEN,
         collectionTypes: [
           {
@@ -65,7 +66,7 @@ module.exports = {
             singularName: "homepage",
             queryParams: {
               publicationState:
-              process.env.GATSBY_IS_PREVIEW === "true" ? "preview" : "live",
+                process.env.GATSBY_IS_PREVIEW === "true" ? "preview" : "live",
               populate: {
                 blocks: {
                   populate: "*",
@@ -77,7 +78,7 @@ module.exports = {
             singularName: "contact",
             queryParams: {
               publicationState:
-              process.env.GATSBY_IS_PREVIEW === "true" ? "preview" : "live",
+                process.env.GATSBY_IS_PREVIEW === "true" ? "preview" : "live",
               populate: {
                 blocks: {
                   populate: "*",
@@ -91,7 +92,6 @@ module.exports = {
     "gatsby-plugin-postcss",
     "gatsby-plugin-styled-components",
     "gatsby-plugin-image",
-    "gatsby-plugin-sitemap",
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
@@ -127,6 +127,37 @@ module.exports = {
         path: "./src/images/",
       },
       __key: "images",
+    },
+    {
+      resolve: `gatsby-plugin-sitemap`,
+      options: {
+        query: `{
+          site {
+            siteMetadata {
+              siteUrl
+            }
+          }
+          allSitePage {
+            edges {
+              node {
+                path
+              }
+            }
+          }
+        }`,
+        serialize: ({ site, allSitePage }) => {
+          let pages = [];
+          allSitePage.edges.map((edge) => {
+            pages.push({
+              url: site.siteMetadata.siteUrl + edge.node.path,
+              changefreq: `daily`,
+              priority: 0.7,
+            });
+          });
+
+          return pages;
+        },
+      },
     },
   ],
 };
