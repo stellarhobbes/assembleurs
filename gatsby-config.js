@@ -8,14 +8,14 @@ module.exports = {
     description:
       "Les Assembleurs est une société coopérative d’intérêt collectif (SCIC) ayant pour mission d’accompagner, former et animer une dynamique collective pour un numérique inclusif et créatif en Hauts-de-France.",
     siteUrl: `https://assembleurs.co/`,
-    image: "https://res.cloudinary.com/dgnptaxm4/image/upload/v1666271732/illustration-assembleurs_l9rl5h.png"
+    image:
+      "https://res.cloudinary.com/dgnptaxm4/image/upload/v1666271732/illustration-assembleurs_l9rl5h.png",
   },
   plugins: [
     {
       resolve: "gatsby-source-strapi",
       options: {
-        apiURL:
-          process.env.STRAPI_API_URL || "https://assembleurs.herokuapp.com",
+        apiURL: process.env.STRAPI_API_URL || "https://assembleurs.herokuapp.com",
         accessToken: process.env.STRAPI_TOKEN,
         collectionTypes: [
           {
@@ -67,6 +67,114 @@ module.exports = {
         singleTypes: [
           {
             singularName: "homepage",
+            queryParams: {
+              publicationState:
+                process.env.GATSBY_IS_PREVIEW === "true" ? "preview" : "live",
+              populate: {
+                blocks: {
+                  populate: "*",
+                },
+              },
+            },
+          },
+          {
+            singularName: "cooperative",
+            queryParams: {
+              publicationState:
+                process.env.GATSBY_IS_PREVIEW === "true" ? "preview" : "live",
+              populate: {
+                blocks: {
+                  populate: "*",
+                },
+              },
+            },
+          },
+          {
+            singularName: "equipe",
+            queryParams: {
+              publicationState:
+                process.env.GATSBY_IS_PREVIEW === "true" ? "preview" : "live",
+              populate: {
+                blocks: {
+                  populate: "*",
+                },
+              },
+            },
+          },
+          {
+            singularName: "chiffre",
+            queryParams: {
+              publicationState:
+                process.env.GATSBY_IS_PREVIEW === "true" ? "preview" : "live",
+              populate: {
+                blocks: {
+                  populate: "*",
+                },
+              },
+            },
+          },
+          {
+            singularName: "societaire",
+            queryParams: {
+              publicationState:
+                process.env.GATSBY_IS_PREVIEW === "true" ? "preview" : "live",
+              populate: {
+                blocks: {
+                  populate: "*",
+                },
+              },
+            },
+          },
+          {
+            singularName: "temoignage",
+            queryParams: {
+              publicationState:
+                process.env.GATSBY_IS_PREVIEW === "true" ? "preview" : "live",
+              populate: {
+                blocks: {
+                  populate: "*",
+                },
+              },
+            },
+          },
+          {
+            singularName: "mission",
+            queryParams: {
+              publicationState:
+                process.env.GATSBY_IS_PREVIEW === "true" ? "preview" : "live",
+              populate: {
+                blocks: {
+                  populate: "*",
+                },
+              },
+            },
+          },
+          {
+            singularName: "page-solution",
+            queryParams: {
+              publicationState:
+                process.env.GATSBY_IS_PREVIEW === "true" ? "preview" : "live",
+              populate: {
+                blocks: {
+                  populate: "*",
+                },
+              },
+            },
+          },
+          {
+            singularName: "sur-le-terrain",
+            queryParams: {
+              publicationState:
+                process.env.GATSBY_IS_PREVIEW === "true" ? "preview" : "live",
+              populate: {
+                blocks: {
+                  populate: "*",
+                },
+              },
+            },
+          },
+          {
+            singularName: "nos-commun",
             queryParams: {
               publicationState:
                 process.env.GATSBY_IS_PREVIEW === "true" ? "preview" : "live",

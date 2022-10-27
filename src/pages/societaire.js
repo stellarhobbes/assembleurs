@@ -207,8 +207,7 @@ const Societaire = () => {
 export default Societaire;
 
 export const Head = () => (
-  <Seo
-    title="Les Assembleurs - Devenir sociétaire"
-    pathname="/societaire"
-  ></Seo>
+  <Seo title="Les Assembleurs - Devenir sociétaire" pathname="/societaire">
+    <script async src="https://tally.so/widgets/embed.js"></script>
+  </Seo>
 );
