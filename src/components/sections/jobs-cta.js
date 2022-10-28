@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "gatsby";
 import styled from "styled-components";
 import GlobalStyle from "../../globalStyles";
+import { useStaticQuery, graphql } from "gatsby";
 
 import Subtitle from "../elements/subtitle";
 import Button from "../elements/button";
@@ -26,15 +27,31 @@ const Wrapper = styled.section`
 `;
 
 const JobsCTA = (props) => {
+  const offers = useStaticQuery(graphql`
+    query {
+      strapiNousRejoindre {
+        calltoactionMail {
+          title
+          buttonText
+          mailAdress
+        }
+      }
+    }
+  `);
   return (
     <Main backgroundColor={props.backgroundColor}>
       <GlobalStyle />
       <Wrapper>
         <div>
-          <Subtitle bulletColor="red" subtitleText="Envoyez-nous CV et lettre de motivation" />
+          <Subtitle
+            bulletColor="red"
+            subtitleText={offers.strapiNousRejoindre.calltoactionMail.title}
+          />
         </div>
         <div>
-          <Link to="mailto:bonjour@assembleurs.co"><Button buttonText="Candidature spontanée" /></Link>
+          <Link to={`mailto:${offers.strapiNousRejoindre.calltoactionMail.mailAdress}`}>
+            <Button buttonText={offers.strapiNousRejoindre.calltoactionMail.buttonText} />
+          </Link>
         </div>
       </Wrapper>
     </Main>

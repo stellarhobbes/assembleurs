@@ -3,6 +3,7 @@ import styled from "styled-components";
 import GlobalStyle from "../../globalStyles";
 import { AnchorLink } from "gatsby-plugin-anchor-links";
 import { useStaticQuery, graphql } from "gatsby";
+import { motion } from "framer-motion";
 
 import Logos from "../../images/icons/Bandeau-logo-REACT.jpg";
 import LogoCapsule from "../../images/icons/logo-assembleurs-capsule.png";
@@ -39,7 +40,7 @@ const Image = styled.img`
   border-radius: 50px;
 `;
 
-const Title = styled.h1`
+const Title = styled(motion.h1)`
   color: white;
   text-align: center;
 `;
@@ -63,6 +64,11 @@ const ScrollImages = styled.div`
   }
 `;
 
+const animationProperties = {
+  visible: { opacity: 1, y: 0, transition: { duration: 1 } },
+  hidden: { opacity: 0, y: -30 },
+};
+
 const HeaderHome = () => {
   const homeContent = useStaticQuery(graphql`
     query {
@@ -77,7 +83,11 @@ const HeaderHome = () => {
       <GlobalStyle />
       <Wrapper>
         <Logo src={LogoCapsule}></Logo>
-        <Title>{homeContent.strapiHomepage.title}</Title>
+        <Title
+          initial="hidden"
+          variants={animationProperties}
+          animate="visible"
+        >{homeContent.strapiHomepage.title}</Title>
         <Content>{homeContent.strapiHomepage.accroche}</Content>
         <Image src={Logos} alt=""></Image>
         <ScrollImages>

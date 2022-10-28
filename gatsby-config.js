@@ -39,6 +39,12 @@ module.exports = {
               backgroundImage: {
                 populate: "*",
               },
+              image: {
+                populate: "*",
+              },
+              icon: {
+                populate: "*",
+              },
               slug: {
                 populate: "*",
               },
@@ -55,6 +61,48 @@ module.exports = {
                 populate: "*",
               },
               slug: {
+                populate: "*",
+              },
+            },
+            queryParams: {
+              publicationState:
+                process.env.GATSBY_IS_PREVIEW === "true" ? "preview" : "live",
+            },
+          },
+          {
+            singularName: "temoignage-unit",
+            api: {
+              backgroundImage: {
+                populate: "*",
+              },
+              image: {
+                populate: "*",
+              },
+              icon: {
+                populate: "*",
+              },
+            },
+            queryParams: {
+              publicationState:
+                process.env.GATSBY_IS_PREVIEW === "true" ? "preview" : "live",
+            },
+          },
+          {
+            singularName: "equipe-unit",
+            api: {
+              image: {
+                populate: "*",
+              },
+            },
+            queryParams: {
+              publicationState:
+                process.env.GATSBY_IS_PREVIEW === "true" ? "preview" : "live",
+            },
+          },
+          {
+            singularName: "job",
+            api: {
+              icon: {
                 populate: "*",
               },
             },
@@ -175,6 +223,18 @@ module.exports = {
           },
           {
             singularName: "nos-commun",
+            queryParams: {
+              publicationState:
+                process.env.GATSBY_IS_PREVIEW === "true" ? "preview" : "live",
+              populate: {
+                blocks: {
+                  populate: "*",
+                },
+              },
+            },
+          },
+          {
+            singularName: "nous-rejoindre",
             queryParams: {
               publicationState:
                 process.env.GATSBY_IS_PREVIEW === "true" ? "preview" : "live",

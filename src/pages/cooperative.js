@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import GlobalStyle from "../globalStyles";
+import { useStaticQuery, graphql } from "gatsby";
 import { Seo } from "../components/seo";
 
 /*Components*/
@@ -21,41 +22,9 @@ import HalfImage from "../components/sections/half-image";
 import ContactCTA from "../components/sections/contact-cta";
 
 /*Images*/
-/*import IllustrationLieux from "../images/illustrations/illustration-lieux.png";*/
-import ImageHeader from "../images/pictures/image-header-cooperative-haricot.png";
 import IconEyeCyan from "../images/icons/cyaneye-assembleurs.png";
 import IconEyeRed from "../images/icons/redeye-assembleurs.png";
-import IllustrationUrgence from "../images/illustrations/illustration-urgencesociale.png";
 import ArrowRight from "../images/icons/arrow-right-assembleurs.png";
-import HandsImage from "../images/illustrations/Picto_mains.png";
-import HatImage from "../images/illustrations/Picto_diplome.png";
-import DisplayImage from "../images/illustrations/Picto_fleches.png";
-import LinkImage from "../images/illustrations/Picto_reseau.png";
-import EquipeAssembleurs from "../images/pictures/équipe-assembleurs-couleur.png";
-
-/*Contents*/
-const missionContents = [
-  {
-    url: HandsImage,
-    titleText: "Accompagner",
-    contentText: "des stratégies de l'inclusion numérique",
-  },
-  {
-    url: HatImage,
-    titleText: "Structurer",
-    contentText: "et animer une offre de formation",
-  },
-  {
-    url: DisplayImage,
-    titleText: "Mener",
-    contentText: "des projets sectoriels de l'inclusion numérique",
-  },
-  {
-    url: LinkImage,
-    titleText: "Créer du lien",
-    contentText: "mettre en réseau et animer l'écosystème",
-  },
-];
 
 /*Styles*/
 const Wrapper = styled.section`
@@ -79,6 +48,51 @@ const Bubble = styled.p`
 `;
 
 const Cooperative = () => {
+  const cooperativeContent = useStaticQuery(graphql`
+    query {
+      strapiCooperative {
+        textImage {
+          image {
+            url
+          }
+          title
+          description
+        }
+        citation
+        visionBloc {
+          title
+          accroche
+          content
+        }
+        importantText
+        fullImage {
+          image {
+            url
+          }
+          imageText
+        }
+        actions {
+          title
+          content
+          actionCard {
+            cardImage {
+              url
+            }
+            cardTitle
+            cardText
+          }
+        }
+        centerText
+        textImageEnd {
+          image {
+            url
+          }
+          title
+          description
+        }
+      }
+    }
+  `);
   return (
     <body>
       <GlobalStyle />
@@ -86,68 +100,68 @@ const Cooperative = () => {
       <TopNav />
       <SectionWrap backgroundColor="lightgrey">
         <ReverseTextImage
-          title="Mission des assembleurs"
-          text="Accompagner, former et animer une dynamique collective pour une société numérique inclusive et créative !"
-          imageUrl={ImageHeader}
+          title={cooperativeContent.strapiCooperative.textImage.title}
+          text={cooperativeContent.strapiCooperative.textImage.description}
+          imageUrl={cooperativeContent.strapiCooperative.textImage.image.url}
           targetId="/cooperative#target"
         />
       </SectionWrap>
       <div id="target"></div>
       <Citation
         backgroundColor="lightgrey"
-        citationText="La médiation numérique désigne les dispositifs qui permettent à chacun de comprendre et de s'approprier le numérique, ses enjeux et ses usages"
+        citationText={cooperativeContent.strapiCooperative.citation}
       />
       <SectionWrap backgroundColor="lightgrey">
         <TextCitation
           backgroundColor="lightgrey"
-          title="Notre vision"
-          htroisText="Agir collectivement pour une transition numérique inclusive des Hauts-de-France !"
-          text="L'inclusion numérique, c'est répondre à une urgence sociale pour aider les plus éloignés dans leur appropriation des outils et démarches. C'est aussi un enjeu sociétal qui consiste à accompagner un changement de société et donner à tous et à toutes les clés pour être acteurs de la société numérique "
+          title={cooperativeContent.strapiCooperative.visionBloc.title}
+          htroisText={cooperativeContent.strapiCooperative.visionBloc.accroche}
+          text={cooperativeContent.strapiCooperative.visionBloc.content}
           iconUrl={IconEyeCyan}
-          citationText="Agir collectivement pour que chacun trouve sa place dans la société numérique"
+          citationText={cooperativeContent.strapiCooperative.importantText}
         />
       </SectionWrap>
       <FullImage
-        imageUrl={IllustrationUrgence}
+        imageUrl={cooperativeContent.strapiCooperative.fullImage.image.url}
         imageAlt="Illustration de la transformation sociétale"
       />
       <Wrapper>
         <Bubble>
-          On considère qu’environ 20% de la population est en situation
-          d’illectronisme, mais l’inclusion numérique c’est aussi accompagner
-          l’ensemble des citoyens dans la transformation sociétale en cours.
+          {cooperativeContent.strapiCooperative.fullImage.imageText}
         </Bubble>
       </Wrapper>
       <SectionWrap backgroundColor="lightgrey">
         <SubtitleButton
-          subtitleText="Nos actions sur le terrain"
+          subtitleText={cooperativeContent.strapiCooperative.actions.title}
           backgroundColor="lightgrey"
         />
         <ContentBloc
           backgroundColor="lightgrey"
           imageUrl={ArrowRight}
           imageAlt=""
-          contentText="Pour nous, le déploiement d'une offre de médiation en adéquation avec les besoins des citoyens sur l'ensemble du territoire passe à la fois par le renforcement des lieux de médiation, le déploiement de solutions innovantes et une meilleure identification des acteurs"
+          contentText={cooperativeContent.strapiCooperative.actions.content}
         />
         <FourColumns backgroundColor="lightgrey">
-          {missionContents.map((content) => (
-            <Card
-              url={content.url}
-              titleText={content.titleText}
-              contentText={content.contentText}
-            />
-          ))}
+          {cooperativeContent.strapiCooperative.actions.actionCard.map(
+            (content) => (
+              <Card
+                url={content.cardImage.url}
+                titleText={content.cardTitle}
+                contentText={content.cardText}
+              />
+            )
+          )}
         </FourColumns>
       </SectionWrap>
       <CitationSimple
         iconUrl={IconEyeRed}
-        citationText="En 2022, les Assembleurs, ce sont des formations pour les aidants et les médiateurs, des rencontres entre acteurs de l'inclusion numérique, des projets autour du numérique éducatif, de la lutte contre la pauvreté ou des TPE-PME"
+        citationText={cooperativeContent.strapiCooperative.centerText}
       />
       <HalfImage
         backgroundColor="lightgrey"
-        backgroundImage={EquipeAssembleurs}
-        subtitleText="Notre équipe"
-        contentText="Le projet s'est développé depuis fin 2019 au sein du collectif POP, ses activités sont portées par une SCIC. L'équipe compte plus de 15 collaborateurs et nous prévoyons de doubler les effectifs d'ici fin 2023"
+        backgroundImage={cooperativeContent.strapiCooperative.textImageEnd.image.url}
+        subtitleText={cooperativeContent.strapiCooperative.textImageEnd.title}
+        contentText={cooperativeContent.strapiCooperative.textImageEnd.description}
         buttonText="Découvrir les profils"
         url="/equipe"
       />
@@ -160,8 +174,5 @@ const Cooperative = () => {
 export default Cooperative;
 
 export const Head = () => (
-  <Seo
-    title="Les Assembleurs - Coopérative"
-    pathname="/cooperative"
-  ></Seo>
+  <Seo title="Les Assembleurs - Coopérative" pathname="/cooperative"></Seo>
 );

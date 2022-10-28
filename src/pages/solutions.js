@@ -1,8 +1,9 @@
 import React from "react";
 import GlobalStyle from "../globalStyles";
-import { useStaticQuery, graphql } from "gatsby";
+import { Link, useStaticQuery, graphql } from "gatsby";
 import styled from "styled-components";
 import Masonry from "react-masonry-css";
+import Marquee from "react-fast-marquee";
 import { Seo } from "../components/seo";
 
 /*Components*/
@@ -14,35 +15,7 @@ import SectionWrap from "../components/sections/section-wrap";
 import SolutionCard from "../components/elements/solution-card";
 
 /*Images*/
-import ActeursPublics from "../images/illustrations/Picto_illu_1.png";
-import ActeursInclusionNum from "../images/illustrations/Picto_illu_2.png";
-import ActeursSocietaux from "../images/illustrations/Picto_illu_3.png";
 import Pattern from "../images/pictures/pattern-logo.png";
-
-/*Content*/
-const headerContent = [
-  {
-    image: ActeursPublics,
-    alt: "Illustration acteurs publics",
-    title: "Acteurs publics",
-    text: "(collectivités, opérateurs de service public...)",
-    url: "/solutions/acteurs-publics",
-  },
-  {
-    image: ActeursInclusionNum,
-    alt: "Illustration acteurs publics",
-    title: "Acteurs de l'inclusion numérique",
-    text: "(lieux de médiation, tiers-lieux, centres sociaux...)",
-    url: "/solutions/acteurs-inclusion-numerique",
-  },
-  {
-    image: ActeursSocietaux,
-    alt: "Illustration acteurs publics",
-    title: "Acteurs sociétaux",
-    text: "(associations, acteurs santé, éducatifs, économiques...)",
-    url: "/solutions/acteurs-societaux",
-  },
-];
 
 /*Styles*/
 const HeaderWrap = styled.div`
@@ -84,6 +57,24 @@ const breakpointColumnsObj = {
   500: 1,
 };
 
+const CallToAction = styled.div`
+  background-color: #FFE0DB;
+  padding: 20px 0px;
+`;
+
+const AnimateText = styled.p`
+  text-transform: uppercase;
+  font-family: "Big Shoulders Display";
+  font-weight: 600;
+  font-size: 1.5em;
+  letter-spacing: 1px;
+`;
+
+const Bold = styled.span`
+  font-weight: 700;
+  color: #FF4114;
+`
+
 const Solutions = () => {
   const Solutions = useStaticQuery(graphql`
     query {
@@ -100,6 +91,19 @@ const Solutions = () => {
           }
         }
       }
+      strapiPageSolution {
+        overText
+        title
+        solutionHeaderCard {
+          cardImage {
+            url
+            alternativeText
+          }
+          cardTitle
+          cardText
+          buttonUrl
+        }
+      }
     }
   `);
 
@@ -109,22 +113,34 @@ const Solutions = () => {
       <Navbar />
       <HeaderWrap>
         <Header>
-          <Title>Découvrir nos solutions en fonction de votre situation</Title>
-          <Content>Vous êtes&nbsp;...</Content>
+          <Title>{Solutions.strapiPageSolution.overText}</Title>
+          <Content>{Solutions.strapiPageSolution.title}</Content>
         </Header>
 
         <ThreeColumns>
-          {headerContent.map((content) => (
+          {Solutions.strapiPageSolution.solutionHeaderCard.map((content) => (
             <SolutionHeaderCard
-              imageUrl={content.image}
-              imageAlt={content.alt}
-              titleText={content.title}
-              contentText={content.text}
-              link={content.url}
+              imageUrl={content.cardImage.url}
+              imageAlt={content.cardImage.alternativeText}
+              titleText={content.cardTitle}
+              contentText={content.cardText}
+              link={content.buttonUrl}
             />
           ))}
         </ThreeColumns>
       </HeaderWrap>
+      <Link to="https://labase.anct.gouv.fr/base/73" target="_blank">
+        <CallToAction>
+          <AnimateText>
+            <Marquee gradientWidth="0">
+              Vous souhaitez découvrir toutes les solutions de nos partenaires
+              sur l'inclusion numérique ?&nbsp;<Bold>Rendez-vous sur la Base</Bold>&nbsp;• Vous
+              souhaitez découvrir toutes les solutions de nos partenaires sur
+              l'inclusion numérique ?&nbsp;<Bold>Rendez-vous sur la Base</Bold>&nbsp;•&nbsp;
+            </Marquee>
+          </AnimateText>
+        </CallToAction>
+      </Link>
       <SectionWrap>
         <ColumnsWrapper>
           <Masonry

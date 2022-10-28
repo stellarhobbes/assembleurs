@@ -1,8 +1,9 @@
 import React from "react";
 import GlobalStyle from "../../globalStyles";
-import { useStaticQuery, graphql } from "gatsby";
+import { Link, useStaticQuery, graphql } from "gatsby";
 import styled from "styled-components";
 import Masonry from "react-masonry-css";
+import Marquee from "react-fast-marquee";
 import { Seo } from "../../components/seo";
 
 /*Components*/
@@ -26,7 +27,7 @@ const headerContent = [
     opacity: "yes",
     alt: "Illustration acteurs publics",
     title: "Acteurs publics",
-    text: "(collectivités, opérateurs de service public...)",
+    text: "(Collectivités, opérateurs de service public...)",
     url: "/solutions/acteurs-publics",
   },
   {
@@ -34,7 +35,7 @@ const headerContent = [
     opacity: "yes",
     alt: "Illustration acteurs publics",
     title: "Acteurs de l'inclusion numérique",
-    text: "(lieux de médiation, tiers-lieux, centres sociaux...)",
+    text: "(Lieux de médiation, tiers-lieux, centres sociaux...)",
     url: "/solutions/acteurs-inclusion-numerique",
   },
   {
@@ -42,7 +43,7 @@ const headerContent = [
     opacity: "",
     alt: "Illustration acteurs publics",
     title: "Acteurs sociétaux",
-    text: "(associations, acteurs santé, éducatifs, économiques...)",
+    text: "(Associations, acteurs santé, éducatifs, économiques...)",
     url: "/solutions/acteurs-societaux",
   },
 ];
@@ -87,6 +88,24 @@ const breakpointColumnsObj = {
   500: 1,
 };
 
+const CallToAction = styled.div`
+  background-color: #ffe0db;
+  padding: 20px 0px;
+`;
+
+const AnimateText = styled.p`
+  text-transform: uppercase;
+  font-family: "Big Shoulders Display";
+  font-weight: 600;
+  font-size: 1.5em;
+  letter-spacing: 1px;
+`;
+
+const Bold = styled.span`
+  font-weight: 700;
+  color: #ff4114;
+`;
+
 const SolutionsPublic = () => {
   const Solutions = useStaticQuery(graphql`
     query {
@@ -129,6 +148,19 @@ const SolutionsPublic = () => {
           ))}
         </ThreeColumns>
       </HeaderWrap>
+      <Link to="https://labase.anct.gouv.fr/base/73" target="_blank">
+        <CallToAction>
+          <AnimateText>
+            <Marquee gradientWidth="0">
+              Vous souhaitez découvrir toutes les solutions de nos partenaires
+              sur l'inclusion numérique ?&nbsp;
+              <Bold>Rendez-vous sur la Base</Bold>&nbsp;• Vous souhaitez
+              découvrir toutes les solutions de nos partenaires sur l'inclusion
+              numérique ?&nbsp;<Bold>Rendez-vous sur la Base</Bold>&nbsp;•&nbsp;
+            </Marquee>
+          </AnimateText>
+        </CallToAction>
+      </Link>
       <SectionWrap>
         <ColumnsWrapper>
           <Masonry

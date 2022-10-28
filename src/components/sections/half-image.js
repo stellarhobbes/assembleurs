@@ -63,6 +63,7 @@ const HalfImage = (props) => {
         <Content
           subtitleText={props.subtitleText}
           contentText={props.contentText}
+          subContentText={props.subContentText}
           buttonText={props.buttonText}
           url={props.url}
         />

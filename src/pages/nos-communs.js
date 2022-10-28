@@ -9,9 +9,13 @@ import { Seo } from "../components/seo";
 import Navbar from "../components/sections/navbar";
 import Footer from "../components/sections/footer";
 import HalfImage from "../components/sections/half-image";
-import IconCard from "../components/elements/icon-card";
 import SectionWrap from "../components/sections/section-wrap";
 import ContactCTA from "../components/sections/contact-cta";
+import SimpleSection from "../components/sections/simple-section";
+import ThreeColumns from "../components/sections/three-columns";
+import Card from "../components/elements/card";
+import FormationCard from "../components/elements/formation-card";
+import AtelierCard from "../components/elements/atelier-card";
 
 /*Images*/
 import ImageHeader from "../images/pictures/image-header-ressources.png";
@@ -19,7 +23,10 @@ import ImageHeader from "../images/pictures/image-header-ressources.png";
 /*Contents*/
 
 /*Styles*/
-const ColumnsWrapper = styled.section``;
+const ColumnsWrapper = styled.section`
+  width: 90%;
+  max-width: 1350px;
+`;
 const breakpointColumnsObj = {
   default: 3,
   960: 2,
@@ -32,8 +39,6 @@ const Ressources = () => {
     query {
       allStrapiRessource {
         nodes {
-          accroche
-          backgroundColor
           title
           content {
             data {
@@ -43,9 +48,29 @@ const Ressources = () => {
           backgroundImage {
             url
           }
-          icon {
+          image {
             url
           }
+          duration
+          peopleNumber
+          category
+        }
+      }
+      strapiNosCommun {
+        title
+        accroche
+        subAccroche
+        formationTitle {
+          title
+          accroche
+        }
+        formationBenefits {
+          title
+          content
+        }
+        atelierTitle {
+          title
+          accroche
         }
       }
     }
@@ -57,11 +82,23 @@ const Ressources = () => {
       <HalfImage
         backgroundImage={ImageHeader}
         backgroundColor="lightgrey"
-        subtitleText="Nos communs"
-        contentText="Les Assembleurs sélectionnent et mettent en commun de nombreuses
-        ressources et outils méthodologiques, à votre disposition ci-dessous."
+        subtitleText={strapiData.strapiNosCommun.title}
+        contentText={strapiData.strapiNosCommun.accroche}
+        subContentText={strapiData.strapiNosCommun.subAccroche}
       />
-
+      <SectionWrap>
+        <SimpleSection
+          iconUrl="https://res.cloudinary.com/dgnptaxm4/image/upload/v1666963466/formation_assembleurs_communs_3f453b1e2c.png?updated_at=2022-10-28T13:24:26.873Z"
+          titleText={strapiData.strapiNosCommun.formationTitle.title}
+        >
+          {strapiData.strapiNosCommun.formationTitle.accroche}
+        </SimpleSection>
+      </SectionWrap>
+      <ThreeColumns>
+        {strapiData.strapiNosCommun.formationBenefits.map((content) => (
+          <Card titleText={content.title} contentText={content.content} />
+        ))}
+      </ThreeColumns>
       <SectionWrap>
         <ColumnsWrapper>
           <Masonry
@@ -69,24 +106,58 @@ const Ressources = () => {
             className="my-masonry-grid"
             columnClassName="my-masonry-grid_column"
           >
-            {strapiData.allStrapiRessource.nodes.map((node) => (
-              <IconCard
-                backgroundImage={node.backgroundImage.url}
-                backgroundColor={node.backgroundColor}
-                imageUrl={node.icon.url}
-                imageAlt=""
-                subtitleText={node.title}
-                accrocheText={node.accroche}
-                buttonText=""
-                buttonUrl=""
-              >
-                {node.content.data.content}
-              </IconCard>
-            ))}
+            {strapiData.allStrapiRessource.nodes
+              .filter((node) => node.category.includes("formation"))
+              .map((node) => (
+                <FormationCard
+                  imageUrl={node.image.url}
+                  backgroundImage={node.backgroundImage.url}
+                  backgroundColor={node.backgroundColor}
+                  imageAlt=""
+                  subtitleText={node.title}
+                  duration={node.duration}
+                  people={node.peopleNumber}
+                >
+                  {node.content.data.content}
+                </FormationCard>
+              ))}
           </Masonry>
         </ColumnsWrapper>
       </SectionWrap>
-      <ContactCTA backgroundColor="lightgrey" />
+      <SectionWrap backgroundColor="lightgrey">
+        <SimpleSection
+          iconUrl="https://res.cloudinary.com/dgnptaxm4/image/upload/v1666963466/atelier_assembleurs_communs_a38663e688.png?updated_at=2022-10-28T13:24:27.370Z"
+          titleText={strapiData.strapiNosCommun.atelierTitle.title}
+        >
+          {strapiData.strapiNosCommun.atelierTitle.accroche}
+        </SimpleSection>
+      </SectionWrap>
+      <SectionWrap backgroundColor="lightgrey">
+        <ColumnsWrapper>
+          <Masonry
+            breakpointCols={breakpointColumnsObj}
+            className="my-masonry-grid"
+            columnClassName="my-masonry-grid_column"
+          >
+            {strapiData.allStrapiRessource.nodes
+              .filter((node) => node.category.includes("atelier"))
+              .map((node) => (
+                <AtelierCard
+                  imageUrl={node.image.url}
+                  backgroundImage={node.backgroundImage.url}
+                  backgroundColor={node.backgroundColor}
+                  imageAlt=""
+                  subtitleText={node.title}
+                  duration={node.duration}
+                  people={node.peopleNumber}
+                >
+                  {node.content.data.content}
+                </AtelierCard>
+              ))}
+          </Masonry>
+        </ColumnsWrapper>
+      </SectionWrap>
+      <ContactCTA backgroundColor="white" />
       <Footer />
     </body>
   );
@@ -95,8 +166,5 @@ const Ressources = () => {
 export default Ressources;
 
 export const Head = () => (
-  <Seo
-    title="Les Assembleurs - Nos communs"
-    pathname="/nos-communs"
-  ></Seo>
+  <Seo title="Les Assembleurs - Nos communs" pathname="/nos-communs"></Seo>
 );

@@ -51,6 +51,9 @@ exports.sourceNodes = ({ actions }) => {
     },
     type allStrapiRessource implements Node @infer {
       accroche: String
+    },
+    type allStrapiTemoignageUnit implements Node @infer {
+      image: File
     }
   `;
   createTypes(typeDefs);

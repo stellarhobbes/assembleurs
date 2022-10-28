@@ -12,6 +12,7 @@ const SimpleBloc = (props) => {
     <Main>
       <Subtitle bulletColor={props.bulletColor} subtitleText={props.subtitleText} />
       <p>{props.contentText}</p>
+      {props.subContentText && <p>{props.subContentText}</p>}
       {props.buttonText && (
         <Button buttonText={props.buttonText} url={props.url} target={props.target} />
       )}

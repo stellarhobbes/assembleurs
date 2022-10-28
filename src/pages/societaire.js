@@ -1,7 +1,7 @@
 import React from "react";
 import GlobalStyle from "../globalStyles";
-import { Link } from "gatsby";
 import styled from "styled-components";
+import { useStaticQuery, graphql } from "gatsby";
 import { Seo } from "../components/seo";
 
 /*Components*/
@@ -23,9 +23,6 @@ import Footer from "../components/sections/footer";
 import LogoAssembleurs from "../images/icons/Icone_logo_Assembleurs.png";
 import CyanEye from "../images/icons/cyaneye-assembleurs.png";
 import ArrowDown from "../images/icons/arrow-down-assembleurs.png";
-import NumberOne from "../images/icons/number01-assembleurs.png";
-import NumberTwo from "../images/icons/number02-assembleurs.png";
-import NumberThree from "../images/icons/number03-assembleurs.png";
 import QuestionMark from "../images/icons/questionmark-assembleurs.png";
 import Mouse from "../images/illustrations/cursor-image.png";
 
@@ -41,61 +38,59 @@ const SocietaireCard = styled.div`
   align-items: center;
 `;
 
-/*Contents*/
-const headerContent = [
-  {
-    numberUrl: NumberOne,
-    title: "Participer",
-    text: "S'impliquer activement dans la gouvernance d'un projet régional au service de l'intérêt général",
-  },
-  {
-    numberUrl: NumberTwo,
-    title: "Échanger",
-    text: "Se mettre en réseau avec d'autres acteurs et territoires",
-  },
-  {
-    numberUrl: NumberThree,
-    title: "S'informer",
-    text: "Décrypter l'actualité de l'inclusion numérique : dispositifs d'États, appels à projet, financements",
-  },
-];
-
-const valeursContent = [
-  {
-    title: "Inclusion et pouvoir d'agir",
-    text: "Œuvrer pour une société numérique inclusive et créative qui offre une place à chacun",
-  },
-  {
-    title: "Durabilité & sobriété",
-    text: "Favoriser un numérique éthique, coopératif, démocratique et frugal",
-  },
-  {
-    title: "ESS & Agilité",
-    text: "Les Assembleurs est une entreprise de l'ESS, qui allie intérêt général et agilité entrepreneuriale",
-  },
-  {
-    title: "Ouverture & Collaboration",
-    text: "Favoriser la co-construction, le pair à pair et la production de communs",
-  },
-  {
-    title: "Ancrage & équité territoriale",
-    text: "Agir pour tous les territoires des Hauts-de-France, notamment les plus sensibles",
-  },
-];
-
-const societaireContent = [
-  {
-    text: "Vous investissez dans des parts sociales de la coopérative",
-  },
-  {
-    text: "Souscrire dans une SCIC est considéré comme un investissement à votre bilan, qui reste donc à votre actif. Le jour où vous souhaitez quitter la SCIC, vous pouvez récupérer le montant de vos parts",
-  },
-  {
-    text: "Vous prenez part à la gouvernance et devenez acteur de l'inclusion numérique en Hauts-de-France",
-  },
-];
-
 const Societaire = () => {
+  const SocietaireContent = useStaticQuery(graphql`
+    query {
+      strapiSocietaire {
+        title
+        accroche
+        numberSection {
+          numberCard {
+            number {
+              url
+            }
+            title
+            content
+          }
+        }
+        valeursSection {
+          title
+          valeurUnit {
+            title
+            content
+          }
+        }
+        principeBloc {
+          title
+          content
+          buttonText
+          buttonUrl
+        }
+        whatBloc {
+          title
+          subtitle
+          bulletText {
+            content
+          }
+        }
+        howBloc {
+          title
+          content
+          buttonText
+          buttonUrl
+        }
+        numberSectionEnd {
+          numberCard {
+            number {
+              url
+            }
+            title
+            content
+          }
+        }
+      }
+    }
+  `);
   return (
     <body>
       <GlobalStyle />
@@ -105,53 +100,60 @@ const Societaire = () => {
         isChildren="yes"
         iconUrl={LogoAssembleurs}
         iconAlt="Logo des Assembleurs"
-        titleText="Devenir sociétaire des Assembleurs"
-        contentText="Depuis juillet 2022, les Assembleurs sont devenus une Société Coopérative d'Intérêt Collectif (SCIC). Découvrez comment prendre part à la dynamique !"
+        titleText={SocietaireContent.strapiSocietaire.title}
+        contentText={SocietaireContent.strapiSocietaire.accroche}
       >
         <ThreeColumns>
-          {headerContent.map((content) => (
-            <DarkCard
-              iconUrl={content.numberUrl}
-              titleText={content.title}
-              contentText={content.text}
-            />
-          ))}
+          {SocietaireContent.strapiSocietaire.numberSection.numberCard.map(
+            (content) => (
+              <DarkCard
+                iconUrl={content.number.url}
+                titleText={content.title}
+                contentText={content.content}
+              />
+            )
+          )}
         </ThreeColumns>
       </Header>
       <DecorationSection>
-        <Subtitle subtitleText="Les valeurs partagées" />
-        {valeursContent.map((content) => (
-          <ListElement titleText={content.title} contentText={content.text} />
-        ))}
+        <Subtitle
+          subtitleText={SocietaireContent.strapiSocietaire.valeursSection.title}
+        />
+        {SocietaireContent.strapiSocietaire.valeursSection.valeurUnit.map(
+          (content) => (
+            <ListElement
+              titleText={content.title}
+              contentText={content.content}
+            />
+          )
+        )}
       </DecorationSection>
       <GreySection>
         <SectionWrap>
           <SimpleSection
             iconUrl={CyanEye}
             iconAlt="Un oeil cyan"
-            titleText="Le principe Coopératif"
-            buttonUrl="https://drive.pop.eu.com/s/e4NBnYNLwkZbto3"
-            buttonText="Télécharger la plaquette"
+            titleText={SocietaireContent.strapiSocietaire.principeBloc.title}
+            buttonUrl={SocietaireContent.strapiSocietaire.principeBloc.buttonUrl}
+            buttonText={SocietaireContent.strapiSocietaire.principeBloc.buttonText}
             imageUrl={Mouse}
             imageAlt="Image de souris"
           >
-            Devenir sociétaire consiste à souscrire une ou plusieurs parts
-            sociales de la SCIC.<br></br>1 associé = 1 voix dans la gouvernance,
-            quel que soit le nombre de parts souscrites.
+            {SocietaireContent.strapiSocietaire.principeBloc.content}
           </SimpleSection>
         </SectionWrap>
         <SectionWrap>
           <SimpleSection
             iconUrl={ArrowDown}
             iconAlt="Une flèche vers le bas"
-            titleText="Qu'est-ce que le sociétariat ?"
+            titleText={SocietaireContent.strapiSocietaire.whatBloc.title}
           >
             <RoundCard
               backgroundColor="white"
-              titleText="Devenir sociétaire c'est ..."
+              titleText={SocietaireContent.strapiSocietaire.whatBloc.subtitle}
             >
-              {societaireContent.map((content) => (
-                <ListElement contentText={content.text} />
+              {SocietaireContent.strapiSocietaire.whatBloc.bulletText.map((content) => (
+                <ListElement contentText={content.content} />
               ))}
             </RoundCard>
           </SimpleSection>
@@ -161,41 +163,23 @@ const Societaire = () => {
         <SimpleSection
           iconUrl={QuestionMark}
           iconAlt="Un point d'interrogation"
-          titleText="Comment devenir sociétaire ?"
-          buttonUrl="https://tally.so/#tally-open=nWO76k&tally-emoji-text=👋&tally-emoji-animation=wave"
-          buttonText="Télécharger le document"
+          titleText={SocietaireContent.strapiSocietaire.howBloc.title}
+          buttonUrl={SocietaireContent.strapiSocietaire.howBloc.buttonUrl}
+          buttonText={SocietaireContent.strapiSocietaire.howBloc.buttonText}
         >
-          Si vous souhaitez uniquement adhérer au réseau, contactez-nous à{" "}
-          <Link to="mailto:bonjour@assembleurs.co">bonjour@assembleurs.co</Link>
+          {SocietaireContent.strapiSocietaire.howBloc.content}
         </SimpleSection>
         <div style={{ margin: "75px" }}></div>
         <ThreeColumns>
-          <SocietaireCard>
-            <img src={NumberOne} alt="" style={{ width: "50px" }}></img>
-            <h3 style={{ textAlign: "center" }}>Bulletin de souscription</h3>
+          {SocietaireContent.strapiSocietaire.numberSectionEnd.numberCard.map((content) => (
+            <SocietaireCard>
+            <img src={content.number.url} alt="" style={{ width: "50px" }}></img>
+            <h3 style={{ textAlign: "center" }}>{content.title}</h3>
             <p style={{ textAlign: "center" }}>
-              Vous téléchargez le bulletin de souscription et nous le renvoyez
-              rempli à{" "}
-              <Link to="mailto:bonjour@assembleurs.co">
-                bonjour@assembleurs.co
-              </Link>
+              {content.content}
             </p>
           </SocietaireCard>
-          <SocietaireCard>
-            <img src={NumberTwo} alt="" style={{ width: "50px" }}></img>
-            <h3 style={{ textAlign: "center" }}>Validation administrative</h3>
-            <p style={{ textAlign: "center" }}>
-              Votre souscription est présentée au Conseil d’Adminisitration
-            </p>
-          </SocietaireCard>
-          <SocietaireCard>
-            <img src={NumberThree} alt="" style={{ width: "50px" }}></img>
-            <h3 style={{ textAlign: "center" }}>Prise de sociétariat</h3>
-            <p style={{ textAlign: "center" }}>
-              Vous versez les fonds relatifs à votre souscription sur le compte
-              des Assembleurs
-            </p>
-          </SocietaireCard>
+          ))}
         </ThreeColumns>
       </SectionWrap>
       <ContactCTA backgroundColor="lightblue" />

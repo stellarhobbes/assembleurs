@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import GlobalStyle from "../globalStyles";
+import { useStaticQuery, graphql } from "gatsby";
 import { Seo } from "../components/seo";
 
 /*Components*/
@@ -14,112 +15,6 @@ import DataCard from "../components/elements/data-card";
 import ThreeColumns from "../components/sections/three-columns.js";
 import ContactCTA from "../components/sections/contact-cta";
 import Separator from "../components/blocs/separator";
-
-/*Images*/
-import OvalePicture from "../images/pictures/ovale-picture-chiffres-assembleurs.png";
-import Oneblue from "../images/icons/number01-cyan.png";
-import Twoblue from "../images/icons/number02-cyan.png";
-import Threeblue from "../images/icons/number03-cyan.png";
-import France from "../images/pictures/france.png";
-
-/*Data - Pictogrammes*/
-import DataOne from "../images/data/data-15pax.png";
-import DataTwo from "../images/data/data-30.png";
-import DataThree from "../images/data/data-60.png";
-import DataFour from "../images/data/data-300000.png";
-import DataFive from "../images/data/data-4.png";
-import DataSix from "../images/data/data-800.png";
-
-import DataSeven from "../images/data/data-29-2.png";
-import DataEight from "../images/data/data-90.png";
-import DataNine from "../images/data/data-57.png";
-
-import DataTen from "../images/data/data-1200000.png";
-import DataEleven from "../images/data/data-750.png";
-import DataTwelve from "../images/data/data-75000.png";
-
-const dataAssembleurs = [
-  {
-    imageUrl: DataOne,
-    imageAlt: "",
-    subtitleText: "Personnes dans l'équipe",
-    contentText: "",
-    subcontentText: "",
-    sourceText: "",
-  },
-  {
-    imageUrl: DataTwo,
-    imageAlt: "",
-    subtitleText: "Projets en cours",
-    contentText: "",
-    subcontentText: "",
-    sourceText: "",
-  },
-  {
-    imageUrl: DataThree,
-    imageAlt: "",
-    subtitleText: "Acteurs impliqués",
-    contentText: "",
-    subcontentText: "",
-    sourceText: "",
-  },
-  {
-    imageUrl: DataFour,
-    imageAlt: "",
-    subtitleText: "Pass numériques",
-    contentText: "",
-    subcontentText:
-      "en cours de déploiement sur le territoire des Hauts-de-France",
-    sourceText: "",
-  },
-  {
-    imageUrl: DataFive,
-    imageAlt: "",
-    subtitleText: "Projets sectoriels",
-    contentText: "",
-    subcontentText:
-      "Le numérique éducatif - Inclusion numérique des dirigeants TPE - Stratégie de lutte contre la pauvreté - Santé",
-    sourceText: "",
-  },
-  {
-    imageUrl: DataSix,
-    imageAlt: "",
-    subtitleText: "Personnes formées",
-    contentText: "",
-    subcontentText: "À Aidants Connect",
-    sourceText: "",
-  },
-];
-
-const dataNumerique = [
-  {
-    imageUrl: DataSeven,
-    imageAlt: "",
-    subtitleText: "",
-    contentText:
-      "se déclarent peu / ne pas être compétents en matière d'administration numérique",
-    subcontentText: "",
-    sourceText: "Source - lien",
-  },
-  {
-    imageUrl: DataEight,
-    imageAlt: "",
-    subtitleText: "",
-    contentText:
-      "Pourcentage de la population qui possède un smartphone et une connexion internet",
-    subcontentText: "",
-    sourceText: "Source - lien",
-  },
-  {
-    imageUrl: DataNine,
-    imageAlt: "",
-    subtitleText: "",
-    contentText:
-      "Des offres d'emploi sont inaccessibles aux débutants sans compétences numériques",
-    subcontentText: "",
-    sourceText: "Source - Pôle Emploi",
-  },
-];
 
 /*Styles*/
 const GeoNumbers = styled.div``;
@@ -153,6 +48,85 @@ const Top = styled.div`
 const Bottom = styled.div``;
 
 const Chiffres = () => {
+  const chiffresContent = useStaticQuery(graphql`
+  query {
+    strapiChiffre {
+      textImage {
+        image {
+          url
+        }
+        title
+        description
+      }
+      assembleursData {
+        numberImage {
+          url
+        }
+        title
+        dataCard {
+          cardImage {
+            url
+          }
+          content
+          title
+          subContent
+          source
+        }
+      }
+      inclusionData {
+        numberImage {
+          url
+        }
+        title
+        dataCard {
+          cardImage {
+            url
+          }
+          title
+          content
+          subContent
+          source
+        }
+      }
+      geoData {
+        numberImage {
+          url
+        }
+        title
+        decorationImage {
+          url
+        }
+        firstGeoData {
+          cardImage {
+            url
+          }
+          title
+          content
+          subContent
+          source
+        }
+        secondGeoData {
+          cardImage {
+            url
+          }
+          title
+          content
+          subContent
+          source
+        }
+        thirdGeoData {
+          cardImage {
+            url
+          }
+          title
+          content
+          subContent
+          source
+        }
+      }
+    }
+  }
+  `);
   return (
     <body>
       <GlobalStyle />
@@ -162,32 +136,27 @@ const Chiffres = () => {
         backgroundColor="darkblue"
         bulletColor="red"
         titleColor="white"
-        title="Données et chiffres"
+        title={chiffresContent.strapiChiffre.textImage.title}
         contentColor="white"
-        imageUrl={OvalePicture}
+        imageUrl={chiffresContent.strapiChiffre.textImage.image.url}
         alt="Une réunion chez les Assembleurs"
       >
-        La mission des Assembleurs est d'accompagner, former et animer une
-        dynamique collective pour une société numérique inclusive et créative.{" "}
-        <br />
-        <br /> Notre vision : Agir collectivement pour une transition numérique
-        inclusive des Hauts-de-France&nbsp;!
+        {chiffresContent.strapiChiffre.textImage.description}
       </TextImage>
       <div style={{ backgroundColor: "#F4F4F4" }}>
         <SectionWrap>
-          <SubtitleCenter iconUrl={Oneblue} iconAlt="">
-            Les chiffres clés des Assembleurs
+          <SubtitleCenter iconUrl={chiffresContent.strapiChiffre.assembleursData.numberImage.url} iconAlt="">
+          {chiffresContent.strapiChiffre.assembleursData.title}
           </SubtitleCenter>
           <SectionWrap>
             <ThreeColumns>
-              {dataAssembleurs.map((data) => (
+              {chiffresContent.strapiChiffre.assembleursData.dataCard.map((data) => (
                 <DataCard
-                  imageUrl={data.imageUrl}
-                  imageAlt={data.imageAlt}
-                  subtitleText={data.subtitleText}
-                  contentText={data.contentText}
-                  subcontentText={data.subcontentText}
-                  sourceText={data.sourceText}
+                  imageUrl={data.cardImage.url}
+                  subtitleText={data.title}
+                  contentText={data.content}
+                  subcontentText={data.subContent}
+                  sourceText={data.source}
                 />
               ))}
             </ThreeColumns>
@@ -196,19 +165,18 @@ const Chiffres = () => {
       </div>
       <div style={{ backgroundColor: "#ffffff" }}>
         <SectionWrap>
-          <SubtitleCenter iconUrl={Twoblue} iconAlt="">
-            Les chiffres clés de l'inclusion numérique
+          <SubtitleCenter iconUrl={chiffresContent.strapiChiffre.inclusionData.numberImage.url} iconAlt="">
+          {chiffresContent.strapiChiffre.inclusionData.title}
           </SubtitleCenter>
           <SectionWrap>
             <ThreeColumns>
-              {dataNumerique.map((data) => (
+            {chiffresContent.strapiChiffre.inclusionData.dataCard.map((data) => (
                 <DataCard
-                  imageUrl={data.imageUrl}
-                  imageAlt={data.imageAlt}
-                  subtitleText={data.subtitleText}
-                  contentText={data.contentText}
-                  subcontentText={data.subcontentText}
-                  sourceText={data.sourceText}
+                  imageUrl={data.cardImage.url}
+                  subtitleText={data.title}
+                  contentText={data.content}
+                  subcontentText={data.subContent}
+                  sourceText={data.source}
                 />
               ))}
             </ThreeColumns>
@@ -219,30 +187,30 @@ const Chiffres = () => {
       <SectionWrap>
         <GeoNumbers>
           <Wrapper>
-            <Image src={France}></Image>
+            <Image src={chiffresContent.strapiChiffre.geoData.decorationImage.url}></Image>
             <NumbersBloc>
-              <SubtitleCenter iconUrl={Threeblue} iconAlt="">
-                Données des Hauts-de-France
+              <SubtitleCenter iconUrl={chiffresContent.strapiChiffre.geoData.numberImage.url} iconAlt="">
+              {chiffresContent.strapiChiffre.geoData.title}
               </SubtitleCenter>
               <Numbers>
                 <Top>
                   <DataCard
-                    imageUrl={DataTen}
+                    imageUrl={chiffresContent.strapiChiffre.geoData.firstGeoData.cardImage.url}
                     imageAlt=""
-                    contentText="exclues du numérique en Hauts-de-France"
-                    subcontentText="Soit 19% de la population"
+                    contentText={chiffresContent.strapiChiffre.geoData.firstGeoData.content}
+                    subcontentText={chiffresContent.strapiChiffre.geoData.firstGeoData.subContent}
                   />
                   <DataCard
-                    imageUrl={DataEleven}
+                    imageUrl={chiffresContent.strapiChiffre.geoData.secondGeoData.cardImage.url}
                     imageAlt=""
-                    contentText="Médiateurs numériques en Hauts-de-France au sein de 500 lieux"
+                    contentText={chiffresContent.strapiChiffre.geoData.secondGeoData.content}
                   />
                 </Top>
                 <Bottom>
                   <DataCard
-                    imageUrl={DataTwelve}
+                    imageUrl={chiffresContent.strapiChiffre.geoData.thirdGeoData.cardImage.url}
                     imageAlt=""
-                    contentText="75.000 travailleurs sociaux en première ligne, trop peu formés"
+                    contentText={chiffresContent.strapiChiffre.geoData.thirdGeoData.content}
                   />
                 </Bottom>
               </Numbers>

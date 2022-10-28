@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { Link } from "gatsby";
+import { useStaticQuery, graphql } from "gatsby";
 import { Seo } from "../components/seo";
 /*import Masonry from "react-masonry-css";
 
@@ -14,7 +15,6 @@ import SimpleSection from "../components/sections/simple-section";
 /*import IconCard from "../components/elements/icon-card";
 
 /*Images*/
-import ImageHeader from "../images/pictures/image-header-equipe.png";
 import CyanEye from "../images/icons/cyaneye-assembleurs.png";
 /*import LogoAssembleurs from "../images/icons/Icone_logo_Assembleurs.png";
 
@@ -106,26 +106,39 @@ const Bubble = styled.p`
 `;
 
 const NousRejoindre = () => {
+  const offers = useStaticQuery(graphql`
+    query {
+      strapiNousRejoindre {
+        title
+        image {
+          url
+        }
+        accroche
+        jobOffers {
+          title
+          accroche
+        }
+      }
+    }
+  `);
   return (
     <body>
       <Navbar />
       <HalfImage
         isScrollAnimation="yes"
-        backgroundImage={ImageHeader}
+        backgroundImage={offers.strapiNousRejoindre.image.url}
         backgroundColor="lightgrey"
-        subtitleText="Rejoindre une équipe dynamique et sympa"
-        contentText="Envie de travailler sur des sujets à impact social fort&nbsp;? Rejoignez les Assembleurs pour agir sur l'inclusion numérique en Hauts-de-France"
+        subtitleText={offers.strapiNousRejoindre.title}
+        contentText={offers.strapiNousRejoindre.accroche}
       />
       <JobsCTA />
       <SectionWrap>
         <SimpleSection
           iconUrl={CyanEye}
           iconAlt="Un oeil cyan"
-          titleText="Nos offres d'emplois"
+          titleText={offers.strapiNousRejoindre.jobOffers.title}
         >
-          Envie de travailler sur des sujets à impact social fort&nbsp;? <br />
-          Rejoignez les Assembleurs pour agir sur l'inclusion numérique en
-          Hauts-de-France
+          {offers.strapiNousRejoindre.jobOffers.accroche}
         </SimpleSection>
       </SectionWrap>
 

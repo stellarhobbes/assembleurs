@@ -119,7 +119,6 @@ const Contact = () => {
     </body>
   );
 };
-
 export default Contact;
 
 export const Head = () => (

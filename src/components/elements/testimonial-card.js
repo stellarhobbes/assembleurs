@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import ReactMarkdown from "react-markdown";
 import GlobalStyle from "../../globalStyles";
 
 import Button from "./button";
@@ -60,7 +61,28 @@ const Company = styled.p`
   font-weight: 600;
 `;
 
-const Content = styled.p``;
+const ContentMarkdown = styled(ReactMarkdown)`
+  h2 {
+    text-transform: none;
+    letter-spacing: 0.5px;
+  }
+  a {
+    color: #ff4114;
+    text-decoration: underline;
+    font-weight: 600;
+  }
+
+  blockquote p {
+    font-style: italic;
+    padding-left: 25px;
+    border-left: solid 1px #252d80;
+  }
+
+  img {
+    width: 100%;
+    padding: 50px 0px;
+  }
+`;
 
 const TestimonialCard = (props) => {
   return (
@@ -74,7 +96,7 @@ const TestimonialCard = (props) => {
           <Company>{props.companyText}</Company>
         </Title>
       </Presentation>
-      <Content>{props.contentText}</Content>
+      <ContentMarkdown>{props.contentText}</ContentMarkdown>
       {props.buttonText && <Button url={props.buttonUrl} buttonText={props.buttonText}></Button>}
     </Wrapper>
   );

@@ -112,7 +112,6 @@ const IndexPage = () => {
     </body>
   );
 };
-
 export default IndexPage;
 
 export const Head = () => <Seo title="Les Assembleurs - Home" />;

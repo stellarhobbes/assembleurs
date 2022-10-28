@@ -4,8 +4,18 @@ import GlobalStyle from "../../globalStyles";
 
 import Button from "./button";
 
+const colors = {
+  lightblue: "#E0F3F9",
+  lightred: "#FFE0DB",
+  lightgrey: "#F4F4F4",
+  white: "#ffffff",
+  darkblue: "#252D80",
+};
+
 const Wrapper = styled.div`
-  background-color: ${(props) => props.backgroundColor};
+  background-color: ${(props) => {
+    return colors[props.backgroundColor] || "transparent";
+  }};
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -34,7 +44,7 @@ const PeopleCard = (props) => {
       <Image src={props.imageUrl} />
       <Name>{props.name}</Name>
       <Job>{props.job}</Job>
-      {props.buttonUrl && <Button buttonText="Email" url={props.buttonUrl}/>}
+      {props.buttonUrl && <Button buttonText="Email" url={props.buttonUrl} />}
     </Wrapper>
   );
 };

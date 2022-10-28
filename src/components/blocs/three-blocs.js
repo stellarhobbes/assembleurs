@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import GlobalStyle from "../../globalStyles";
+import { useStaticQuery, graphql } from "gatsby";
 
 import BackgroundPattern from "../../images/pictures/pattern-ovale-red.png";
 
@@ -43,27 +44,54 @@ const Content = styled.p`
 `;
 
 const ThreeBlocs = () => {
+  const MissionsContent = useStaticQuery(graphql`
+    query {
+      strapiMission {
+        missionFour {
+          bottomBlocOne {
+            title
+            accroche
+          }
+          bottomBlocTwo {
+            title
+            accroche
+          }
+          topBloc {
+            title
+            accroche
+          }
+        }
+      }
+    }
+  `);
   return (
     <Wrapper>
       <GlobalStyle />
       <Top>
         <ContentWrap>
-          <Title>Programmes d'accompagnement</Title>
-          <Content>Voyages, apprenants, conférences, échanges ...</Content>
+          <Title>
+            {MissionsContent.strapiMission.missionFour.topBloc.title}
+          </Title>
+          <Content>
+            {MissionsContent.strapiMission.missionFour.topBloc.accroche}
+          </Content>
         </ContentWrap>
       </Top>
       <Bottom>
         <ContentWrap>
-          <Title>Pass numérique</Title>
+          <Title>
+            {MissionsContent.strapiMission.missionFour.bottomBlocOne.title}
+          </Title>
           <Content>
-            Mettre en réseau des prescripteurs avec des opérateurs de médiation
+            {MissionsContent.strapiMission.missionFour.bottomBlocOne.accroche}
           </Content>
         </ContentWrap>
         <ContentWrap>
-          <Title>Conseillers</Title>
+          <Title>
+            {MissionsContent.strapiMission.missionFour.bottomBlocTwo.title}
+          </Title>
           <Content>
-            Animer le réseau des CNFS en Hauts-de-France : webinaires,
-            rencontres, échanges ...
+            {MissionsContent.strapiMission.missionFour.bottomBlocTwo.accroche}
           </Content>
         </ContentWrap>
       </Bottom>

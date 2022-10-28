@@ -12,8 +12,6 @@ import SectionWrap from "../components/sections/section-wrap";
 import ReverseTextImage from "../components/sections/reverse-text-image";
 import Footer from "../components/sections/footer";
 
-import ImageHeader from "../images/illustrations/illustration-public.png";
-
 const breakpointColumnsObj = {
   default: 3,
   960: 2,
@@ -38,6 +36,15 @@ const BlogPage = () => {
           date(formatString: "DD/MM/YYYY")
         }
       }
+      strapiSurLeTerrain {
+        header {
+          title
+          description
+          image {
+            url
+          }
+        }
+      }
     }
   `);
   return (
@@ -46,9 +53,9 @@ const BlogPage = () => {
       <Navbar />
       <SectionWrap backgroundColor="lightgrey">
         <ReverseTextImage
-          title="Sur le terrain"
-          text="Découvrez les actualités des Assembleurs et de la médiation numérique en Hauts-de-France."
-          imageUrl={ImageHeader}
+          title={blogs.strapiSurLeTerrain.header.title}
+          text={blogs.strapiSurLeTerrain.header.description}
+          imageUrl={blogs.strapiSurLeTerrain.header.image.url}
           targetId="/sur-le-terrain#target"
         />
       </SectionWrap>
