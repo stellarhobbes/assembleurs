@@ -52,6 +52,10 @@ exports.sourceNodes = ({ actions }) => {
     type allStrapiRessource implements Node @infer {
       accroche: String
     },
+    type allStrapiJob implements Node @infer {
+      buttonText: String
+      buttonUrl: String
+    },
     type allStrapiTemoignageUnit implements Node @infer {
       image: File
     }

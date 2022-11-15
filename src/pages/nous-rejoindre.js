@@ -1,9 +1,8 @@
 import React from "react";
 import styled from "styled-components";
-import { Link } from "gatsby";
 import { useStaticQuery, graphql } from "gatsby";
 import { Seo } from "../components/seo";
-/*import Masonry from "react-masonry-css";
+import Masonry from "react-masonry-css";
 
 /*Components*/
 import Navbar from "../components/sections/navbar";
@@ -12,73 +11,13 @@ import HalfImage from "../components/sections/half-image";
 import JobsCTA from "../components/sections/jobs-cta";
 import SectionWrap from "../components/sections/section-wrap";
 import SimpleSection from "../components/sections/simple-section";
-/*import IconCard from "../components/elements/icon-card";
+import IconCard from "../components/elements/icon-card";
 
 /*Images*/
 import CyanEye from "../images/icons/cyaneye-assembleurs.png";
-/*import LogoAssembleurs from "../images/icons/Icone_logo_Assembleurs.png";
 
-/*Contents*/
-/*
-const offersContent = [
-  {
-    backgroundColor: "lightblue",
-    image: CyanEye,
-    alt: "Un oeil cyan",
-    title: "Chargé(e) de mission inclusion numérique",
-    text: "Résumé : Développer sur les territoires une offre de médiation numérique au plus proche des besoins des habitants, en allant les chercher où ils sont",
-    button: "Découvrir le poste",
-    url: "#",
-  },
-  {
-    backgroundColor: "lightred",
-    image: LogoAssembleurs,
-    alt: "Un oeil cyan",
-    title: "Chargé(e) de mission inclusion numérique",
-    text: "Résumé : Développer sur les territoires une offre de médiation numérique",
-    button: "Découvrir le poste",
-    url: "#",
-  },
-  {
-    backgroundColor: "lightblue",
-    image: CyanEye,
-    alt: "Un oeil cyan",
-    title: "Chargé(e) de mission inclusion numérique",
-    text: "Résumé : Développer sur les territoires une offre de médiation numérique au plus proche des besoins des habitants, en allant les chercher où ils sont",
-    button: "Découvrir le poste",
-    url: "#",
-  },
-  {
-    backgroundColor: "lightgrey",
-    image: LogoAssembleurs,
-    alt: "Un oeil cyan",
-    title: "Chargé(e) de mission inclusion numérique",
-    text: "Résumé : Développer sur les territoires une offre de médiation numérique",
-    button: "Découvrir le poste",
-    url: "#",
-  },
-  {
-    backgroundColor: "lightblue",
-    image: CyanEye,
-    alt: "Un oeil cyan",
-    title: "Chargé(e) de mission inclusion numérique",
-    text: "Résumé : Développer sur les territoires une offre de médiation numérique au plus proche des besoins des habitants, en allant les chercher où ils sont",
-    button: "Découvrir le poste",
-    url: "#",
-  },
-  {
-    backgroundColor: "lightred",
-    image: LogoAssembleurs,
-    alt: "Un oeil cyan",
-    title: "Chargé(e) de mission inclusion numérique",
-    text: "Résumé : Développer sur les territoires une offre de médiation numérique",
-    button: "Découvrir le poste",
-    url: "#",
-  },
-];
-*/
 /*Styles*/
-/*const ColumnsWrapper = styled.section``;
+const ColumnsWrapper = styled.section``;
 
 const breakpointColumnsObj = {
   default: 3,
@@ -86,28 +25,26 @@ const breakpointColumnsObj = {
   700: 2,
   500: 1,
 };
-*/
-const Wrapper = styled.section`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-`;
-const Bubble = styled.p`
-  width: 50%;
-  font-weight: 600;
-  text-align: center;
-  background-color: #e0f3f9;
-  border-radius: 30px;
-  padding: 50px;
-  @media (max-width: 960px) {
-    width: 90%;
-  }
-`;
 
 const NousRejoindre = () => {
   const offers = useStaticQuery(graphql`
     query {
+      allStrapiJob(sort: {fields: date, order: ASC}) {
+        nodes {
+          backgroundColor
+          buttonText
+          buttonUrl
+          content {
+            data {
+              content
+            }
+          }
+          job
+          icon {
+            url
+          }
+        }
+      }
       strapiNousRejoindre {
         title
         image {
@@ -141,37 +78,28 @@ const NousRejoindre = () => {
           {offers.strapiNousRejoindre.jobOffers.accroche}
         </SimpleSection>
       </SectionWrap>
-
-      <Wrapper>
-        <Bubble>
-          Nous n’avons pas d’offre d’emploi en cours, n’hésitez pas à nous
-          envoyer une candidature spontanée à{" "}
-          <Link to="mailto:bonjour@assembleurs.co">bonjour@assembleurs.co</Link>
-        </Bubble>
-      </Wrapper>
-      <SectionWrap />
-      {/*
+      {
       <ColumnsWrapper>
         <Masonry
           breakpointCols={breakpointColumnsObj}
           className="my-masonry-grid"
           columnClassName="my-masonry-grid_column"
         >
-          {offersContent.map((content) => (
+          {offers.allStrapiJob.nodes.map((node) => (
             <IconCard
-              backgroundColor={content.backgroundColor}
-              imageUrl={content.image}
-              imageAlt={content.alt}
-              subtitleText={content.title}
-              buttonText={content.button}
-              buttonUrl={content.url}
+              backgroundColor={node.backgroundColor}
+              imageUrl={node.icon.url}
+              imageAlt=""
+              subtitleText={node.job}
+              buttonText={node.buttonText}
+              buttonUrl={node.buttonUrl}
             >
-              {content.text}
+              {node.content.data.content}
             </IconCard>
           ))}
         </Masonry>
       </ColumnsWrapper>
-*/}
+}
       <Footer />
     </body>
   );

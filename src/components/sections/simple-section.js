@@ -64,7 +64,7 @@ const SimpleSection = (props) => {
         {props.titleText && <Title>{props.titleText}</Title>}
         {props.children && <Content>{props.children}</Content>}
         {props.buttonText && (
-          <Button url={props.buttonUrl} buttonText={props.buttonText} />
+          <Button url={props.buttonUrl} buttonText={props.buttonText} target="_blank"/>
         )}
         {props.imageUrl && (
           <Image src={props.imageUrl} alt={props.imageAlt}></Image>

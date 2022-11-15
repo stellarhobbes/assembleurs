@@ -46,7 +46,7 @@ const Title = styled.p`
 const AtypicalSection = () => {
   const lastBlogArticle = useStaticQuery(graphql`
     query {
-      allStrapiBlog(limit: 1) {
+      allStrapiBlog(sort: {fields: date, order: DESC}, limit: 1) {
         nodes {
           title 
           image {

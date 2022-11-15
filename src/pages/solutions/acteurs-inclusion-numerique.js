@@ -109,7 +109,7 @@ const Bold = styled.span`
 const SolutionsPublic = () => {
   const Solutions = useStaticQuery(graphql`
     query {
-      allStrapiSolution {
+      allStrapiSolution(sort: {fields: date, order: ASC}) {
         nodes {
           accroche
           backgroundColor

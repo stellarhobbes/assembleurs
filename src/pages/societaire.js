@@ -24,7 +24,6 @@ import LogoAssembleurs from "../images/icons/Icone_logo_Assembleurs.png";
 import CyanEye from "../images/icons/cyaneye-assembleurs.png";
 import ArrowDown from "../images/icons/arrow-down-assembleurs.png";
 import QuestionMark from "../images/icons/questionmark-assembleurs.png";
-import Mouse from "../images/illustrations/cursor-image.png";
 
 /*Styles*/
 const GreySection = styled.div`
@@ -63,8 +62,6 @@ const Societaire = () => {
         principeBloc {
           title
           content
-          buttonText
-          buttonUrl
         }
         whatBloc {
           title
@@ -134,10 +131,6 @@ const Societaire = () => {
             iconUrl={CyanEye}
             iconAlt="Un oeil cyan"
             titleText={SocietaireContent.strapiSocietaire.principeBloc.title}
-            buttonUrl={SocietaireContent.strapiSocietaire.principeBloc.buttonUrl}
-            buttonText={SocietaireContent.strapiSocietaire.principeBloc.buttonText}
-            imageUrl={Mouse}
-            imageAlt="Image de souris"
           >
             {SocietaireContent.strapiSocietaire.principeBloc.content}
           </SimpleSection>

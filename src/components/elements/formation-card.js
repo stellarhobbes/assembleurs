@@ -6,6 +6,8 @@ import ReactMarkdown from "react-markdown";
 import { FaHourglassHalf } from "react-icons/fa";
 import { BsPeopleFill } from "react-icons/bs";
 
+import Button from "./button";
+
 const ImageBloc = styled.div`
   border-radius: 30px 30px 0px 0px;
   position: relative;
@@ -112,10 +114,23 @@ const FormationCard = (props) => {
         {props.subtitleText && <Subtitle>{props.subtitleText}</Subtitle>}
         {props.accrocheText && <Accroche>{props.accrocheText}</Accroche>}
         <DataBloc>
-          <Duration><FaHourglassHalf color="#FF4114" size="20" />&nbsp;{props.duration}</Duration>
-          <People><BsPeopleFill color="#FF4114" size="25" />&nbsp;&nbsp;{props.people}</People>
+          <Duration>
+            <FaHourglassHalf color="#FF4114" size="20" />
+            &nbsp;{props.duration}
+          </Duration>
+          <People>
+            <BsPeopleFill color="#FF4114" size="25" />
+            &nbsp;&nbsp;{props.people}
+          </People>
         </DataBloc>
         <Content>{props.children}</Content>
+        {props.buttonUrl && (
+          <Button
+            buttonText="Découvrir"
+            url={props.buttonUrl}
+            target="_blank"
+          ></Button>
+        )}
       </Wrapper>
     </main>
   );

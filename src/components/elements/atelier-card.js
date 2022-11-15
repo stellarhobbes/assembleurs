@@ -6,6 +6,8 @@ import ReactMarkdown from "react-markdown";
 import { FaHourglassHalf } from "react-icons/fa";
 import { BsPeopleFill } from "react-icons/bs";
 
+import Button from "./button";
+
 const ImageBloc = styled.div`
   border-radius: 30px 30px 0px 0px;
   position: relative;
@@ -17,7 +19,7 @@ const ImageBloc = styled.div`
 `;
 
 const Wrapper = styled.div`
-  background-color: #E0F3F9;
+  background-color: #e0f3f9;
   background-image: ${(props) => `url(${props.backgroundImage})`};
   background-size: cover;
   padding: 25px 50px;
@@ -112,10 +114,23 @@ const FormationCard = (props) => {
         {props.subtitleText && <Subtitle>{props.subtitleText}</Subtitle>}
         {props.accrocheText && <Accroche>{props.accrocheText}</Accroche>}
         <DataBloc>
-          <Duration><FaHourglassHalf color="#00BEE6" size="20" />&nbsp;{props.duration}</Duration>
-          <People><BsPeopleFill color="#00BEE6" size="25" />&nbsp;&nbsp;{props.people}</People>
+          <Duration>
+            <FaHourglassHalf color="#00BEE6" size="20" />
+            &nbsp;{props.duration}
+          </Duration>
+          <People>
+            <BsPeopleFill color="#00BEE6" size="25" />
+            &nbsp;&nbsp;{props.people}
+          </People>
         </DataBloc>
         <Content>{props.children}</Content>
+        {props.buttonUrl && (
+          <Button
+            buttonText="Découvrir"
+            url={props.buttonUrl}
+            target="_blank"
+          ></Button>
+        )}
       </Wrapper>
     </main>
   );

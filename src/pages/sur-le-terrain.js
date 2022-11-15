@@ -24,7 +24,7 @@ const ColumnsWrapper = styled.section``;
 const BlogPage = () => {
   const blogs = useStaticQuery(graphql`
     query {
-      allStrapiBlog {
+      allStrapiBlog(sort: {fields: date, order: DESC}) {
         nodes {
           image {
             url

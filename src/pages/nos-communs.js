@@ -37,7 +37,7 @@ const breakpointColumnsObj = {
 const Ressources = () => {
   const strapiData = useStaticQuery(graphql`
     query {
-      allStrapiRessource {
+      allStrapiRessource(sort: { fields: date, order: ASC }) {
         nodes {
           title
           content {
@@ -54,6 +54,7 @@ const Ressources = () => {
           duration
           peopleNumber
           category
+          buttonUrl
         }
       }
       strapiNosCommun {
@@ -117,6 +118,7 @@ const Ressources = () => {
                   subtitleText={node.title}
                   duration={node.duration}
                   people={node.peopleNumber}
+                  buttonUrl={node.buttonUrl}
                 >
                   {node.content.data.content}
                 </FormationCard>
@@ -150,6 +152,7 @@ const Ressources = () => {
                   subtitleText={node.title}
                   duration={node.duration}
                   people={node.peopleNumber}
+                  buttonUrl={node.buttonUrl}
                 >
                   {node.content.data.content}
                 </AtelierCard>

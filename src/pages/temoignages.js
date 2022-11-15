@@ -28,7 +28,7 @@ const DoubleColumnsWrapper = styled.section``;
 const Temoignages = () => {
   const testimonials = useStaticQuery(graphql`
     query {
-      allStrapiTemoignageUnit {
+      allStrapiTemoignageUnit(sort: {fields: date, order: ASC}) {
         nodes {
           image {
             url

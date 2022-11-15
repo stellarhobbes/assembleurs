@@ -16,7 +16,7 @@ import ContactCTA from "../components/sections/contact-cta";
 const Equipe = () => {
   const team = useStaticQuery(graphql`
     query {
-      allStrapiEquipeUnit {
+      allStrapiEquipeUnit(sort: {fields: date, order: ASC}) {
         nodes {
           image {
             url
