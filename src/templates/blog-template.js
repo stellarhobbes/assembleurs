@@ -76,11 +76,9 @@ const BlogTemplate = (props) => {
         />
         <Wrapper>
           <SectionWrap>
-            {props.data.strapiBlog.content.data.content && (
-              <BlogMarkdown>
-                {props.data.strapiBlog.content.data.content}
-              </BlogMarkdown>
-            )}
+            <BlogMarkdown>
+              {props.data.strapiBlog.content.data.content}
+            </BlogMarkdown>
           </SectionWrap>
         </Wrapper>
         <Footer />
