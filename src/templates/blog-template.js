@@ -43,6 +43,15 @@ const BlogMarkdown = styled(ReactMarkdown)`
   }
 `;
 
+function LinkRenderer(props) {
+  console.log({ props });
+  return (
+    <a href={props.href} target="_blank" rel="noreferrer">
+      {props.children}
+    </a>
+  );
+}
+
 export const query = graphql`
   query ($slug: String!) {
     strapiBlog(slug: { eq: $slug }) {
@@ -76,7 +85,7 @@ const BlogTemplate = (props) => {
         />
         <Wrapper>
           <SectionWrap>
-            <BlogMarkdown>
+            <BlogMarkdown components={{ a: LinkRenderer}}>
               {props.data.strapiBlog.content.data.content}
             </BlogMarkdown>
           </SectionWrap>

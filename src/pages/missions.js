@@ -153,7 +153,6 @@ const Missions = () => {
             buttonUrl={
               MissionsContent.strapiMission.missionTwo.calltoactionOne.buttonUrl
             }
-            target="_blank"
           />
           <Card
             url={
@@ -170,7 +169,6 @@ const Missions = () => {
             buttonUrl={
               MissionsContent.strapiMission.missionTwo.calltoactionTwo.buttonUrl
             }
-            target="_blank"
           />
           <NumberBloc
             url={NumberTwo}

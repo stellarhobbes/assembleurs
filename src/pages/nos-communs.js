@@ -82,12 +82,48 @@ const Ressources = () => {
       <Navbar />
       <HalfImage
         backgroundImage={ImageHeader}
-        backgroundColor="lightgrey"
+        backgroundColor="white"
         subtitleText={strapiData.strapiNosCommun.title}
         contentText={strapiData.strapiNosCommun.accroche}
         subContentText={strapiData.strapiNosCommun.subAccroche}
       />
-      <SectionWrap>
+
+      <SectionWrap backgroundColor="lightgrey">
+        <SimpleSection
+          iconUrl="https://res.cloudinary.com/dgnptaxm4/image/upload/v1666963466/atelier_assembleurs_communs_a38663e688.png?updated_at=2022-10-28T13:24:27.370Z"
+          titleText={strapiData.strapiNosCommun.atelierTitle.title}
+        >
+          {strapiData.strapiNosCommun.atelierTitle.accroche}
+        </SimpleSection>
+      </SectionWrap>
+      <SectionWrap backgroundColor="lightgrey">
+        <ColumnsWrapper>
+          <Masonry
+            breakpointCols={breakpointColumnsObj}
+            className="my-masonry-grid"
+            columnClassName="my-masonry-grid_column"
+          >
+            {strapiData.allStrapiRessource.nodes
+              .filter((node) => node.category.includes("atelier"))
+              .map((node) => (
+                <AtelierCard
+                  imageUrl={node.image.url}
+                  backgroundImage={node.backgroundImage.url}
+                  backgroundColor={node.backgroundColor}
+                  imageAlt=""
+                  subtitleText={node.title}
+                  duration={node.duration}
+                  people={node.peopleNumber}
+                  buttonUrl={node.buttonUrl}
+                >
+                  {node.content.data.content}
+                </AtelierCard>
+              ))}
+          </Masonry>
+        </ColumnsWrapper>
+      </SectionWrap>
+
+      <SectionWrap >
         <SimpleSection
           iconUrl="https://res.cloudinary.com/dgnptaxm4/image/upload/v1666963466/formation_assembleurs_communs_3f453b1e2c.png?updated_at=2022-10-28T13:24:26.873Z"
           titleText={strapiData.strapiNosCommun.formationTitle.title}
@@ -122,40 +158,6 @@ const Ressources = () => {
                 >
                   {node.content.data.content}
                 </FormationCard>
-              ))}
-          </Masonry>
-        </ColumnsWrapper>
-      </SectionWrap>
-      <SectionWrap backgroundColor="lightgrey">
-        <SimpleSection
-          iconUrl="https://res.cloudinary.com/dgnptaxm4/image/upload/v1666963466/atelier_assembleurs_communs_a38663e688.png?updated_at=2022-10-28T13:24:27.370Z"
-          titleText={strapiData.strapiNosCommun.atelierTitle.title}
-        >
-          {strapiData.strapiNosCommun.atelierTitle.accroche}
-        </SimpleSection>
-      </SectionWrap>
-      <SectionWrap backgroundColor="lightgrey">
-        <ColumnsWrapper>
-          <Masonry
-            breakpointCols={breakpointColumnsObj}
-            className="my-masonry-grid"
-            columnClassName="my-masonry-grid_column"
-          >
-            {strapiData.allStrapiRessource.nodes
-              .filter((node) => node.category.includes("atelier"))
-              .map((node) => (
-                <AtelierCard
-                  imageUrl={node.image.url}
-                  backgroundImage={node.backgroundImage.url}
-                  backgroundColor={node.backgroundColor}
-                  imageAlt=""
-                  subtitleText={node.title}
-                  duration={node.duration}
-                  people={node.peopleNumber}
-                  buttonUrl={node.buttonUrl}
-                >
-                  {node.content.data.content}
-                </AtelierCard>
               ))}
           </Masonry>
         </ColumnsWrapper>
